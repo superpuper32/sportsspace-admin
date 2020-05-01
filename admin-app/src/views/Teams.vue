@@ -1,6 +1,6 @@
 <template>
-  <div class="teams">
-    <h1>Команды</h1>
+  <div class="container teams">
+    <h1 class="text-left">Команды мои</h1>
     <TeamCard />
   </div>
 </template>

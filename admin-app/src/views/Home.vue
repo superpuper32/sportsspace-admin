@@ -1,17 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <TeamCard msg="Создание" />
+    <PracticeSchedule />
   </div>
 </template>
 
 <script>
-import TeamCard from '@/components/TeamCard.vue'
+import PracticeSchedule from '@/components/PracticeSchedule.vue'
 
 export default {
   name: 'Home',
   components: {
-    TeamCard
+    PracticeSchedule
   }
 }
 </script>

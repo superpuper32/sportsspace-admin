@@ -1,5 +1,16 @@
 <template>
   <div class="playgrounds">
-    <h1>Площадки</h1>
+    <PlaygroundLayout msg="Площадки" />
   </div>
 </template>
+
+<script>
+import PlaygroundLayout from '@/components/PlaygroundLayout.vue'
+
+export default {
+  name: 'playgrounds',
+  components: {
+    PlaygroundLayout
+  }
+}
+</script>

@@ -1,6 +1,6 @@
 <template>
-  <div class="practice">
-    <h1>Мои Турниры</h1>
+  <div class="container practice">
+    <h1 class="text-left">Мои Турниры</h1>
     <TournamentCard />
   </div>
 </template>
