@@ -1,6 +1,6 @@
 <template>
   <div class="playgrounds">
-    <PlaygroundLayout msg="Площадки" />
+    <playground-layout msg="Площадки" />
   </div>
 </template>
 

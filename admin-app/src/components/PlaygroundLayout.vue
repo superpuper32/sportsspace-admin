@@ -45,12 +45,8 @@
               <strong class="d-inline-block mb-2 text-primary">Песок Озеро</strong>
               <h3 class="mb-0">📍Малаховка</h3>
               <div class="mb-1 text-muted">создан 26.01.2020 20:51</div>
-              <p class="card-text mb-auto">
-                Вид спорта: Волейбол
-              </p>
-              <p class="card-text mb-auto">
-                Покрытие: Линолеум
-              </p>
+              <p class="card-text mb-auto">Вид спорта: Волейбол</p>
+              <p class="card-text mb-auto">Покрытие: Линолеум</p>
               <a href="#" class="stretched-link">Регистрация Подробнее</a>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -124,12 +120,8 @@
               <strong class="d-inline-block mb-2 text-primary">Песок Озеро</strong>
               <h3 class="mb-0">📍Малаховка</h3>
               <div class="mb-1 text-muted">создан 26.01.2020 20:51</div>
-              <p class="card-text mb-auto">
-                Вид спорта: Волейбол
-              </p>
-              <p class="card-text mb-auto">
-                Покрытие: Линолеум
-              </p>
+              <p class="card-text mb-auto">Вид спорта: Волейбол</p>
+              <p class="card-text mb-auto">Покрытие: Линолеум</p>
               <a href="#" class="stretched-link">Регистрация Подробнее</a>
             </div>
             <div class="col-auto d-none d-lg-block">
@@ -190,27 +182,16 @@
 export default {
   name: 'PlaygroundLayout',
   props: {
-    msg: String,
-    // eslint-disable-next-line vue/require-prop-type-constructor
-    required: true
+    msg: {
+      type: String,
+      required: true
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.card {
+  display: block;
 }
 </style>

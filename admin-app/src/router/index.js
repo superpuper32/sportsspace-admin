@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Teams from '../views/Teams.vue'
-import Tournaments from '../views/Tournaments.vue'
-import Playgrounds from '../views/Playgrounds.vue'
+import Home from '@/views/Home.vue'
+import Teams from '@/views/Teams.vue'
+import Tournaments from '@/views/Tournaments.vue'
+import Playgrounds from '@/views/Playgrounds.vue'
 
 Vue.use(VueRouter)
 

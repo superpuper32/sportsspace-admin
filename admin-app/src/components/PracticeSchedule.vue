@@ -60,30 +60,22 @@
 export default {
   name: 'PracticeSchedule',
   props: {
-    msg: String,
-    // eslint-disable-next-line vue/require-prop-type-constructor
-    required: true
+    msg: {
+      type: String,
+      required: true
+    }
+  },
+  computed: {
+    total: function() {
+      const count = 1
+      return count
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-table {
-  color: #fff;
+.schedule {
+  display: flex;
 }
 </style>

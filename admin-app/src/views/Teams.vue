@@ -1,7 +1,7 @@
 <template>
   <div class="container teams">
     <h1 class="text-left">Команды мои</h1>
-    <TeamCard />
+    <team-card />
   </div>
 </template>
 
