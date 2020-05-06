@@ -21,64 +21,20 @@
             </svg>
           </div>
           <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary">Малаховский район</strong>
-            <h3 class="mb-0">🏐 Мезище</h3>
+            <strong class="d-inline-block mb-2 text-primary">{{ team.address }}</strong>
+            <h3 class="mb-0">🏐 {{ team.title }}</h3>
             <div class="mb-1 text-muted">создана 26.01.2020 20:51</div>
-            <p class="card-text mb-auto">
-              Капитан: NickName
-            </p>
-            <p class="card-text mb-auto">
-              Вид спорта: Волейбол
-            </p>
-            <p class="card-text mb-auto">
-              Участников 7 Побед 12 Поражений 0
-            </p>
-            <a href="#" class="stretched-link text-right mt-3">Удалить Изменить</a>
+            <p class="card-text mb-auto">Капитан: {{ team.captainName.first }}</p>
+            <p class="card-text mb-auto">Вид спорта: {{ team.sport.kind }}</p>
+            <p class="card-text mb-auto">Участников {{ team.players }}</p>
+            <p>Побед {{ team.wins }}</p>
+            <p>Поражений {{ team.loses }}</p>
+
+            <router-link :to="'/edit/' + team.id" class="stretched-link text-right mt-3">Изменить</router-link>
           </div>
         </div>
       </div>
     </div>
-    <h1>{{ msg }}</h1>
-    <p>
-      Создать свою команду
-      <a href="#" target="_blank" rel="noopener">здесь</a>.
-    </p>
-    <h3>Стартовый комплект</h3>
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Аккредитация для бизнеса</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором турнира</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором Тренера</a>
-      </li>
-    </ul>
-    <h3>Новое</h3>
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Игровая практика</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Найти себе команду</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Добавить</a>
-      </li>
-    </ul>
-    <h3>Заслуживающее внимания</h3>
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть самому</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть с командой</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть с друзьями</a>
-      </li>
-    </ul>
   </div>
 </template>
 
@@ -86,9 +42,10 @@
 export default {
   name: 'TeamCard',
   props: {
-    msg: String,
-    // eslint-disable-next-line vue/require-prop-type-constructor
-    required: true
+    team: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

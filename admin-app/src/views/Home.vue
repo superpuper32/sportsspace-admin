@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    {{ practice.email }}
     <practice-schedule />
   </div>
 </template>
