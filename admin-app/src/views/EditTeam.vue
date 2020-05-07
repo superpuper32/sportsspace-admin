@@ -2,7 +2,9 @@
   <div>
     Редактировать команду - {{ id }}
     <div class="alert alert-warning" v-if="!team">Загрузка данных ...</div>
-    <team-form v-else :team="team" />
+    <team-form v-else :team="team" @update="team = $event" />
+
+    <button type="button" class="btn btn-primary" @click="save">Сохранить</button>
   </div>
 </template>
 
@@ -33,6 +35,12 @@ export default {
       axios
         .get('http://localhost:3004/teams/' + this.id)
         .then(response => (this.team = response.data))
+        .catch(error => console.error(error))
+    },
+    save() {
+      axios
+        .patch('http://localhost:3004/teams/' + this.id, this.team)
+        .then(() => this.$router.push('/teams'))
         .catch(error => console.error(error))
     }
   }

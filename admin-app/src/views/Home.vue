@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     {{ practice.email }}
-    <practice-schedule />
+    <practice-schedule msg="msg" />
   </div>
 </template>
 
