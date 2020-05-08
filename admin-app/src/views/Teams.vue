@@ -49,12 +49,11 @@
 
 <script>
 import axios from 'axios'
-import TeamCard from '@/components/TeamCard.vue'
 
 export default {
   name: 'Teams',
   components: {
-    'team-card': TeamCard
+    TeamCard: () => import('@/components/TeamCard.vue')
   },
   data: function() {
     return {

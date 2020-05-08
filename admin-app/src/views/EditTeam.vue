@@ -10,12 +10,11 @@
 
 <script>
 import axios from 'axios'
-import TeamForm from '@/components/TeamForm.vue'
 
 export default {
   name: 'EditTeamPage',
   components: {
-    TeamForm
+    TeamForm: () => import('@/components/TeamForm.vue')
   },
   data: function() {
     return {
