@@ -1,8 +1,8 @@
 <template>
   <div>
-    Форма {{ team.title }}
-    <p>Название команды {{ team.title }}</p>
-    <p>За какой город, область, край, пос - выступает команда {{ team.address }}</p>
+    Форма {{ localTeam.title }}
+    <p>Название команды {{ localTeam.title }}</p>
+    <p>За какой город, область, край, пос - выступает команда {{ localTeam.address }}</p>
 
     <div class="form-group">
       <label>Имя капитана</label>
@@ -16,6 +16,10 @@
 <script>
 export default {
   name: 'TeamForm',
+  model: {
+    prop: 'team',
+    event: 'ultrasave'
+  },
   props: {
     team: {
       type: Object,
@@ -45,7 +49,7 @@ export default {
   },
   methods: {
     updateTeam() {
-      this.$emit('update', Object.assign({}, this.team))
+      this.$emit('ultrasave', Object.assign({}, this.localTeam))
     }
   }
 }

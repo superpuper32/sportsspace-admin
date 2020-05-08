@@ -2,7 +2,7 @@
   <div>
     Редактировать команду - {{ id }}
     <div class="alert alert-warning" v-if="!team">Загрузка данных ...</div>
-    <team-form v-else :team="team" @update="team = $event" />
+    <team-form v-else v-model="team" />
 
     <button type="button" class="btn btn-primary" @click="save">Сохранить</button>
   </div>
