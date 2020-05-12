@@ -65,8 +65,16 @@ export default {
   },
   methods: {
     loadTeams() {
+      const token = '1234567890' // localStorage/cookies
+
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+
       axios
-        .get('http://localhost:3004/teams')
+        .get('http://localhost:3004/teams', config)
         .then(response => (this.teams = response.data))
         .catch(error => console.error(error))
     }
