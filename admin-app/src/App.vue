@@ -32,7 +32,7 @@
       </div>
     </div>
     <div id="nav">
-      <router-link to="/">Занятия</router-link>
+      <router-link to="/">Занятия</router-link>|
       <router-link to="/teams">Команды</router-link>|
       <router-link to="/tournaments">Турниры</router-link>|
       <router-link to="/playgrounds">Площадки</router-link>

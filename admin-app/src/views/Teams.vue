@@ -1,9 +1,14 @@
 <template>
   <div class="container teams">
     <h1 class="text-left">Команды мои</h1>
-    <div v-for="team in teams" :key="team.index">
-      <team-card v-bind:team="team" />
+
+    <div class="row mb-2">
+      <div class="col-md-6" v-for="team in teams" :key="team.index">
+        <team-card v-bind:team="team" />
+      </div>
     </div>
+
+    <h2 class="text-left">Создание</h2>
     <p>
       Создать свою команду
       <a href="#" target="_blank" rel="noopener">здесь</a>.
