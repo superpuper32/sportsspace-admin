@@ -14,6 +14,7 @@
       <a href="#" target="_blank" rel="noopener">здесь</a>.
     </p>
     <h3>Стартовый комплект</h3>
+    <team-recomend v-bind="team" />
     <ul>
       <li>
         <a href="#" target="_blank" rel="noopener">Аккредитация для бизнеса</a>
@@ -58,7 +59,8 @@ import axios from 'axios'
 export default {
   name: 'Teams',
   components: {
-    TeamCard: () => import('@/components/TeamCard.vue')
+    TeamCard: () => import('@/components/TeamCard.vue'),
+    TeamRecomend: () => import('@/components/TeamRecomend.vue')
   },
   data: function() {
     return {
