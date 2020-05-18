@@ -2,6 +2,10 @@
   <a href="#" class="team-recomend">
     <div class="team-recomend__link-card">
       <div class="team-recomend__line"></div>
+      <div class="team-recomend__content">
+        <h3>Правила командных игр</h3>
+        <p>Подробная инструкция и рекомендации описание данной карточки</p>
+      </div>
     </div>
   </a>
 </template>
@@ -25,7 +29,7 @@ export default {
 
   &__link-card {
     height: 12.5rem;
-    color: #484848;
+    color: #fff;
     background: #2c3e50;
     border-radius: 2px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
@@ -40,6 +44,11 @@ export default {
     height: 0.5rem;
     width: 100%;
     background-color: rgb(44, 156, 152);
+  }
+
+  &__content {
+    padding: 20px 10px;
+    text-align: left;
   }
 }
 </style>

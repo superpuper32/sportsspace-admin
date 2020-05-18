@@ -13,43 +13,36 @@
       Создать свою команду
       <a href="#" target="_blank" rel="noopener">здесь</a>.
     </p>
-    <h3>Стартовый комплект</h3>
-    <team-recomend v-bind="team" />
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Аккредитация для бизнеса</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором турнира</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором Тренера</a>
-      </li>
-    </ul>
-    <h3>Новое</h3>
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Игровая практика</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Найти себе команду</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Добавить</a>
-      </li>
-    </ul>
-    <h3>Заслуживающее внимания</h3>
-    <ul>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть самому</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть с командой</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Поиграть с друзьями</a>
-      </li>
-    </ul>
+
+    <h3 class="text-left">Стартовый комплект</h3>
+    <div class="row mb-2">
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+    </div>
+
+    <h3 class="text-left">Новое</h3>
+    <div class="row mb-2">
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+
+      <div class="col-md-4">
+        <team-recomend v-bind="team" />
+      </div>
+    </div>
   </div>
 </template>
 
