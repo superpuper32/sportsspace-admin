@@ -14,7 +14,7 @@
 export default {
   name: 'TeamRecomend',
   props: {
-    team: {
+    recomends: {
       type: Object,
       required: true
     }

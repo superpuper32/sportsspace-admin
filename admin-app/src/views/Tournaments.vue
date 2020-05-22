@@ -1,27 +1,28 @@
 <template>
   <div class="container practice">
     <h1 class="text-left">Мои Турниры</h1>
-    <div class="col-md-6" v-for="tournament in tournaments" :key="tournament.index">
-      <tournament-card v-bind:tournament="tournament" />
+
+    <div class="row mb-2">
+      <div class="col-md-6" v-for="tournament in tournaments" :key="tournament.index">
+        <tournament-card v-bind:tournament="tournament" />
+      </div>
     </div>
 
-    <h1>Создание</h1>
+    <h2 class="text-left">Создание</h2>
+
     <p>
       Создать турнир
       <a href="#" target="_blank" rel="noopener">здесь</a>.
     </p>
-    <h3>Стартовый комплект</h3>
-    <ul>
-      <li>
+
+    <h3 class="text-left">Стартовый комплект</h3>
+
+    <div class="row mb-2">
+      <div class="col-md-4">
+        <card-recomend v-bind:tournament="tournament" />
         <a href="#" target="_blank" rel="noopener">Аккредитация для бизнеса</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором турнира</a>
-      </li>
-      <li>
-        <a href="#" target="_blank" rel="noopener">Помочь с выбором Тренера</a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,11 +32,13 @@ import axios from 'axios'
 export default {
   name: 'Tournaments',
   components: {
-    TournamentCard: () => import('@/components/TournamentCard.vue')
+    TournamentCard: () => import('@/components/TournamentCard.vue'),
+    CardRecomend: () => import('@/components/CardRecomend.vue')
   },
   data: function() {
     return {
-      tournaments: []
+      tournaments: [],
+      recomends: []
     }
   },
   mounted() {

@@ -9,38 +9,33 @@
     </div>
 
     <h2 class="text-left">Создание</h2>
+
     <p>
       Создать свою команду
       <a href="#" target="_blank" rel="noopener">здесь</a>.
     </p>
 
     <h3 class="text-left">Стартовый комплект</h3>
+
     <div class="row mb-2">
       <div class="col-md-4">
-        <team-recomend v-bind="team" />
+        <card-recomend v-bind="team" />
       </div>
 
       <div class="col-md-4">
-        <team-recomend v-bind="team" />
+        <card-recomend v-bind="team" />
       </div>
 
       <div class="col-md-4">
-        <team-recomend v-bind="team" />
+        <card-recomend v-bind="team" />
       </div>
     </div>
 
-    <h3 class="text-left">Новое</h3>
+    <h3 class="text-left">Заслуживает внимания</h3>
+
     <div class="row mb-2">
-      <div class="col-md-4">
-        <team-recomend v-bind="team" />
-      </div>
-
-      <div class="col-md-4">
-        <team-recomend v-bind="team" />
-      </div>
-
-      <div class="col-md-4">
-        <team-recomend v-bind="team" />
+      <div class="col-md-4" v-for="recomend in recomends" :key="recomend.index">
+        <card-recomend v-bind:recomend="recomend" />
       </div>
     </div>
   </div>
@@ -53,11 +48,12 @@ export default {
   name: 'Teams',
   components: {
     TeamCard: () => import('@/components/TeamCard.vue'),
-    TeamRecomend: () => import('@/components/TeamRecomend.vue')
+    CardRecomend: () => import('@/components/CardRecomend.vue')
   },
   data: function() {
     return {
-      teams: []
+      teams: [],
+      recomend: []
     }
   },
   mounted() {

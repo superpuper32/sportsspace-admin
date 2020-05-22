@@ -22,17 +22,12 @@
       </div>
     </div>
   </div>
-  <div>{{ msg }}</div>
 </template>
 
 <script>
 export default {
   name: 'TournamentCard',
   props: {
-    msg: {
-      type: String,
-      required: true
-    },
     tournament: {
       type: Object,
       requird: true
