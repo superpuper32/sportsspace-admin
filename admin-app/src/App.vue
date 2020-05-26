@@ -1,5 +1,41 @@
 <template>
   <div id="app">
+    <main class="main">
+      <aside class="sidebar">
+        <h2 class="sidebar__title">SportsSpace</h2>
+        <ul class="sidebar__nav">
+          <li class="active">
+            <router-link to="/" data-page="dashboard">
+              <i class="icon-dashboard"></i>
+              <span>Занятия</span>
+            </router-link>
+          </li>
+
+          <li>
+            <router-link to="/teams" data-page="teams">
+              <i class="icon-teams"></i>
+              <span>Команды</span>
+            </router-link>
+          </li>
+
+          <li>
+            <router-link to="/tournaments" data-page="tournaments">
+              <i class="icon-tournaments"></i>
+              <span>Турниры</span>
+            </router-link>
+          </li>
+
+          <li>
+            <router-link to="/playgrounds" data-page="playgrounds">
+              <i class="icon-playgrounds"></i>
+              <span>Площадки</span>
+            </router-link>
+          </li>
+        </ul>
+      </aside>
+
+      <section class="content"></section>
+    </main>
     <div class="admin">
       <div class="admin__panel">
         <div class="admin__leftSection">
@@ -42,16 +78,11 @@
 </template>
 
 <style lang="scss">
-body {
-  background-color: #2c3e50;
-}
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #2c3e50;
-  text-align: center;
   color: #fff;
 }
 
