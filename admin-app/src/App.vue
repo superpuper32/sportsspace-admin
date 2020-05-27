@@ -89,46 +89,10 @@
             </div>
           </div>
         </nav>
+
+        <router-view />
       </section>
     </main>
-    <div class="admin">
-      <div class="admin__panel">
-        <div class="admin__leftSection">
-          <div class="admin__profileContainer">
-            <div class="admin__avatarContainer">
-              <img
-                src="https://sjc5.discourse-cdn.com/codecademy/user_avatar/discuss.codecademy.com/ruronite/120/6937361_2.png"
-                alt="avatar"
-                class="admin__avatarImage"
-              />
-            </div>
-            <div class="admin__userDetailsContainer">
-              <div class="admin__usernamContainer">
-                <h1 class="admin__userName">Владимир</h1>
-              </div>
-              <div data-testid="role-label" style="text-align: left;">Спортсмен</div>
-            </div>
-          </div>
-        </div>
-        <div class="admin__rightSection">
-          <div class="admin__container">
-            <div class="admin__count">1000 руб.</div>
-            <div class="admin__label">Баланс</div>
-          </div>
-          <div class="admin__container">
-            <div class="admin__count">36</div>
-            <div class="admin__label">игр</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="nav">
-      <router-link to="/">Занятия</router-link>|
-      <router-link to="/teams">Команды</router-link>|
-      <router-link to="/tournaments">Турниры</router-link>|
-      <router-link to="/playgrounds">Площадки</router-link>
-    </div>
-    <router-view />
   </div>
 </template>
 
