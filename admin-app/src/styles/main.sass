@@ -38,7 +38,7 @@
                 text-align: left
                 line-height: 24px
                 font-size: 16px
-                color: #98a9bc
+                color: #778ca2
                 text-decoration: none
 
             [class^="icon-"]:before
@@ -71,5 +71,46 @@
 
     .content
         grid-area: content
-        background: var(--grey-skeleton)
-        padding: 24px 36px
+        background-color: #fff
+
+        .top-bar
+            padding: 14px 20px
+            min-height: 64px
+            position: sticky
+            display: flex
+            justify-content: space-between
+            align-items: center
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.1)
+
+            &__menu
+                display: flex
+
+                button
+                    border: 0
+                    outline: none
+
+                h3
+                    color: #778ca2
+
+            &__settings
+                display: flex
+
+            &__avatar
+                margin: 0 8px
+                position: ralative
+
+                button
+                    padding: 0
+                    border-color: transparent
+                    outline: none
+                    background: transparent
+
+            &__img
+                width: 2.5rem
+                height: 2.5rem
+                border-radius: 100%
+                overflow: hidden
+
+                img
+                    width: 2.5rem
+                    height: 2.5rem
