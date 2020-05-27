@@ -1,7 +1,11 @@
 <template>
-  <div class="home">
-    {{ practice.email }}
+  <div class="calendar">
+    <div class="calendar__actions">
+      <div class="actions__tasks">Сегодня</div>
+      <div class="actions__date">20 Май 2020</div>
+    </div>
     <practice-schedule msg="msg" />
+    {{ practice.email }}
   </div>
 </template>
 
@@ -10,7 +14,7 @@ import axios from 'axios'
 import PracticeSchedule from '@/components/PracticeSchedule.vue'
 
 export default {
-  name: 'Home',
+  name: 'Calendar',
   components: {
     PracticeSchedule
   },
