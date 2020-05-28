@@ -1,5 +1,42 @@
 .calendar
+    padding: 24px
+    display: block
+    background-color: #e8ecef
 
     &__actions
         display: flex
         justify-content: flex-start
+
+    &__schedule
+        padding: 28px 12px
+        // display: grid
+        // grid-template-columns: repeat(7,minmax(0,1fr))
+        // grid-column-gap: 2rem
+        // grid-row-gap: 3rem
+        border-radius: 4px
+        background-color: #fff
+
+    &__day-of-week
+        padding-bottom: 20px
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+        font-size: 14px
+        color: #252631
+
+    &__date-grid
+        display: grid
+        grid-template-columns: repeat(7, 1fr)
+
+    &__cell
+        position: relative
+        border: 0
+        border-top: 3px solid #e8ecef
+        width: 144px
+        height: 36px
+        font-weight: 600
+        text-align: left
+        background-color: transparent
+        color: #98a9bc
+
+        &:first-child
+            grid-column-start: 5
