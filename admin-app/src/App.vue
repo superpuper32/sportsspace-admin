@@ -31,6 +31,13 @@
               <span>Площадки</span>
             </a>
           </router-link>
+
+          <router-link tag="li" to="/contacts" data-page="contacts">
+            <a>
+              <i class="icon-contacts"></i>
+              <span>Контакты</span>
+            </a>
+          </router-link>
         </ul>
       </aside>
 

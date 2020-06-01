@@ -26,6 +26,11 @@ const routes = [
     component: () => import('@/views/Playgrounds.vue')
   },
   {
+    path: '/contacts',
+    name: 'Contacts',
+    component: () => import('@/views/Contacts.vue')
+  },
+  {
     path: '/edit/:id',
     name: 'EditTeam',
     component: () => import('@/views/EditTeam.vue')
