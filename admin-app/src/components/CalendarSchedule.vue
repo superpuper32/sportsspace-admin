@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'PracticeSchedule',
+  name: 'CalendarSchedule',
   props: {
     msg: {
       type: String,

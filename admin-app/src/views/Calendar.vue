@@ -21,19 +21,19 @@
       <div class="actions__date">20 Май 2020</div>
     </div>
 
-    <practice-schedule msg="msg" />
+    <calendar-schedule msg="msg" />
     {{ practice.email }}
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import PracticeSchedule from '@/components/PracticeSchedule.vue'
+// 如果想要中文版 element-ui，按如下方式声明
 
 export default {
   name: 'Calendar',
   components: {
-    PracticeSchedule
+    CalendarSchedule: () => import('@/components/CalendarSchedule.vue')
   },
   data: function() {
     return {

@@ -3,32 +3,77 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+import Layout from '@/layout'
+
 const routes = [
   {
     path: '/',
-    name: 'Calendar',
-    component: () => import('@/views/Calendar.vue')
+    component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index'),
+        meta: { title: 'Dashboard', icon: 'dashboard' }
+      }
+    ]
+  },
+  {
+    path: '/practice',
+    component: Layout,
+    children: [
+      {
+        path: '/practice',
+        name: 'Calendar',
+        component: () => import('@/views/Calendar.vue')
+      }
+    ]
   },
   {
     path: '/teams',
-    name: 'Teams',
-    component: () => import('@/views/Teams.vue'),
-    meta: { requiresAuth: true }
+    component: Layout,
+    children: [
+      {
+        path: '/teams',
+        name: 'Teams',
+        component: () => import('@/views/Teams.vue'),
+        meta: { requiresAuth: true }
+      }
+    ]
   },
   {
     path: '/tournaments',
-    name: 'Tournaments',
-    component: () => import('@/views/Tournaments.vue')
+    component: Layout,
+    children: [
+      {
+        path: '/tournaments',
+        name: 'Tournaments',
+        component: () => import('@/views/Tournaments.vue')
+      }
+    ]
   },
   {
     path: '/playgrounds',
-    name: 'Playgrounds',
-    component: () => import('@/views/Playgrounds.vue')
+    component: Layout,
+    children: [
+      {
+        path: '/playgrounds',
+        name: 'Playgrounds',
+        component: () => import('@/views/Playgrounds.vue')
+      }
+    ]
   },
   {
     path: '/contacts',
-    name: 'Contacts',
-    component: () => import('@/views/Contacts.vue')
+    component: Layout,
+    children: [
+      {
+        path: '/contacts',
+        name: 'Contacts',
+        component: () => import('@/views/Contacts.vue')
+      }
+    ]
   },
   {
     path: '/edit/:id',
