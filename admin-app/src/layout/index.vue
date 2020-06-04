@@ -1,16 +1,21 @@
 <template>
   <main class="main">
     <sidebar />
-    <app-main />
+
+    <section class="content">
+      <navbar />
+      <app-main />
+    </section>
   </main>
 </template>
 
 <script>
-import { Sidebar, AppMain } from './components'
+import { Navbar, Sidebar, AppMain } from './components'
 
 export default {
   name: 'Layout',
   components: {
+    Navbar,
     Sidebar,
     AppMain
   }
