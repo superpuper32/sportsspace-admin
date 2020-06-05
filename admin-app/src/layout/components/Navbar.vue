@@ -115,6 +115,15 @@
             alt="Avatar"
           />
         </div>
+
+        <div class="top-bar__avatar-menu">
+          <div class="top-bar__name">User Name</div>
+          <ul>
+            <li>Ваш профиль</li>
+            <li>Настройки</li>
+            <li>Выйти</li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -122,6 +131,9 @@
 
 <script>
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  methods: {
+    toggleMenu() {}
+  }
 }
 </script>

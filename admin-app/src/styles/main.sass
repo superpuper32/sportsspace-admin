@@ -15,7 +15,7 @@
         position: -webkit-sticky
         position: sticky
         top: 0
-        box-shadow: 6px 0 18px rgba(0, 0, 0, 0.06)
+        box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
         z-index: 5
 
         &__title
@@ -94,7 +94,7 @@
             justify-content: space-between
             align-items: center
             background-color: #fff
-            box-shadow: 0 2px 4px 0 rgba(0,0,0,.1)
+            box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
             z-index: 3
 
             &__menu
@@ -115,7 +115,7 @@
 
             &__avatar
                 margin: 0 8px
-                position: ralative
+                position: relative
 
                 button
                     padding: 0
@@ -132,6 +132,18 @@
                 img
                     width: 2.5rem
                     height: 2.5rem
+
+            &__avatar-menu
+                position: absolute
+                padding: 20px
+                background-color: blue
+                top: 50px
+                right: 0
+                border-radius: 4px
+                color: #000
+
+            &__name
+                background-color: #f8fafb
 
             &__header-tab
                 margin: 0 8px
