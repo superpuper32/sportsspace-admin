@@ -109,20 +109,36 @@
       </div>
 
       <div class="top-bar__avatar">
-        <div class="top-bar__img">
+        <div @click="toggle" class="top-bar__img">
           <img
             src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&amp;d=retro"
             alt="Avatar"
           />
         </div>
 
-        <div class="top-bar__avatar-menu">
-          <div class="top-bar__name">User Name</div>
-          <ul>
-            <li>Ваш профиль</li>
-            <li>Настройки</li>
-            <li>Выйти</li>
-          </ul>
+        <div v-show="isOpen" class="top-bar__avatar-menu">
+          <div class="top-bar__profile">
+            <div class="top-bar__avatar-img">
+              <img
+                src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&amp;d=retro"
+                alt="Avatar"
+              />
+            </div>
+
+            <div class="top-bar__user-details">
+              <div class="top-bar__name">User Name</div>
+
+              <div class="top-bar__mail">mail@sportsspace.ru</div>
+            </div>
+          </div>
+
+          <div class="top-bar__links">
+            <ul>
+              <li class="top-bar__link top-bar__link_profile">Ваш профиль</li>
+              <li class="top-bar__link top-bar__link_settings">Настройки</li>
+              <li class="top-bar__link top-bar__link_log-out">Выйти</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -132,8 +148,15 @@
 <script>
 export default {
   name: 'Navbar',
+  data: function() {
+    return {
+      isOpen: false
+    }
+  },
   methods: {
-    toggleMenu() {}
+    toggle() {
+      this.isOpen = !this.isOpen
+    }
   }
 }
 </script>
