@@ -20,6 +20,28 @@ const routes = [
     ]
   },
   {
+    path: '/profile',
+    component: Layout,
+    children: [
+      {
+        path: '/profile',
+        name: 'Profile',
+        component: () => import('@/views/Profile.vue')
+      }
+    ]
+  },
+  {
+    path: '/settings',
+    component: Layout,
+    children: [
+      {
+        path: '/settings',
+        name: 'Settings',
+        component: () => import('@/views/Settings.vue')
+      }
+    ]
+  },
+  {
     path: '/practice',
     component: Layout,
     children: [

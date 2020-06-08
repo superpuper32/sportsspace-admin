@@ -134,8 +134,13 @@
 
           <div class="top-bar__links">
             <ul>
-              <li class="top-bar__link top-bar__link_profile">Ваш профиль</li>
-              <li class="top-bar__link top-bar__link_settings">Настройки</li>
+              <li class="top-bar__link top-bar__link_profile">
+                <router-link to="/profile">Ваш профиль</router-link>
+              </li>
+
+              <li class="top-bar__link top-bar__link_settings">
+                <router-link to="/settings">Настройки</router-link>
+              </li>
               <li class="top-bar__link top-bar__link_log-out">Выйти</li>
             </ul>
           </div>

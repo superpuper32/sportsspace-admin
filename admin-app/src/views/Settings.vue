@@ -1,9 +1,9 @@
 <template>
-  <h2>Contacts</h2>
+  <div>Settings</div>
 </template>
 
 <script>
 export default {
-  name: 'Contacts'
+  name: 'Settings'
 }
 </script>
