@@ -1,7 +1,7 @@
 <template>
   <nav class="top-bar">
     <div class="top-bar__menu">
-      <div>
+      <div class="top-bar__hamburger">
         <button>
           <svg
             width="24"
@@ -20,7 +20,7 @@
         </button>
       </div>
 
-      <div>
+      <div class="top-bar__add">
         <button>
           <svg
             width="24"
@@ -40,7 +40,7 @@
       </div>
 
       <div>
-        <h3>Календарь</h3>
+        <h3 class="top-bar__title">Календарь</h3>
       </div>
     </div>
 
