@@ -23,10 +23,6 @@
 export default {
   name: 'PlaygroundLayout',
   props: {
-    msg: {
-      type: String,
-      required: true
-    },
     playground: {
       type: Object,
       required: true

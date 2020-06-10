@@ -1,12 +1,8 @@
 <template>
   <footer class="footer-bar">
-    <div class="footer-bar__content">
-      <div>&copy; 2020 - All rights Reserved</div>
+    <div class="footer-bar__content">&copy; 2020 - All rights Reserved</div>
 
-      <div>
-        <a>About</a>
-      </div>
-    </div>
+    <div>About</div>
   </footer>
 </template>
 
