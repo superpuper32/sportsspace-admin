@@ -1,10 +1,14 @@
 <template>
-  <main class="main"></main>
+  <main class="main">
+    <profile />
+  </main>
 </template>
 
 <script>
 export default {
   name: 'Dashboard',
-  components: {}
+  components: {
+    Profile: () => import('@/components/Profile/index.vue')
+  }
 }
 </script>

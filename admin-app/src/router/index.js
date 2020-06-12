@@ -20,13 +20,14 @@ const routes = [
     ]
   },
   {
-    path: '/profile',
+    path: '/trainers',
     component: Layout,
     children: [
       {
-        path: '/profile',
-        name: 'Profile',
-        component: () => import('@/views/Profile.vue')
+        path: '/trainers',
+        name: 'Trainers',
+        component: () => import('@/views/Trainers'),
+        meta: { title: 'Trainers', icon: 'trainers' }
       }
     ]
   },

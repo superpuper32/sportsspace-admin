@@ -9,6 +9,13 @@
         </a>
       </router-link>
 
+      <router-link tag="li" to="/tournaments" data-page="tournaments">
+        <a>
+          <i class="icon-tournaments"></i>
+          <span>Турниры</span>
+        </a>
+      </router-link>
+
       <router-link tag="li" to="/teams" data-page="teams">
         <a>
           <i class="icon-teams"></i>
@@ -16,10 +23,10 @@
         </a>
       </router-link>
 
-      <router-link tag="li" to="/tournaments" data-page="tournaments">
+      <router-link tag="li" to="/trainers" data-page="trainers">
         <a>
-          <i class="icon-tournaments"></i>
-          <span>Турниры</span>
+          <i class="icon-trainers"></i>
+          <span>Тренера</span>
         </a>
       </router-link>
 
