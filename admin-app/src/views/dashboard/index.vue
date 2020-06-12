@@ -1,7 +1,5 @@
 <template>
-  <main class="main">
-    <profile />
-  </main>
+  <profile />
 </template>
 
 <script>
