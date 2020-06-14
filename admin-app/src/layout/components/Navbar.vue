@@ -135,7 +135,7 @@
           <div class="top-bar__links">
             <ul>
               <li class="top-bar__link top-bar__link_profile">
-                <router-link to="/profile">Ваш профиль</router-link>
+                <router-link to="/">Ваш профиль</router-link>
               </li>
 
               <li class="top-bar__link top-bar__link_settings">
