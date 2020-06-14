@@ -1,5 +1,4 @@
 .profile
-    // background: linear-gradient(180deg, #12C99B 0%, rgba(255, 255, 255, 0) 100%)
 
     &__background
         width: 100%
@@ -7,7 +6,6 @@
         border: 2px dotted #98a9bc
         border-radius: 4px
         text-align: center
-        // align-self: center
 
     &__header
         display: flex
@@ -22,21 +20,64 @@
         width: 60%
         color: #778CA2
 
+    &__avatar
+        padding-top: 30px
+        position: relative
+
+        &::after
+            content: ''
+            position: absolute
+            bottom: 10px
+            left: 70px
+            width: 16px
+            height: 16px
+            background-color: #fff
+            border: 5px solid #6dd230
+            border-radius: 50%
+
+    &__img
+        position: absolute
+        bottom: 6px
+        border-radius: 50%
+        overflow: hidden
+
+        img
+            position: relative
+            width: 96px
+            height: 96px
+
     &__name
+        padding-bottom: 10px
         font-family: SF Pro Text
         font-size: 17px
         line-height: 22px
         color: #2c2e3f
 
     &__position
+        padding-bottom: 20px
         font-size: 14px
         line-height: 21px
 
     &__description
+        padding-bottom: 20px
         font-style: normal
         font-weight: 300
         font-size: 14px
         line-height: 21px
+
+    &__btns
+        display: flex
+
+    &__btn
+        padding: 13px 0
+        width: 180px
+        border-radius: 4px
+        background-color: rgba(0, 140, 255, 0.08)
+        text-align: center
+        font-weight: 500
+        font-size: 14px
+        line-height: 17px
+        color: #008DFF
 
     &__payment
         width: 20%
