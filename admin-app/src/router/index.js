@@ -19,6 +19,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/trainers',
     component: Layout,
@@ -26,22 +27,39 @@ const routes = [
       {
         path: '/trainers',
         name: 'Trainers',
-        component: () => import('@/views/Trainers'),
+        component: () => import('@/views/trainers'),
         meta: { title: 'Trainers', icon: 'trainers' }
       }
     ]
   },
+
   {
     path: '/settings',
     component: Layout,
     children: [
       {
         path: '/settings',
+        redirect: '/settings/main',
+        component: () => import('@/views/settings'),
         name: 'Settings',
-        component: () => import('@/views/Settings.vue')
+        children: [
+          {
+            path: 'main',
+            component: () => import('@/views/settings/main'),
+            name: 'Main',
+            meta: { title: 'Main' }
+          },
+          {
+            path: 'social',
+            component: () => import('@/views/settings/social'),
+            name: 'Social',
+            meta: { title: 'Social' }
+          }
+        ]
       }
     ]
   },
+
   {
     path: '/practice',
     component: Layout,
@@ -53,6 +71,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/teams',
     component: Layout,
@@ -65,6 +84,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/tournaments',
     component: Layout,
@@ -76,6 +96,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/playgrounds',
     component: Layout,
@@ -87,6 +108,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/contacts',
     component: Layout,
@@ -98,6 +120,7 @@ const routes = [
       }
     ]
   },
+
   {
     path: '/edit/:id',
     name: 'EditTeam',
