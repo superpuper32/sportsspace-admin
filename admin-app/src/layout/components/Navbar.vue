@@ -134,11 +134,11 @@
 
           <div class="top-bar__links">
             <ul>
-              <li class="top-bar__link top-bar__link_profile">
+              <li class="top-bar__link top-bar__link_profile" @click="toggle">
                 <router-link to="/">Ваш профиль</router-link>
               </li>
 
-              <li class="top-bar__link top-bar__link_settings">
+              <li class="top-bar__link top-bar__link_settings" @click="toggle">
                 <router-link to="/settings">Настройки</router-link>
               </li>
               <li class="top-bar__link top-bar__link_log-out">Выйти</li>

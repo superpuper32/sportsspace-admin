@@ -42,3 +42,78 @@
             &::placeholder
                 line-height: 21px
                 color: #98a9bc
+
+    &__nav
+        color: #778ca2
+
+        ul
+            padding-left: 0
+            list-style: none
+
+    &__link
+        display: block
+        position: relative
+        padding: 18px 0 18px 60px
+        border-bottom: 1px solid #f8fafb
+        color: #485C73
+
+        &:first-child
+            border-top-left-radius: 4px
+
+        &:hover
+            background-color: #f8fafb
+            text-decoration: none
+            color: #485C73
+
+        // &::before
+        //     content: ''
+        //     position: absolute
+        //     top: 50%
+        //     left: 0
+        //     width: 24px
+        //     height: 24px
+        //     background-position: center
+        //     background-repeat: no-repeat
+        //     background-position: 50%
+        //     transform: translateY(-50%)
+        //     background-image: url(../assets/settings_profile.svg)
+
+        &_active
+            background-color: #f8fafb
+            border-right: 2px solid #008dff
+            color: #008dff
+
+            &:hover
+                color: #008dff
+
+        [class^="icon-"]:before
+                content: ''
+                position: absolute
+                top: 38%
+                left: 20px
+                width: 24px
+                height: 24px
+                background-position: center
+                background-repeat: no-repeat
+                background-position: 50%
+                transform: translateY(-38%)
+
+        .icon-main::before
+            background-image: url(../assets/settings_profile-active.svg)
+
+        .icon-social::before, .icon-password:before, .icon-payment:before
+            background-image: url(../assets/settings_profile.svg)
+
+        .icon-notification::before
+            background-image: url(../assets/headerTab-bell.svg)
+
+        span
+            display: block
+
+    &__title
+        font-size: 1rem
+        line-height: 19px
+
+    &__description
+        font-size: .875rem
+        color: #98a9bc
