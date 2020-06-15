@@ -45,6 +45,8 @@
     </div>
 
     <div class="top-bar__settings">
+      <input-search />
+
       <div class="top-bar__header-tab">
         <div class="top-bar__icon">
           <button>
@@ -153,6 +155,9 @@
 <script>
 export default {
   name: 'Navbar',
+  components: {
+    InputSearch: () => import('@/layout/components/Navbar/InputSearch.vue')
+  },
   data: function() {
     return {
       isOpen: false
