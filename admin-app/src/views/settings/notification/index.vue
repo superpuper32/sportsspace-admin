@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h3>Основная информация</h3>
-
-    <div class="settings__img">Загрузить изображение</div>
+    <h3>Уведомления</h3>
 
     <form class="settings__form">
       <div>
@@ -27,6 +25,6 @@
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Notification'
 }
 </script>

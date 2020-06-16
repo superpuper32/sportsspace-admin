@@ -36,6 +36,8 @@ const routes = [
   {
     path: '/settings',
     component: Layout,
+    name: 'Settings',
+    meta: { title: 'Settings' },
     children: [
       {
         path: '/settings',
@@ -54,6 +56,24 @@ const routes = [
             component: () => import('@/views/settings/social'),
             name: 'Social',
             meta: { title: 'Social' }
+          },
+          {
+            path: 'password',
+            component: () => import('@/views/settings/password'),
+            name: 'Password',
+            meta: { title: 'Password' }
+          },
+          {
+            path: 'payment',
+            component: () => import('@/views/settings/payment'),
+            name: 'Social',
+            meta: { title: 'Social' }
+          },
+          {
+            path: 'notification',
+            component: () => import('@/views/settings/notification'),
+            name: 'Notification',
+            meta: { title: 'Notification' }
           }
         ]
       }

@@ -1,5 +1,26 @@
 <template>
-  <h3>Социальные сети</h3>
+  <div>
+    <h3>Социальные сети</h3>
+
+    <form class="settings__form">
+      <div>
+        <label for="name">Аккаунт</label>
+        <input type="text" name="name" placeholder="Facebook" />
+      </div>
+
+      <div>
+        <label for="email">Ссылка</label>
+        <input type="email" name="email" placeholder="fb.com/iotask" />
+      </div>
+
+      <div>
+        <label for="position">Аккаунт</label>
+        <input type="text" name="position" placeholder="Twitter" />
+      </div>
+    </form>
+
+    <button class="main__button">Обновить</button>
+  </div>
 </template>
 
 <script>
