@@ -5,7 +5,7 @@
     </aside>
 
     <section class="settings__content">
-      <router-view :key="key" :settings="settings" />
+      <router-view :key="key" v-bind:settings="settings" />
     </section>
   </div>
 </template>

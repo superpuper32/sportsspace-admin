@@ -3,17 +3,17 @@
     <h3>Социальные сети</h3>
 
     <form class="settings__form">
-      <div>
+      <div class="settings__input">
         <label for="name">Аккаунт</label>
         <input type="text" name="name" placeholder="Facebook" />
       </div>
 
-      <div>
+      <div class="settings__input">
         <label for="email">Ссылка</label>
         <input type="email" name="email" placeholder="fb.com/iotask" />
       </div>
 
-      <div>
+      <div class="settings__input">
         <label for="position">Аккаунт</label>
         <input type="text" name="position" placeholder="Twitter" />
       </div>
@@ -25,6 +25,12 @@
 
 <script>
 export default {
-  name: 'Social'
+  name: 'Social',
+  props: {
+    settings: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

@@ -5,22 +5,22 @@
     <div class="settings__img">Загрузить изображение</div>
 
     <form class="settings__form">
-      <div>
+      <div class="settings__input">
         <label for="name">{{ settings.name }}</label>
         <input type="text" name="name" placeholder="Иванов" />
       </div>
 
-      <div>
+      <div class="settings__input">
         <label for="email">Email</label>
         <input type="email" name="email" placeholder="Введите email" />
       </div>
 
-      <div>
+      <div class="settings__input">
         <label for="phone">Телефон</label>
         <input type="tel" name="phone" placeholder="Введите номер телефона" />
       </div>
 
-      <div>
+      <div class="settings__input">
         <label for="position">Должность</label>
         <input type="text" name="position" placeholder="Тренер" />
       </div>

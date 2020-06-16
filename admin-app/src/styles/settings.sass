@@ -26,6 +26,8 @@
         text-align: center
 
     &__form
+        display: flex
+        flex-wrap: wrap
         margin-bottom: 80px
         font-size: 14px
 
@@ -34,7 +36,7 @@
             color: $font-black
 
         input
-            width: 380px
+            width: 100%
             margin-bottom: 26px
             padding: 20px 0 20px 16px
             border: 1px solid #E8ECEF
@@ -43,6 +45,10 @@
             &::placeholder
                 line-height: 21px
                 color: #98a9bc
+
+    &__input
+        padding-right: 26px
+        width: 50%
 
     &__link
         display: block
