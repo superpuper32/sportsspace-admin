@@ -17,7 +17,7 @@
         </a>
       </router-link>
 
-      <router-link tag="li" to="/settings/password">
+      <router-link tag="li" to="/settings/password" data-page="/settings/password">
         <a class="settings__link">
           <i class="icon-password"></i>
           <span class="settings__title">Безопасность</span>
@@ -25,7 +25,7 @@
         </a>
       </router-link>
 
-      <router-link tag="li" to="/settings/payment">
+      <router-link tag="li" to="/settings/payment" data-page="/settings/payment">
         <a class="settings__link">
           <i class="icon-payment"></i>
           <span class="settings__title">Оплата</span>
@@ -33,7 +33,7 @@
         </a>
       </router-link>
 
-      <router-link tag="li" to="/settings/notification">
+      <router-link tag="li" to="/settings/notification" data-page="/settings/notification">
         <a class="settings__link">
           <i class="icon-notification"></i>
           <span class="settings__title">Уведомления</span>

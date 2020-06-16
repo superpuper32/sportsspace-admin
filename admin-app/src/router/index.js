@@ -43,7 +43,7 @@ const routes = [
         path: '/settings',
         redirect: '/settings/main',
         component: () => import('@/views/settings'),
-        name: 'Settings',
+        name: 'ProfileSettings',
         children: [
           {
             path: 'main',
@@ -66,8 +66,8 @@ const routes = [
           {
             path: 'payment',
             component: () => import('@/views/settings/payment'),
-            name: 'Social',
-            meta: { title: 'Social' }
+            name: 'Payment',
+            meta: { title: 'Payment' }
           },
           {
             path: 'notification',

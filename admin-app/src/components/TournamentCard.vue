@@ -30,7 +30,7 @@ export default {
   props: {
     tournament: {
       type: Object,
-      requird: true
+      required: true
     }
   }
 }

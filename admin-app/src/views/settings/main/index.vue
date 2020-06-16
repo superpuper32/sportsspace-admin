@@ -6,13 +6,18 @@
 
     <form class="settings__form">
       <div>
-        <label for="name">ФИО</label>
+        <label for="name">{{ settings.name }}</label>
         <input type="text" name="name" placeholder="Иванов" />
       </div>
 
       <div>
-        <label for="email">Должность</label>
+        <label for="email">Email</label>
         <input type="email" name="email" placeholder="Введите email" />
+      </div>
+
+      <div>
+        <label for="phone">Телефон</label>
+        <input type="tel" name="phone" placeholder="Введите номер телефона" />
       </div>
 
       <div>
@@ -27,6 +32,12 @@
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  props: {
+    settings: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>

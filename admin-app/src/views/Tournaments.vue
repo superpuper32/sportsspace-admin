@@ -4,7 +4,7 @@
 
     <div class="row mb-2">
       <div class="col-md-6" v-for="tournament in tournaments" :key="tournament.index">
-        <tournament-card v-bind:tournament="tournament" />
+        <tournament-card :tournament="tournament" />
       </div>
     </div>
 
@@ -19,7 +19,7 @@
 
     <div class="row mb-2">
       <div class="col-md-4">
-        <card-recomend v-bind:tournament="tournament" />
+        <card-recomend :tournament="tournament" />
         <a href="#" target="_blank" rel="noopener">Аккредитация для бизнеса</a>
       </div>
     </div>
