@@ -1,5 +1,25 @@
 <template>
-  <div class="calendar">
+  <section class="calendar">
+    <nav class="calendar__nav">
+      <ul>
+        <li>
+          <a href="#">Занятия</a>
+        </li>
+
+        <li>
+          <a href="#">Команды</a>
+        </li>
+
+        <li>
+          <a href="#">Турниры</a>
+        </li>
+
+        <li>
+          <a href="#">Площадки</a>
+        </li>
+      </ul>
+    </nav>
+
     <div class="calendar__actions">
       <div class="actions__tasks">
         <svg
@@ -22,8 +42,7 @@
     </div>
 
     <calendar-schedule msg="msg" />
-    {{ practice.email }}
-  </div>
+  </section>
 </template>
 
 <script>

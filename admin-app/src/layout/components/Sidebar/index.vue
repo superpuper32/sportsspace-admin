@@ -2,10 +2,10 @@
   <aside class="sidebar">
     <h2 class="sidebar__title">SportsSpace</h2>
     <ul class="sidebar__nav">
-      <router-link tag="li" to="/practice" data-page="practice">
+      <router-link tag="li" to="/calendar" data-page="practice">
         <a>
           <i class="icon-practice"></i>
-          <span>Занятия</span>
+          <span>Календарь</span>
         </a>
       </router-link>
 
