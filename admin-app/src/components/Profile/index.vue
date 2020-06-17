@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <div class="profile__background">
-      <div>Загрузить изображение</div>
+      <span>Загрузить изображение</span>
     </div>
 
     <div class="profile__header">
