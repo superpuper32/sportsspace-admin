@@ -34,6 +34,11 @@
       </div>
     </form>
 
+    <div class="settings__add">
+      <button class="button button__add"></button>
+      <span>Добавить</span>
+    </div>
+
     <div class="settings__btns">
       <button class="button button__resting">Отмена</button>
       <button class="button button__main">Обновить</button>

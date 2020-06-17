@@ -19,7 +19,15 @@
       </div>
     </form>
 
-    <button class="main__button">Обновить</button>
+    <h5>История платежей</h5>
+
+    <payment-history />
+    <payment-history />
+
+    <div class="settings__btns">
+      <button class="button button__resting">Отмена</button>
+      <button class="button button__main">Обновить</button>
+    </div>
   </div>
 </template>
 
@@ -31,6 +39,9 @@ export default {
       type: Object,
       required: true
     }
+  },
+  components: {
+    PaymentHistory: () => import('@/components/PaymentHistory')
   }
 }
 </script>

@@ -12,14 +12,36 @@
         <label for="email">Новый пароль</label>
         <input type="email" name="email" placeholder="Введите новый пароль" />
       </div>
+    </form>
 
+    <h5>Вопросы безопасности</h5>
+
+    <form class="settings__form">
       <div class="settings__input">
         <label for="position">Вопрос 1</label>
         <input type="text" name="position" placeholder="Как зовут твоего друга" />
       </div>
+
+      <div class="settings__input">
+        <label for="position">Ответ</label>
+        <input type="text" name="position" placeholder="Антон" />
+      </div>
+
+      <div class="settings__input">
+        <label for="position">Вопрос 2</label>
+        <input type="text" name="position" placeholder="Пожалуйста, выберите вопрос" />
+      </div>
+
+      <div class="settings__input">
+        <label for="position">Ответ</label>
+        <input type="text" name="position" placeholder="Введите ответ" />
+      </div>
     </form>
 
-    <button class="main__button">Обновить</button>
+    <div class="settings__btns">
+      <button class="button button__resting">Отмена</button>
+      <button class="button button__main">Обновить</button>
+    </div>
   </div>
 </template>
 

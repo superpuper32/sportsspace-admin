@@ -33,7 +33,7 @@
       </div>
     </form>
 
-    <button class="main__button">Обновить</button>
+    <button class="button button__main">Обновить</button>
   </div>
 </template>
 
