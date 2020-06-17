@@ -83,11 +83,40 @@ const routes = [
   {
     path: '/calendar',
     component: Layout,
+    name: 'Calendar',
+    meta: { title: 'Calendar' },
     children: [
       {
         path: '/calendar',
-        name: 'Calendar',
-        component: () => import('@/views/calendar')
+        redirect: '/calendar/practice',
+        component: () => import('@/views/calendar'),
+        name: 'CalendarContent',
+        children: [
+          {
+            path: 'practice',
+            component: () => import('@/views/calendar/practice'),
+            name: 'Practice',
+            meta: { title: 'Practice' }
+          },
+          {
+            path: 'teams',
+            component: () => import('@/views/calendar/teams'),
+            name: 'Teams',
+            meta: { title: 'Teams' }
+          },
+          {
+            path: 'tournaments',
+            component: () => import('@/views/calendar/tournaments'),
+            name: 'Tournaments',
+            meta: { title: 'Tournaments' }
+          },
+          {
+            path: 'playgrounds',
+            component: () => import('@/views/calendar/playgrounds'),
+            name: 'Playgrounds',
+            meta: { title: 'Playgrounds' }
+          }
+        ]
       }
     ]
   },
