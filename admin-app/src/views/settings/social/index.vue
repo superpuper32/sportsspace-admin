@@ -17,9 +17,27 @@
         <label for="position">Аккаунт</label>
         <input type="text" name="position" placeholder="Twitter" />
       </div>
+
+      <div class="settings__input">
+        <label for="email">Ссылка</label>
+        <input type="email" name="email" placeholder="fb.com/iotask" />
+      </div>
+
+      <div class="settings__input">
+        <label for="position">Аккаунт</label>
+        <input type="text" name="position" placeholder="Slack" />
+      </div>
+
+      <div class="settings__input">
+        <label for="email">Ссылка</label>
+        <input type="email" name="email" placeholder="fb.com/iotask" />
+      </div>
     </form>
 
-    <button class="main__button">Обновить</button>
+    <div class="settings__btns">
+      <button class="button button__resting">Отмена</button>
+      <button class="button button__main">Обновить</button>
+    </div>
   </div>
 </template>
 

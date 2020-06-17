@@ -2,12 +2,19 @@
   <div>
     <h3>Основная информация</h3>
 
-    <div class="settings__img">Загрузить изображение</div>
+    <div class="settings__img">
+      <span>Загрузить изображение</span>
+    </div>
 
     <form class="settings__form">
       <div class="settings__input">
         <label for="name">{{ settings.name }}</label>
         <input type="text" name="name" placeholder="Иванов" />
+      </div>
+
+      <div class="settings__input">
+        <label for="position">Должность</label>
+        <input type="text" name="position" placeholder="Тренер" />
       </div>
 
       <div class="settings__input">
@@ -21,8 +28,8 @@
       </div>
 
       <div class="settings__input">
-        <label for="position">Должность</label>
-        <input type="text" name="position" placeholder="Тренер" />
+        <label for="phone">Язык</label>
+        <input type="tel" name="phone" placeholder="Русский" />
       </div>
     </form>
 
