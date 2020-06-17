@@ -23,7 +23,8 @@ export default {
   align-items: center
   margin-bottom: 10px
   padding: 20px 25px
-  border: 1px solid #f8fafb
+  border: 1px solid #E8ECEF
+  border-radius: 4px
   color: #2C2E3F
 
   &__date
