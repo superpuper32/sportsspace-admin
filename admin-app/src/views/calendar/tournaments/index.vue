@@ -1,12 +1,15 @@
 <template>
   <section>
-    <h3>Мои турниры</h3>
+    <calendar-card title="Мои турниры" add="свой турнир" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Tournaments'
+  name: 'Tournaments',
+  components: {
+    CalendarCard: () => import('@/components/CalendarCard')
+  }
   //   props: {
   //     calendar: {
   //       type: Object,

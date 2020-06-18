@@ -1,12 +1,15 @@
 <template>
   <section>
-    <h3>Мои площадки</h3>
+    <calendar-card title="Мои площадки" add="свою площадку" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Playgrounds'
+  name: 'Playgrounds',
+  components: {
+    CalendarCard: () => import('@/components/CalendarCard')
+  }
   //   props: {
   //     calendar: {
   //       type: Object,
