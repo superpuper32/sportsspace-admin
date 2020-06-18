@@ -127,7 +127,7 @@ const routes = [
     children: [
       {
         path: '/teams',
-        name: 'Teams',
+        name: 'AllTeams',
         component: () => import('@/views/Teams.vue'),
         meta: { requiresAuth: true }
       }
@@ -140,7 +140,7 @@ const routes = [
     children: [
       {
         path: '/tournaments',
-        name: 'Tournaments',
+        name: 'AllTournaments',
         component: () => import('@/views/Tournaments.vue')
       }
     ]
@@ -152,7 +152,7 @@ const routes = [
     children: [
       {
         path: '/playgrounds',
-        name: 'Playgrounds',
+        name: 'AllPlaygrounds',
         component: () => import('@/views/Playgrounds.vue')
       }
     ]

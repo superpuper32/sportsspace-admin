@@ -25,22 +25,67 @@
                     border-bottom: 2px solid #008DFF
                     color: #008DFF
 
-    &__actions
+    &__title
+        margin-top: 30px
         margin-bottom: 24px
         display: flex
-        justify-content: flex-start
+        justify-content: space-between
+        align-items: center
         font-size: 13px
+
+    &__dates
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        font-weight: 500
+        font-size: 12px
+        line-height: 14px
         text-transform: uppercase
 
-        .actions__tasks
-            margin-right: 20px
-            font-weight: 600
-            color: #008dff
+    &__day
+        position: relative
+        dsiplay: block
+        color: #0D9372
+
+        &:before
+            content: ''
+            position: absolute
+            top: 50%
+            left: -34px
+            width: 24px
+            height: 24px
+            background: url(../assets/calendar_day.svg) center center no-repeat
+            transform: translateY(-50%)
+
+    &__date
+        margin-left: 44px
+        position: relative
+        dsiplay: block
+        color: #485C73
+
+        &:before
+            content: ''
+            position: absolute
+            top: 50%
+            left: -34px
+            width: 24px
+            height: 24px
+            background: url(../assets/calendar_date.svg) center center no-repeat
+            transform: translateY(-50%)
+
+    &__button
+        margin-left: 10px
+        width: 20px
+        height: 20px
+        border: 0
+        background-color: transparent
+        background: url(../assets/calendar_arrow.svg) center center no-repeat
 
     &__schedule
         padding: 28px 12px
         border-radius: 4px
         background-color: #fff
+        box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
 
     &__day-of-week
         padding-bottom: 20px
