@@ -13,6 +13,10 @@
     </div>
 
     <calendar-schedule msg="msg" />
+
+    <calendar-card title="Мои занятия" add="свое занятие" />
+
+    <calendar-card title="Мои тренировки" add="свое занятие" />
   </div>
 </template>
 
@@ -20,7 +24,8 @@
 export default {
   name: 'Practice',
   components: {
-    CalendarSchedule: () => import('@/components/CalendarSchedule.vue')
+    CalendarSchedule: () => import('@/components/CalendarSchedule.vue'),
+    CalendarCard: () => import('@/components/CalendarCard')
   }
   //   props: {
   //     calendar: {
