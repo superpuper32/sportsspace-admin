@@ -105,6 +105,12 @@ const routes = [
             meta: { title: 'Teams' }
           },
           {
+            path: 'create-team',
+            component: () => import('@/views/calendar/teams/CreateTeam.vue'),
+            name: 'Create-Team',
+            meta: { title: 'Create Team' }
+          },
+          {
             path: 'tournaments',
             component: () => import('@/views/calendar/tournaments'),
             name: 'Tournaments',
