@@ -38,6 +38,7 @@ export default {
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
   border-bottom: 4px solid #1ED760
   border-left-bottom-radius: 1px
+  cursor: pointer
 
   &__title
     position: relative
