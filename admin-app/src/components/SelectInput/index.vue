@@ -2,12 +2,13 @@
   <div class="simple-input">
     <label for="name">{{ title }}</label>
     <input type="text" name="name" :placeholder="placeholder" />
+    <label for="before"></label>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SimpleInput',
+  name: 'SelectInput',
   props: {
     title: String,
     placeholder: String
@@ -17,10 +18,9 @@ export default {
 
 <style lang="sass" scoped>
 @import '../../styles/colors.sass'
-
 .simple-input
-    display: inline-block
-    width: 100%
+    padding-right: 26px
+    width: 50%
     font-size: 14px
 
     label
@@ -33,6 +33,7 @@ export default {
         color: $font-black
 
     input
+        // position: relative
         width: 100%
         margin-bottom: 26px
         padding: 20px 0 20px 16px
@@ -42,4 +43,18 @@ export default {
         &::placeholder
             line-height: 21px
             color: #98a9bc
+
+    label
+        position: relative
+
+        &:after
+            content: ''
+            position: absolute
+            top: 50%
+            right: 0px
+            width: 20px
+            height: 20px
+            background: url(../../assets/select-input_arrow.svg) center center no-repeat
+            transform: translateY(-50%)
+            z-index: 3
 </style>
