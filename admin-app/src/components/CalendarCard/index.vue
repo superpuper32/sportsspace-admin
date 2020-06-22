@@ -10,7 +10,9 @@
       <div class="calendar-card__lessons"></div>
 
       <div class="calendar-card__add">
-        <span>Создать {{ add }}</span>
+        <router-link to="/calendar/teams/create-team" data-page="calendar">
+          <span>Создать {{ add }}</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -27,7 +29,8 @@ export default {
     add: {
       type: String,
       required: true
-    }
+    },
+    to: String
   }
 }
 </script>

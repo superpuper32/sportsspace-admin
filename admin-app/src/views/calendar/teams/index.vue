@@ -1,15 +1,12 @@
 <template>
   <section>
-    <calendar-card title="Мои команды" add="свою команду" />
+    <router-view :key="key" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Teams',
-  components: {
-    CalendarCard: () => import('@/components/CalendarCard')
-  }
+  name: 'Teams'
   //   props: {
   //     calendar: {
   //       type: Object,

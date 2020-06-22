@@ -47,32 +47,32 @@ const routes = [
         children: [
           {
             path: 'main',
-            component: () => import('@/views/settings/main'),
             name: 'Main',
+            component: () => import('@/views/settings/main'),
             meta: { title: 'Main' }
           },
           {
             path: 'social',
-            component: () => import('@/views/settings/social'),
             name: 'Social',
+            component: () => import('@/views/settings/social'),
             meta: { title: 'Social' }
           },
           {
             path: 'password',
-            component: () => import('@/views/settings/password'),
             name: 'Password',
+            component: () => import('@/views/settings/password'),
             meta: { title: 'Password' }
           },
           {
             path: 'payment',
-            component: () => import('@/views/settings/payment'),
             name: 'Payment',
+            component: () => import('@/views/settings/payment'),
             meta: { title: 'Payment' }
           },
           {
             path: 'notification',
-            component: () => import('@/views/settings/notification'),
             name: 'Notification',
+            component: () => import('@/views/settings/notification'),
             meta: { title: 'Notification' }
           }
         ]
@@ -94,32 +94,38 @@ const routes = [
         children: [
           {
             path: 'practice',
-            component: () => import('@/views/calendar/practice'),
             name: 'Practice',
+            component: () => import('@/views/calendar/practice'),
             meta: { title: 'Practice' }
           },
           {
             path: 'teams',
-            component: () => import('@/views/calendar/teams'),
             name: 'Teams',
-            meta: { title: 'Teams' }
-          },
-          {
-            path: 'create-team',
-            component: () => import('@/views/calendar/teams/CreateTeam.vue'),
-            name: 'Create-Team',
-            meta: { title: 'Create Team' }
+            component: () => import('@/views/calendar/teams'),
+            meta: { title: 'Teams' },
+            children: [
+              {
+                path: '',
+                component: () => import('@/views/calendar/teams/Main.vue')
+              },
+              {
+                path: 'create-team',
+                name: 'Create-Team',
+                component: () => import('@/views/calendar/teams/CreateTeam.vue'),
+                meta: { title: 'Create Team' }
+              }
+            ]
           },
           {
             path: 'tournaments',
-            component: () => import('@/views/calendar/tournaments'),
             name: 'Tournaments',
+            component: () => import('@/views/calendar/tournaments'),
             meta: { title: 'Tournaments' }
           },
           {
             path: 'playgrounds',
-            component: () => import('@/views/calendar/playgrounds'),
             name: 'Playgrounds',
+            component: () => import('@/views/calendar/playgrounds'),
             meta: { title: 'Playgrounds' }
           }
         ]
