@@ -100,12 +100,12 @@ const routes = [
           },
           {
             path: 'teams',
-            name: 'Teams',
             component: () => import('@/views/calendar/teams'),
             meta: { title: 'Teams' },
             children: [
               {
                 path: '',
+                name: 'Teams',
                 component: () => import('@/views/calendar/teams/Main.vue')
               },
               {

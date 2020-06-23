@@ -9,11 +9,9 @@
     <div class="calendar-card__content">
       <div class="calendar-card__lessons"></div>
 
-      <div class="calendar-card__add">
-        <router-link to="/calendar/teams/create-team" data-page="calendar">
-          <span>Создать {{ add }}</span>
-        </router-link>
-      </div>
+      <router-link class="calendar-card__add" to="/calendar/teams/create-team" data-page="calendar">
+        <span>Создать {{ add }}</span>
+      </router-link>
     </div>
   </div>
 </template>
@@ -74,6 +72,9 @@ export default {
     border: 1px dashed #008DFF
     border-radius: 4px
 
+    &:hover
+      text-decoration: none
+
     span
       position: relative
       margin-left: 30px
@@ -82,6 +83,7 @@ export default {
       font-size: 12px
       line-height: 14px
       text-transform: uppercase
+
       color: #008DFF
 
       &:before

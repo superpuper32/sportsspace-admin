@@ -1,6 +1,6 @@
 <template>
   <section>
-    <calendar-card title="Мои команды" add="свою команду" to="create-team" />
+    <calendar-card title="Мои команды" add="свою команду" to="/teams/create-team" />
   </section>
 </template>
 

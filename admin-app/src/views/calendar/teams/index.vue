@@ -6,7 +6,12 @@
 
 <script>
 export default {
-  name: 'Teams'
+  name: 'Teams',
+  computed: {
+    key() {
+      return this.$route.path
+    }
+  }
   //   props: {
   //     calendar: {
   //       type: Object,
