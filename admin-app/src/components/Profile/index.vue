@@ -17,7 +17,21 @@
 
           <div class="profile__position">{{ profile.role }}</div>
 
-          <div class="profile__description">{{ profile.about }}</div>
+          <div class="profile__email">
+            <p>
+              E-mail:
+              <span>{{ profile.email }}</span>
+            </p>
+
+            <p>
+              Телефон:
+              <span>{{ profile.phone }}</span>
+            </p>
+          </div>
+
+          <div class="profile__email"></div>
+
+          <p class="profile__description">{{ profile.about }}</p>
         </div>
 
         <div class="profile__btns">
@@ -51,6 +65,22 @@
       </div>
     </div>
 
+    <h5>График занятий</h5>
+
+    <div class="profile__cards">
+      <div v-for="practice in practices" v-bind:key="practice.index">
+        <dashboard-practice-card :practice="practice" />
+      </div>
+    </div>
+
+    <h5>Команды</h5>
+
+    <div class="profile__cards">
+      <div v-for="team in teams" v-bind:key="team.index">
+        <dashboard-team-card v-bind:team="team" />
+      </div>
+    </div>
+
     <h5>Турниры</h5>
 
     <div class="profile__cards">
@@ -59,13 +89,7 @@
       </div>
     </div>
 
-    <h5>Команды</h5>
-
-    <div class="profile__cards">
-      <div v-for="team in teams" v-bind:key="team.index">
-        <dashboard-team-card :team="team" />
-      </div>
-    </div>
+    <h5>Площадки</h5>
   </div>
 </template>
 
@@ -74,7 +98,8 @@ export default {
   name: 'Profile',
   components: {
     DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
-    DashboardTeamCard: () => import('@/components/DashboardTeamCard')
+    DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
+    DashboardPracticeCard: () => import('@/components/DashboardPracticeCard')
   },
   props: {
     profile: {
@@ -83,16 +108,16 @@ export default {
     }
   },
   data: () => ({
+    practices: [],
     tournaments: [],
     teams: []
   }),
   mounted() {
     this.loadData()
-    // this.tournaments = this.profile.tournaments
-    // this.teams = this.profile.teams
   },
   methods: {
     loadData() {
+      this.practices = this.profile.practice
       this.tournaments = this.profile.tournaments
       this.teams = this.profile.teams
     }

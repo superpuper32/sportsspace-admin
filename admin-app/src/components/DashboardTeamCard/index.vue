@@ -19,7 +19,7 @@
     </div>
 
     <div class="dashboard-card__title">
-      {{ team.loses }}
+      {{ team.losing }}
       <span>Поражений</span>
     </div>
 
@@ -33,8 +33,8 @@ export default {
   name: 'DashboardTeamCard',
   props: {
     team: {
-      type: Object,
-      required: true
+      type: Object
+      //   required: true
     }
   }
 }

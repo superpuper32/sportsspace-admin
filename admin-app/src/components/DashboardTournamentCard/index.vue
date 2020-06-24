@@ -27,9 +27,9 @@ export default {
 .dashboard-card
   margin-bottom: 6px
   padding: 20px 25px
-  align-items: center
   display: grid
   grid-template-columns: 1fr 2fr 8fr 3fr 2fr 50px
+  align-items: center
   background-color: #fff
   border-radius: 4px
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
