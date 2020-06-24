@@ -51,6 +51,7 @@ export default {
     width: 24px
     height: 24px
     border: 0
+    outline: none
     background-color: transparent
     background: url(../../assets/calendar-card_button.svg) center center no-repeat
 

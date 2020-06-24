@@ -53,8 +53,18 @@
 
     <h5>Турниры</h5>
 
-    <div v-for="tournament in tournaments" v-bind:key="tournament.index">
-      <dashboard-card :tournament="tournament" />
+    <div class="profile__cards">
+      <div v-for="tournament in tournaments" v-bind:key="tournament.index">
+        <dashboard-tournament-card :tournament="tournament" />
+      </div>
+    </div>
+
+    <h5>Команды</h5>
+
+    <div class="profile__cards">
+      <div v-for="team in teams" v-bind:key="team.index">
+        <dashboard-team-card :team="team" />
+      </div>
     </div>
   </div>
 </template>
@@ -63,7 +73,8 @@
 export default {
   name: 'Profile',
   components: {
-    DashboardCard: () => import('@/components/DashboardCard')
+    DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
+    DashboardTeamCard: () => import('@/components/DashboardTeamCard')
   },
   props: {
     profile: {
@@ -72,10 +83,29 @@ export default {
     }
   },
   data: () => ({
-    tournaments: []
+    tournaments: [],
+    teams: []
   }),
   mounted() {
-    this.tournaments = this.profile.tournaments
+    this.loadData()
+    // this.tournaments = this.profile.tournaments
+    // this.teams = this.profile.teams
+  },
+  methods: {
+    loadData() {
+      this.tournaments = this.profile.tournaments
+      this.teams = this.profile.teams
+    }
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.profile
+
+  &__cards
+    margin-bottom: 30px
+
+  h5
+    margin-bottom: 24px
+</style>
