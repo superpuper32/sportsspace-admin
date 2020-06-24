@@ -90,6 +90,12 @@
     </div>
 
     <h5>Площадки</h5>
+
+    <div class="profile__cards">
+      <div v-for="playground in playgrounds" v-bind:key="playground.index">
+        <dashboard-playground-card :playground="playground" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -99,7 +105,8 @@ export default {
   components: {
     DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
     DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
-    DashboardPracticeCard: () => import('@/components/DashboardPracticeCard')
+    DashboardPracticeCard: () => import('@/components/DashboardPracticeCard'),
+    DashboardPlaygroundCard: () => import('@/components/DashboardPlaygroundCard')
   },
   props: {
     profile: {
@@ -109,8 +116,9 @@ export default {
   },
   data: () => ({
     practices: [],
+    teams: [],
     tournaments: [],
-    teams: []
+    playgrounds: []
   }),
   mounted() {
     this.loadData()
@@ -118,8 +126,9 @@ export default {
   methods: {
     loadData() {
       this.practices = this.profile.practice
-      this.tournaments = this.profile.tournaments
       this.teams = this.profile.teams
+      this.tournaments = this.profile.tournaments
+      this.playgrounds = this.profile.playgrounds
     }
   }
 }
