@@ -50,13 +50,6 @@
 
         <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
       </div>
-
-      <div class="calendar__help">
-        <h5>Подсказка</h5>
-
-        <button class="button button__main">Создать</button>
-        <button class="button button__resting">Отменить</button>
-      </div>
     </div>
   </section>
 </template>
@@ -74,28 +67,28 @@ export default {
 @import '../../../styles/colors.sass'
 
 .calendar-form
-  box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
-  border-radius: 4px
+    box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+    border-radius: 4px
 
 .form__create-team
-  padding: 20px 56px 20px 20px
-  background-color: #fff
-  border-left-top-radius: 4px
-  border-left-bottom-radius: 4px
+    padding: 20px 56px 20px 20px
+    background-color: #fff
+    border-left-top-radius: 4px
+    border-left-bottom-radius: 4px
 
-  h3
+h3
     margin-bottom: 30px
 
 .create-team
 
-  &__columns
+&__columns
     display: flex
     justify-content: space-between
 
-  &__column
+&__column
     width: 49%
 
-  &__map
+&__map
     margin-bottom: 26px
     width: 100%
     height: 248px
@@ -103,20 +96,20 @@ export default {
     background-size: cover
     border-radius: 4px
 
-  &__logo
+&__logo
     margin-bottom: 26px
 
     span
-      display: block
-      margin-bottom: 8px
-      font-family: SF Pro Display
-      font-style: normal
-      font-weight: 500
-      font-size: 14px
-      line-height: 17px
-      color: $font-black
+        display: block
+        margin-bottom: 8px
+        font-family: SF Pro Display
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 17px
+        color: $font-black
 
-  &__img
+&__img
     height: 177px
     border: 1px dashed #E8ECEF
     border-radius: 4px
@@ -125,16 +118,16 @@ export default {
     align-items: center
 
     span
-      position: relative
-      font-family: SF Pro Display
-      font-style: normal
-      font-weight: 500
-      font-size: 12px
-      line-height: 14px
-      text-transform: uppercase
-      color: #98A9BC
+        position: relative
+        font-family: SF Pro Display
+        font-style: normal
+        font-weight: 500
+        font-size: 12px
+        line-height: 14px
+        text-transform: uppercase
+        color: #98A9BC
 
-      &:before
+    &:before
         content: ''
         display: block
         position: absolute

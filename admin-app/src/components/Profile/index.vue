@@ -9,21 +9,15 @@
         <div>
           <div class="profile__avatar">
             <div class="profile__img">
-              <img
-                src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&d=retro"
-                alt="avatar"
-              />
+              <img :src="profile.avatar" alt="avatar" />
             </div>
           </div>
 
-          <div class="profile__name">User Name</div>
+          <div class="profile__name">{{ profile.name.first }} {{ profile.name.last }}</div>
 
-          <div class="profile__position">Должность</div>
+          <div class="profile__position">{{ profile.role }}</div>
 
-          <div class="profile__description">
-            Значимость этих проблем настолько очевидна, что начало повседневной работы по
-            формированию позиции играет важную роль в формировании модели развития
-          </div>
+          <div class="profile__description">{{ profile.about }}</div>
         </div>
 
         <div class="profile__btns">
@@ -35,7 +29,7 @@
 
       <div class="profile__payment">
         <div class="profile__score">
-          <span>500 ₽</span>
+          <span>{{ profile.balance }} ₽</span>
         </div>
 
         <div class="profile__social">
@@ -57,14 +51,31 @@
       </div>
     </div>
 
-    <div class="profile__activity">
-      <h3>Турниры</h3>
+    <h5>Турниры</h5>
+
+    <div v-for="tournament in tournaments" v-bind:key="tournament.index">
+      <dashboard-card :tournament="tournament" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Profile'
+  name: 'Profile',
+  components: {
+    DashboardCard: () => import('@/components/DashboardCard')
+  },
+  props: {
+    profile: {
+      type: Object,
+      required: true
+    }
+  },
+  data: () => ({
+    tournaments: []
+  }),
+  mounted() {
+    this.tournaments = this.profile.tournaments
+  }
 }
 </script>

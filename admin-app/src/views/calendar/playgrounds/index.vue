@@ -1,6 +1,6 @@
 <template>
   <section>
-    <calendar-card title="Мои площадки" add="свою площадку" />
+    <calendar-card title="Мои площадки" add="свою площадку" to="/calendar/teams/create-team" />
   </section>
 </template>
 

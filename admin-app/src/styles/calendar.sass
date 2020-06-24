@@ -117,3 +117,21 @@
         display: grid
         grid-template-columns: 2fr 1fr
         grid-column-gap: 30px
+
+    &__help
+        padding: 36px 28px
+
+        h5
+            position: relative
+            padding-bottom: 9px
+            border-bottom: 1px solid #E8ECEF
+
+            &:after
+                content: ''
+                position: absolute
+                top: 50%
+                right: 0
+                width: 16px
+                height: 16px
+                background: url(../assets/calendar_help.svg) center center no-repeat
+                transform: translateY(-50%)

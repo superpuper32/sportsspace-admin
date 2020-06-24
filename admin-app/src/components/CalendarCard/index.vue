@@ -9,7 +9,7 @@
     <div class="calendar-card__content">
       <div class="calendar-card__lessons"></div>
 
-      <router-link class="calendar-card__add" to="/calendar/teams/create-team" data-page="calendar">
+      <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
         <span>Создать {{ add }}</span>
       </router-link>
     </div>
