@@ -1,6 +1,8 @@
 <template>
   <aside class="sidebar">
-    <h2 class="sidebar__title">SportsSpace</h2>
+    <h2 class="sidebar__title">
+      <router-link to="/" data-page="dashboard">SportsSpace</router-link>
+    </h2>
 
     <ul class="sidebar__nav">
       <router-link tag="li" to="/calendar" data-page="calendar">

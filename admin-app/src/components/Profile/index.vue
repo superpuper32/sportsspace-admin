@@ -1,3 +1,4 @@
+/* eslint-disable vue/require-v-for-key */
 <template>
   <div class="profile">
     <div class="profile__background">
@@ -114,21 +115,21 @@ export default {
       required: true
     }
   },
-  data: () => ({
-    practices: [],
-    teams: [],
-    tournaments: [],
-    playgrounds: []
-  }),
   mounted() {
     this.loadData()
   },
-  methods: {
-    loadData() {
-      this.practices = this.profile.practice
-      this.teams = this.profile.teams
-      this.tournaments = this.profile.tournaments
-      this.playgrounds = this.profile.playgrounds
+  computed: {
+    practices: function() {
+      return this.profile.practice
+    },
+    teams: function() {
+      return this.profile.teams
+    },
+    tournaments: function() {
+      return this.profile.tournaments
+    },
+    playgrounds: function() {
+      return this.profile.playgrounds
     }
   }
 }
