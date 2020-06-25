@@ -8,11 +8,11 @@
 
     <div class="calendar-card__content">
       <div class="calendar-card__lessons"></div>
-
-      <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
-        <span>Создать {{ add }}</span>
-      </router-link>
     </div>
+
+    <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
+      <span>Создать {{ add }}</span>
+    </router-link>
   </div>
 </template>
 
@@ -37,6 +37,9 @@ export default {
 .calendar-card
   margin-bottom: 30px
   border-radius: 4px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
   background-color: #fff
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
 
@@ -68,13 +71,21 @@ export default {
 
   &__add
     display: block
-    width: 100%
+    margin: 19px 13px
     padding: 15px 30px
-    border: 1px dashed #008DFF
+    border: 1px dashed #E8ECEF
     border-radius: 4px
 
     &:hover
       text-decoration: none
+      border: 1px dashed #008DFF
+      transition: 0.3s
+
+      span
+        color: #008DFF
+
+        &:before
+          background: url(../../assets/calendar-card_add.svg) center center no-repeat
 
     span
       position: relative
@@ -84,8 +95,7 @@ export default {
       font-size: 12px
       line-height: 14px
       text-transform: uppercase
-
-      color: #008DFF
+      color: #98A9BC
 
       &:before
         content: ''
@@ -94,6 +104,6 @@ export default {
         left: -30px
         width: 20px
         height: 20px
-        background: url(../../assets/calendar-card_add.svg) center center no-repeat
+        background: url(../../assets/calendar-card_add_hover.svg) center center no-repeat
         transform: translateY(-50%)
 </style>
