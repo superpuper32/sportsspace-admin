@@ -3,7 +3,7 @@
     <sidebar />
 
     <section class="content">
-      <navbar />
+      <nav-bar />
 
       <app-main />
 
@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain, FooterBar } from './components'
+import { NavBar, Sidebar, AppMain, FooterBar } from './components'
 
 export default {
   name: 'Layout',
   components: {
-    Navbar,
+    NavBar,
     Sidebar,
     AppMain,
     FooterBar

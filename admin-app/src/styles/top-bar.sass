@@ -13,6 +13,7 @@
     &__menu
         display: flex
         justify-content: center
+        align-items: center
 
         button
             padding: 0
@@ -23,21 +24,80 @@
     &__hamburger
         margin-right: 26px
 
+        button
+            width: 24px
+            height: 24px
+            border: 0
+            outline: none
+            background-color: transparent
+            background: url(../assets/top-bar_hamburger.svg) center center no-repeat
+
     &__add
         margin-right: 20px
 
+        button
+            width: 24px
+            height: 24px
+            border: 0
+            outline: none
+            background-color: transparent
+            background: url(../assets/top-bar_add.svg) center center no-repeat
+
     &__title
-        font-style: normal
-        font-weight: normal
-        font-size: 20px
-        line-height: 30px
-        color: #2C2E3F
+
+        h3
+            font-size: 20px
+            line-height: 30px
+            color: #2C2E3F
 
     &__settings
         display: flex
+        justify-content: center
+        align-items: center
+
+    &__message
+        margin-right: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        button
+            width: 24px
+            height: 24px
+            border: 0
+            outline: none
+            background-color: transparent
+            background: url(../assets/top-bar_message.svg) center center no-repeat
+
+    &__notification
+        margin-right: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        button
+            width: 24px
+            height: 24px
+            border: 0
+            outline: none
+            background-color: transparent
+            background: url(../assets/top-bar_notification.svg) center center no-repeat
+
+    &__schedule
+        margin-right: 24px
+        display: flex
+        justify-content: center
+        align-items: center
+
+        button
+            width: 24px
+            height: 24px
+            border: 0
+            outline: none
+            background-color: transparent
+            background: url(../assets/top-bar_schedule.svg) center center no-repeat
 
     &__avatar
-        margin: 0 8px
         position: relative
 
         button
@@ -61,7 +121,7 @@
     &__avatar-menu
         position: absolute
         top: 60px
-        right: -20px
+        right: -16px
         width: 264px
         border-radius: 4px
         background-color: #fff
@@ -81,7 +141,7 @@
             content: ''
             position: absolute
             top: -18px
-            right: 25px
+            right: 20px
             width: 0
             height: 0
             border-style: solid
@@ -130,13 +190,13 @@
             height: 20px
 
         &_profile
-            background: url('../assets/topBar_person.svg') no-repeat
+            background: url('../assets/top-bar_person.svg') no-repeat
 
         &_settings
-            background: url('../assets/topBar_settings.svg') no-repeat
+            background: url('../assets/top-bar_settings.svg') no-repeat
 
         &_log-out
-            background: url('../assets/topBar_log-out.svg') no-repeat
+            background: url('../assets/top-bar_log-out.svg') no-repeat
 
         a
             font-weight: 500
@@ -146,16 +206,3 @@
 
             &:hover
                 text-decoration: none
-
-    &__header-tab
-        margin: 0 8px
-        position: ralative
-
-    &__icon
-        display: flex
-        height: 40px
-        justify-content: center
-
-        button
-            border: 0
-            background-color: transparent
