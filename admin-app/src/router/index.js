@@ -119,6 +119,7 @@ const routes = [
           {
             path: 'tournaments',
             name: 'Tournaments',
+            props: true,
             component: () => import('@/views/calendar/tournaments'),
             meta: { title: 'Tournaments' }
           },

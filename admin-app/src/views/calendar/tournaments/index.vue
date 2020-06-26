@@ -1,7 +1,14 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <calendar-card title="Мои турниры" add="свой турнир" />
+      <div v-if="tournaments" class="calendar__cards">
+        <div v-for="tournament in tournaments" :key="tournament.index" class="calendar__card">
+          <tournament-card v-bind:tournament="tournament" />
+        </div>
+      </div>
+      <div v-else>
+        <calendar-card title="Мои турниры" add="свой турнир" to="/calendar/teams/create-team" />
+      </div>
 
       <div class="calendar__package">
         <h4>Стартовый комплект</h4>
@@ -19,18 +26,31 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Tournaments',
   components: {
+    TournamentCard: () => import('@/components/TournamentCard'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')
+  },
+  data: function() {
+    return {
+      tournaments: []
+    }
+  },
+  mounted() {
+    this.loadTournaments()
+  },
+  methods: {
+    loadTournaments() {
+      axios
+        .get('http://localhost:3004/tournaments')
+        .then(response => (this.tournaments = response.data))
+        .catch(error => console.error(error))
+    }
   }
-  //   props: {
-  //     calendar: {
-  //       type: Object,
-  //       required: true
-  //     }
-  //   }
 }
 </script>

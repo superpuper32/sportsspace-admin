@@ -6,9 +6,7 @@
       <button class="calendar-card__button"></button>
     </div>
 
-    <div class="calendar-card__content">
-      <div class="calendar-card__lessons"></div>
-    </div>
+    <div class="calendar-card__content"></div>
 
     <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
       <span>Создать {{ add }}</span>
@@ -64,10 +62,6 @@ export default {
     display: flex
     flex-direction: column
     justify-content: flex-end
-
-  &__lessons
-    width: 100%
-    height: 100%
 
   &__add
     display: block

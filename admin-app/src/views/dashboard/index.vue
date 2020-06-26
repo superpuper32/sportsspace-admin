@@ -10,9 +10,11 @@ export default {
   components: {
     Profile: () => import('@/components/Profile/index.vue')
   },
-  data: () => ({
-    profile: null
-  }),
+  data: function() {
+    return {
+      profile: null
+    }
+  },
   mounted() {
     this.loadProfile()
   },

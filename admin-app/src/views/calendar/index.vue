@@ -27,30 +27,13 @@
 </template>
 
 <script>
-import axios from 'axios'
 // 如果想要中文版 element-ui，按如下方式声明
 
 export default {
   name: 'Calendar',
-  data: function() {
-    return {
-      practice: []
-    }
-  },
-  mounted() {
-    this.loadPractice()
-  },
   computed: {
     key() {
       return this.$route.path
-    }
-  },
-  methods: {
-    loadPractice() {
-      axios
-        .get('http://localhost:3004/practice/0')
-        .then(response => (this.practice = response.data))
-        .catch(error => console.error(error))
     }
   }
 }

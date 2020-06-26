@@ -115,9 +115,6 @@ export default {
       required: true
     }
   },
-  mounted() {
-    this.loadData()
-  },
   computed: {
     practices: function() {
       return this.profile.practice

@@ -14,9 +14,9 @@
 
     <calendar-schedule msg="msg" />
 
-    <calendar-card title="Мои занятия" add="свое занятие" />
+    <calendar-card title="Мои занятия" add="свое занятие" to="/calendar/teams/create-team" />
 
-    <calendar-card title="Мои тренировки" add="свое занятие" />
+    <calendar-card title="Мои тренировки" add="свое занятие" to="/calendar/teams/create-team" />
   </div>
 </template>
 
