@@ -2,18 +2,37 @@
   <div class="tournament-card">
     <div class="tournament-card__status">
       <span>В процессе</span>
-      <img src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&d=retro" alt />
+      <img
+        src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&d=retro"
+        alt="avatar"
+      />
     </div>
 
-    <div class="row">
-      <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary">2 Круг ЮВ</strong>
-        <h3 class="mb-0">🏆 title</h3>
-        <div class="mb-1 text-muted">создана 26.01.2020 20:51</div>
-        <p class="card-text mb-auto">Вид спорта: Волейбол</p>
-        <p class="card-text mb-auto">Команды: 10</p>
-        <p class="card-text mb-auto">Дата проведения: 21.12.2020 02:00</p>
+    <div class="tournament-card__title">
+      <div>
+        <h4>{{ tournament.title }}</h4>
+        <span>Дата создания:</span>
+        {{ tournament.created }}
       </div>
+
+      <div class="tournament-card__icons">
+        <img src="../../assets/tournament-card_trophy.svg" alt="logo tournament" />
+        <img src="../../assets/voleyball_logo.svg" alt="logo voleyball" />
+      </div>
+    </div>
+
+    <div class="tournament-card__teams">
+      <span>Команды</span>
+    </div>
+
+    <div class="tournament-card__dates">
+      <span>Дата проведения</span>
+    </div>
+
+    <div class="tournament-card__buttons">
+      <button class="tournament-card__settings"></button>
+      <button class="button button__main">Согласовать</button>
+      <button class="button button__resting">Удалить</button>
     </div>
   </div>
 </template>
@@ -71,4 +90,82 @@ export default {
       width: 32px
       height: 32px
       border-radius: 50%
+
+  &__title
+    padding: 20px 20px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 0.5px solid #E8ECEF
+    font-size: 8px
+    line-height: 12px
+    color: #485C73
+
+    h4
+      margin-bottom: 6px
+      font-family: SF Pro Display
+      font-weight: 600
+      font-size: 20px
+      line-height: 25px
+      color: #485C73
+
+    span
+      margin-right: 8px
+      font-family: SF Pro Text
+      font-style: normal
+      font-weight: normal
+      font-size: 8px
+      line-height: 12px
+      color: #98A9BC
+
+  &__icons
+    display: flex
+    justify-content: space-between
+
+    img
+      width: 32px
+      height: 32px
+
+      &:first-child
+        margin-right: 8px
+
+  &__teams
+    padding: 14px 20px
+    display: flex
+    justify-content: space-between
+    border-bottom: 0.5px solid #E8ECEF
+
+    span
+      font-family: SF Pro Text
+      font-style: normal
+      font-weight: normal
+      font-size: 8px
+      line-height: 12px
+      color: #98A9BC
+
+  &__dates
+    padding: 16px 20px
+    display: flex
+    justify-content: space-between
+    border-bottom: 0.5px solid #E8ECEF
+
+    span
+      font-family: SF Pro Text
+      font-style: normal
+      font-weight: normal
+      font-size: 8px
+      line-height: 12px
+      color: #98A9BC
+
+  &__buttons
+    padding: 54px 20px 20px
+    display: flex
+    justify-content: space-between
+
+  &__settings
+    width: 20px
+    height: 20px
+    background: url(../../assets/button_settings.svg) center center no-repeat
+    border: 1px dashed #F8FAFB
+    border-radius: 50%
 </style>
