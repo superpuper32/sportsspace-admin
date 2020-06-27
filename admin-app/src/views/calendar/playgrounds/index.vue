@@ -1,7 +1,14 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <calendar-card title="Мои площадки" add="свою площадку" to="/calendar/teams/create-team" />
+      <div v-if="playgrounds" class="calendar__cards">
+        <div v-for="playground in playgrounds" :key="playground.index" class="calendar__card">
+          <playground-card v-bind:playground="playground" />
+        </div>
+      </div>
+      <div v-else>
+        <calendar-card title="Мои площадки" add="свою площадку" to="/calendar/teams/create-team" />
+      </div>
 
       <div class="calendar__package">
         <h4>Стартовый комплект</h4>
@@ -19,18 +26,31 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Playgrounds',
   components: {
+    PlaygroundCard: () => import('@/components/PlaygroundCard'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')
+  },
+  data: function() {
+    return {
+      playgrounds: []
+    }
+  },
+  mounted() {
+    this.loadPlaygrounds()
+  },
+  methods: {
+    loadPlaygrounds() {
+      axios
+        .get('http://localhost:3004/playgrounds')
+        .then(response => (this.playgrounds = response.data))
+        .catch(error => console.error(error))
+    }
   }
-  //   props: {
-  //     calendar: {
-  //       type: Object,
-  //       required: true
-  //     }
-  //   }
 }
 </script>
