@@ -163,8 +163,8 @@ export default {
     justify-content: space-between
 
   &__settings
-    width: 20px
-    height: 20px
+    width: 32px
+    height: 32px
     background: url(../../assets/button_settings.svg) center center no-repeat
     border: 1px dashed #F8FAFB
     border-radius: 50%
