@@ -22,17 +22,28 @@
     </div>
 
     <div class="tournament-card__teams">
-      <span>Команды</span>
+      <div>
+        <span>Команды</span>
+        <div class="tournament-card__occupancy">{{ tournament.occupancy }}</div>
+      </div>
+
+      <div class="tournament-card__team-icons">
+        <img src="../../assets/avatar_team.svg" alt="avatar team" />
+      </div>
     </div>
 
-    <div class="tournament-card__dates">
+    <div class="tournament-card__date-info">
       <span>Дата проведения</span>
+      <div class="tournament-card__date">
+        {{ tournament.date }} {{ tournament.time }}
+        <span>- Осталось 3 дня</span>
+      </div>
     </div>
 
     <div class="tournament-card__buttons">
       <button class="tournament-card__settings"></button>
-      <button class="button button__main">Согласовать</button>
-      <button class="button button__resting">Удалить</button>
+      <button class="button button__card-main">Согласовать</button>
+      <button class="button button__card-resting">Удалить</button>
     </div>
   </div>
 </template>
@@ -57,6 +68,14 @@ export default {
   border: 1px solid #E8ECEF
   background: #FFFFFF
   border-radius: 4px
+
+  span
+    font-family: SF Pro Text
+    font-style: normal
+    font-weight: normal
+    font-size: 8px
+    line-height: 12px
+    color: #98A9BC
 
   &__status
     padding: 10px 20px
@@ -111,12 +130,6 @@ export default {
 
     span
       margin-right: 8px
-      font-family: SF Pro Text
-      font-style: normal
-      font-weight: normal
-      font-size: 8px
-      line-height: 12px
-      color: #98A9BC
 
   &__icons
     display: flex
@@ -133,34 +146,64 @@ export default {
     padding: 14px 20px
     display: flex
     justify-content: space-between
+    align-items: center
     border-bottom: 0.5px solid #E8ECEF
 
-    span
-      font-family: SF Pro Text
-      font-style: normal
-      font-weight: normal
-      font-size: 8px
-      line-height: 12px
-      color: #98A9BC
+  &__occupancy
+    position: relative
+    padding-left: 24px
+    font-size: 14px
+    line-height: 21px
+    color: #485C73
 
-  &__dates
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      width: 18px
+      height: 18px
+      background: url(../../assets/tournament-card_occupancy.svg) center center no-repeat
+      transform: translateY(-50%)
+
+  &__date-info
     padding: 16px 20px
-    display: flex
-    justify-content: space-between
     border-bottom: 0.5px solid #E8ECEF
 
     span
-      font-family: SF Pro Text
-      font-style: normal
-      font-weight: normal
-      font-size: 8px
-      line-height: 12px
+      display: block
+
+  &__date
+    position: relative
+    margin-top: 10px
+    padding-left: 22px
+    font-family: SF Pro Text
+    font-style: normal
+    font-weight: 600
+    font-size: 12px
+    line-height: 16px
+    color: #485C73
+
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      width: 18px
+      height: 18px
+      background: url(../../assets/tournament-card_date.svg) center center no-repeat
+      transform: translateY(-50%)
+
+    span
+      display: inline
+      font-size: 14px
+      line-height: 21px
       color: #98A9BC
 
   &__buttons
     padding: 54px 20px 20px
     display: flex
-    justify-content: space-between
+    justify-content: flex-end
 
   &__settings
     width: 32px
