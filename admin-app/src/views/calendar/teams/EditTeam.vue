@@ -2,39 +2,9 @@
   <section>
     <div class="calendar__grid calendar-form">
       <div class="form__create-team create-team">
-        <h3>Редактирование команды</h3>
+        <h3>Редактирование команды {{ id }}</h3>
 
-        <div class="create-team__columns">
-          <div class="create-team__column">
-            <simple-input title="Название" placeholder="Введите название" :value="team.title" />
-
-            <simple-input title="Капитан" placeholder="Выберите капитана" :value="fullName" />
-
-            <simple-input
-              title="Вид спорта"
-              placeholder="Выберите вид спорта"
-              :value="team.sport.kind"
-            />
-
-            <simple-input
-              title="Местоположение команды"
-              placeholder="Выберите местоположение"
-              :value="team.address"
-            />
-          </div>
-
-          <div class="create-team__column">
-            <div class="create-team__logo">
-              <span>Логотип команды</span>
-              <div class="create-team__img">
-                <span>Загрузить изображение</span>
-              </div>
-            </div>
-            <simple-input title="Город" placeholder="Выберите город" />
-
-            <simple-input title="Адрес домашней  площадки" placeholder="Выберите адрес площадки" />
-          </div>
-        </div>
+        <team-form v-model="team" />
 
         <div class="create-team__map"></div>
 
@@ -75,7 +45,8 @@ import axios from 'axios'
 export default {
   name: 'EditTeam',
   components: {
-    SimpleInput: () => import('@/components/SimpleInput')
+    SimpleInput: () => import('@/components/SimpleInput'),
+    TeamForm: () => import('@/components/TeamForm')
   },
   data: function() {
     return {

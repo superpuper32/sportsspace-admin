@@ -187,12 +187,6 @@ const routes = [
         component: () => import('@/views/Contacts.vue')
       }
     ]
-  },
-
-  {
-    path: '/edit/:id',
-    name: 'EditTeam',
-    component: () => import('@/views/EditTeam.vue')
   }
 ]
 
