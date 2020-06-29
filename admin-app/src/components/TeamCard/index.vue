@@ -11,9 +11,9 @@
       </div>
 
       <div class="team-card__rate-info">
-        <div class="team-card__status">{{ team.status }}</div>
+        <div class="team-card__status">{{ team.players }}</div>
 
-        <div class="team-card__rate">{{ team.rate }}</div>
+        <div class="team-card__rate">{{ team.wins }}</div>
       </div>
     </div>
 
@@ -24,17 +24,19 @@
     <div class="team-card__properties">
       <div class="team-card__property">
         <div class="team-card__key">Вид спорта:</div>
-        <div class="team-card__value">Волейбол</div>
+        <div class="team-card__value">{{ team.sport.kind }}</div>
       </div>
 
       <div class="team-card__property">
-        <div class="team-card__key">Капиатн:</div>
-        <div class="team-card__value">Макаревич</div>
+        <div class="team-card__key">Капитан:</div>
+        <div class="team-card__value">{{ fullName }}</div>
       </div>
     </div>
 
     <div class="team-card__buttons">
-      <button class="button button__main">Управлять</button>
+      <button class="button button__main">
+        <router-link :to="`/calendar/teams/edit/${team.id}`">Управлять</router-link>
+      </button>
 
       <button class="button button__resting">Подробнее</button>
     </div>
@@ -48,6 +50,11 @@ export default {
     team: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    fullName() {
+      return `${this.team.captainName.first} ${this.team.captainName.last}`
     }
   }
 }

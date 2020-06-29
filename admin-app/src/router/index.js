@@ -21,19 +21,6 @@ const routes = [
   },
 
   {
-    path: '/trainers',
-    component: Layout,
-    children: [
-      {
-        path: '/trainers',
-        name: 'Trainers',
-        component: () => import('@/views/trainers'),
-        meta: { title: 'Trainers', icon: 'trainers' }
-      }
-    ]
-  },
-
-  {
     path: '/settings',
     component: Layout,
     name: 'Settings',
@@ -113,6 +100,12 @@ const routes = [
                 name: 'Create-Team',
                 component: () => import('@/views/calendar/teams/CreateTeam.vue'),
                 meta: { title: 'Create Team' }
+              },
+              {
+                path: 'edit/:id',
+                name: 'Edit-Team',
+                component: () => import('@/views/calendar/teams/EditTeam.vue'),
+                meta: { title: 'Edit Team' }
               }
             ]
           },
@@ -135,6 +128,18 @@ const routes = [
   },
 
   {
+    path: '/tournaments',
+    component: Layout,
+    children: [
+      {
+        path: '/tournaments',
+        name: 'AllTournaments',
+        component: () => import('@/views/Tournaments.vue')
+      }
+    ]
+  },
+
+  {
     path: '/teams',
     component: Layout,
     children: [
@@ -148,13 +153,14 @@ const routes = [
   },
 
   {
-    path: '/tournaments',
+    path: '/trainers',
     component: Layout,
     children: [
       {
-        path: '/tournaments',
-        name: 'AllTournaments',
-        component: () => import('@/views/Tournaments.vue')
+        path: '/trainers',
+        name: 'Trainers',
+        component: () => import('@/views/trainers'),
+        meta: { title: 'Trainers', icon: 'trainers' }
       }
     ]
   },
