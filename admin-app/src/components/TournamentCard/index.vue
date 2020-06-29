@@ -54,8 +54,7 @@ export default {
   props: {
     tournament: {
       type: Object,
-      required: true,
-      deep: true
+      required: true
     }
   }
 }

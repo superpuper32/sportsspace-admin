@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <div v-if="playgrounds" class="calendar__cards">
+      <div v-if="havePlaygrounds" class="calendar__cards">
         <div v-for="playground in playgrounds" :key="playground.index" class="calendar__card">
           <playground-card v-bind:playground="playground" />
         </div>
@@ -43,6 +43,11 @@ export default {
   },
   mounted() {
     this.loadPlaygrounds()
+  },
+  computed: {
+    havePlaygrounds() {
+      return this.playgrounds.length > 0
+    }
   },
   methods: {
     loadPlaygrounds() {

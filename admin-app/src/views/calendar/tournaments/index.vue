@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <div v-if="tournaments" class="calendar__cards">
+      <div v-if="haveTournaments" class="calendar__cards">
         <div v-for="tournament in tournaments" :key="tournament.index" class="calendar__card">
           <tournament-card v-bind:tournament="tournament" />
         </div>
@@ -43,6 +43,11 @@ export default {
   },
   mounted() {
     this.loadTournaments()
+  },
+  computed: {
+    haveTournaments() {
+      return this.tournaments.length > 0
+    }
   },
   methods: {
     loadTournaments() {

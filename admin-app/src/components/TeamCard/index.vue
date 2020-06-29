@@ -1,40 +1,40 @@
 <template>
-  <div class="playground-card">
-    <div class="playground-card__title">
+  <div class="team-card">
+    <div class="team-card__title">
       <div>
         <img src="../../assets/playground-card__avatar.svg" alt />
       </div>
 
-      <div class="playground-card__heading">
-        <h4>{{ playground.title }}</h4>
-        <span>{{ playground.address }}</span>
+      <div class="team-card__heading">
+        <h4>{{ team.title }}</h4>
+        <span>{{ team.address }}</span>
       </div>
 
-      <div class="playground-card__rate-info">
-        <div class="playground-card__status">{{ playground.status }}</div>
+      <div class="team-card__rate-info">
+        <div class="team-card__status">{{ team.status }}</div>
 
-        <div class="playground-card__rate">{{ playground.rate }}</div>
-      </div>
-    </div>
-
-    <div class="playground-card__created">
-      <span>создан {{ playground.created }}</span>
-    </div>
-
-    <div class="playground-card__properties">
-      <div class="playground-card__property">
-        <div class="playground-card__key">Вид спорта:</div>
-        <div class="playground-card__value">Волейбол</div>
-      </div>
-
-      <div class="playground-card__property">
-        <div class="playground-card__key">Покрытие:</div>
-        <div class="playground-card__value">Линолиум</div>
+        <div class="team-card__rate">{{ team.rate }}</div>
       </div>
     </div>
 
-    <div class="playground-card__buttons">
-      <button class="button button__main">Записаться</button>
+    <div class="team-card__created">
+      <span>создан {{ team.created }}</span>
+    </div>
+
+    <div class="team-card__properties">
+      <div class="team-card__property">
+        <div class="team-card__key">Вид спорта:</div>
+        <div class="team-card__value">Волейбол</div>
+      </div>
+
+      <div class="team-card__property">
+        <div class="team-card__key">Капиатн:</div>
+        <div class="team-card__value">Макаревич</div>
+      </div>
+    </div>
+
+    <div class="team-card__buttons">
+      <button class="button button__main">Управлять</button>
 
       <button class="button button__resting">Подробнее</button>
     </div>
@@ -43,9 +43,9 @@
 
 <script>
 export default {
-  name: 'PlaygroundCard',
+  name: 'TeamCard',
   props: {
-    playground: {
+    team: {
       type: Object,
       required: true
     }
@@ -54,7 +54,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.playground-card
+.team-card
+  margin-bottom: 20px
   padding: 20px 16px
   display: flex
   flex-direction: column

@@ -12,11 +12,5 @@ export default {
       return this.$route.path
     }
   }
-  //   props: {
-  //     calendar: {
-  //       type: Object,
-  //       required: true
-  //     }
-  //   }
 }
 </script>
