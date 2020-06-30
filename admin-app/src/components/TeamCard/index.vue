@@ -34,9 +34,9 @@
     </div>
 
     <div class="team-card__buttons">
-      <button class="button button__main">
-        <router-link :to="`/calendar/teams/edit/${team.id}`">Управлять</router-link>
-      </button>
+      <router-link tag="button" :to="`/calendar/teams/edit/${team.id}`" class="button button__main">
+        <a>Управлять</a>
+      </router-link>
 
       <button class="button button__resting">Подробнее</button>
     </div>
