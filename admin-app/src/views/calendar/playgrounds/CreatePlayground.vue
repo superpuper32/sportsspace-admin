@@ -2,35 +2,58 @@
   <section>
     <div class="calendar__grid calendar-form">
       <div class="form__create-team create-team">
-        <h3>Создание площадки</h3>
+        <h3>Добавление игровой площадки</h3>
+
+        <simple-input title="Название" placeholder="Введите название" />
 
         <div class="create-team__columns">
           <div class="create-team__column">
-            <simple-input title="Название" placeholder="Введите название" />
+            <simple-input title="Количество участников" placeholder="8/16/32" />
 
-            <simple-input title="Капитан" placeholder="Выберите капитана" />
-
-            <simple-input title="Вид спорта" placeholder="Выберите капитана" />
-
-            <simple-input title="Местоположение команды" placeholder="Выберите местоположение" />
+            <simple-input title="Вид спорта" placeholder="Футбол" />
           </div>
 
           <div class="create-team__column">
-            <div class="create-team__logo">
-              <span>Логотип команды</span>
-              <div class="create-team__img">
-                <span>Загрузить изображение</span>
+            <simple-input title="Стоимость" placeholder="0" />
+
+            <div class="create-team__columns">
+              <div class="create-team__column">
+                <simple-input title="Начало игры" placeholder="00:00" />
+              </div>
+
+              <div class="create-team__column">
+                <simple-input title="Конец игры" placeholder="00:00" />
               </div>
             </div>
-            <simple-input title="Город" placeholder="Выберите город" />
-
-            <simple-input title="Адрес домашней  площадки" placeholder="Выберите адрес площадки" />
           </div>
         </div>
 
-        <div class="create-team__map"></div>
+        <div class="create-team__columns">
+          <div class="create-team__column2">
+            <simple-input title="Длина (м)" placeholder="0" />
+          </div>
 
-        <simple-input title="Тренер" placeholder="Выберите тренера" />
+          <div class="create-team__column2">
+            <simple-input title="Ширина (м)" placeholder="0" />
+          </div>
+
+          <div class="create-team__column2">
+            <simple-input title="Высота (м)" placeholder="0" />
+          </div>
+        </div>
+
+        <simple-input title="Описание" placeholder="Введите описание" />
+
+        <div class="create-team__logo">
+          <span>Загрузить фотографии</span>
+          <div class="create-team__img">
+            <span>Загрузить документ</span>
+          </div>
+        </div>
+
+        <simple-input title="Адрес" placeholder="Введите адрес" />
+
+        <div class="create-team__map"></div>
 
         <div class="create-team__columns">
           <div class="create-team__column">
@@ -45,10 +68,6 @@
             <simple-input placeholder="Понедельник — 30.05.2020" />
           </div>
         </div>
-
-        <simple-input title="Описание" placeholder="Введите информацию" />
-
-        <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
       </div>
     </div>
   </section>
@@ -87,6 +106,9 @@ export default {
 
   &__column
     width: 49%
+
+  &__column2
+    width: 31%
 
   &__map
     margin-bottom: 26px

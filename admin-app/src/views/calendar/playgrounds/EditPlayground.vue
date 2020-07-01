@@ -2,7 +2,7 @@
   <section>
     <div class="calendar__grid calendar-form">
       <div class="form__create-team create-team">
-        <h3>Создание площадки</h3>
+        <h3>Добавление игровой площадки</h3>
 
         <div class="create-team__columns">
           <div class="create-team__column">

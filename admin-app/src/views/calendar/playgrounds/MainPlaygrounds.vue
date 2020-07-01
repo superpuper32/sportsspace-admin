@@ -1,13 +1,17 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <div v-if="havePlaygrounds" class="calendar__cards">
-        <div v-for="playground in playgrounds" :key="playground.index" class="calendar__card">
-          <playground-card v-bind:playground="playground" />
+      <div>
+        <div v-if="havePlaygrounds" class="calendar__cards">
+          <div v-for="playground in playgrounds" :key="playground.index" class="calendar__card">
+            <playground-card v-bind:playground="playground" />
+          </div>
         </div>
-      </div>
-      <div v-else>
-        <calendar-card title="Мои площадки" add="свою площадку" to="/calendar/teams/create-team" />
+        <calendar-card
+          title="Мои площадки"
+          add="свою площадку"
+          to="/calendar/playgrounds/create-playground"
+        />
       </div>
 
       <div class="calendar__package">

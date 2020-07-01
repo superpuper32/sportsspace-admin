@@ -55,6 +55,7 @@ export default {
 
 <style lang="sass" scoped>
 .playground-card
+  margin-bottom: 20px
   padding: 20px 16px
   display: flex
   flex-direction: column
