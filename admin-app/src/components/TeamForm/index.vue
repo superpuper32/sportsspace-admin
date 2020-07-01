@@ -1,16 +1,22 @@
 <template>
   <div class="create-team__columns">
     <div class="create-team__column">
-      <simple-input title="Название" placeholder="Введите название" v-model="localTeam.title" />
+      <div class="simple-input">
+        <label for="name">Название</label>
+        <input type="text" name="name" placeholder="Введите название" v-model="localTeam.title" />
+      </div>
 
-      <simple-input title="Капитан" placeholder="Выберите капитана" />
+      <div class="simple-input">
+        <label for="name">Капитан</label>
+        <input type="text" name="name" placeholder="Введите капитана" v-model="localTeam.title" />
+      </div>
 
-      <simple-input title="Вид спорта" placeholder="Выберите вид спорта" :value="localTeam.kind" />
+      <simple-input title="Вид спорта" placeholder="Выберите вид спорта" v-model="localTeam.kind" />
 
       <simple-input
         title="Местоположение команды"
         placeholder="Выберите местоположение"
-        :value="localTeam.address"
+        v-model="localTeam.address"
       />
     </div>
 
@@ -58,7 +64,7 @@ export default {
   },
   methods: {
     updateTeam() {
-      this.$emit('ultrasave', Object.assign({}, this.localTeam))
+      this.$emit('ultrasave', this.localTeam)
     }
   }
 }
@@ -67,54 +73,79 @@ export default {
 <style lang="sass" scoped>
 @import '../../styles/colors.sass'
 
+.simple-input
+  display: inline-block
+  width: 100%
+  font-size: 14px
+
+  label
+    display: block
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    color: $font-black
+
+  input
+    width: 100%
+    margin-bottom: 26px
+    padding: 20px 0 20px 16px
+    border: 1px solid #E8ECEF
+    border-radius: 4px
+
+    &::placeholder
+      line-height: 21px
+      color: #98a9bc
+
 .create-team
 
-    &__columns
-        display: flex
-        justify-content: space-between
+  &__columns
+    display: flex
+    justify-content: space-between
 
-    &__column
-        width: 49%
+  &__column
+    width: 49%
 
-    &__logo
-        margin-bottom: 26px
+  &__logo
+    margin-bottom: 26px
 
-        span
-            display: block
-            margin-bottom: 8px
-            font-family: SF Pro Display
-            font-style: normal
-            font-weight: 500
-            font-size: 14px
-            line-height: 17px
-            color: $font-black
+    span
+      display: block
+      margin-bottom: 8px
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: 500
+      font-size: 14px
+      line-height: 17px
+      color: $font-black
 
-    &__img
-        height: 177px
-        border: 1px dashed #E8ECEF
-        border-radius: 4px
-        display: flex
-        justify-content: center
-        align-items: center
+  &__img
+    height: 177px
+    border: 1px dashed #E8ECEF
+    border-radius: 4px
+    display: flex
+    justify-content: center
+    align-items: center
 
-        span
-            position: relative
-            font-family: SF Pro Display
-            font-style: normal
-            font-weight: 500
-            font-size: 12px
-            line-height: 14px
-            text-transform: uppercase
-            color: #98A9BC
+    span
+      position: relative
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: 500
+      font-size: 12px
+      line-height: 14px
+      text-transform: uppercase
+      color: #98A9BC
 
-            &:before
-                content: ''
-                display: block
-                position: absolute
-                top: 50%
-                left: -32px
-                width: 24px
-                height: 24px
-                background: url(../../assets/create_img.svg) center center no-repeat
-                transform: translateY(-50%)
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 50%
+        left: -32px
+        width: 24px
+        height: 24px
+        background: url(../../assets/create_img.svg) center center no-repeat
+        transform: translateY(-50%)
 </style>
