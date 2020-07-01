@@ -88,12 +88,12 @@ const routes = [
           {
             path: 'teams',
             component: () => import('@/views/calendar/teams'),
-            meta: { title: 'Teams' },
             children: [
               {
                 path: '',
                 name: 'Teams',
-                component: () => import('@/views/calendar/teams/Main.vue')
+                component: () => import('@/views/calendar/teams/Main.vue'),
+                meta: { title: 'Teams' }
               },
               {
                 path: 'create-team',
@@ -118,9 +118,27 @@ const routes = [
           },
           {
             path: 'playgrounds',
-            name: 'Playgrounds',
             component: () => import('@/views/calendar/playgrounds'),
-            meta: { title: 'Playgrounds' }
+            children: [
+              {
+                path: '',
+                name: 'Playgrounds',
+                component: () => import('@/views/calendar/playgrounds/MainPlaygrounds.vue'),
+                meta: { title: 'Playgrounds' }
+              },
+              {
+                path: 'create-playground',
+                name: 'Create-Playground',
+                component: () => import('@/views/calendar/playgrounds/CreatePlayground.vue'),
+                meta: { title: 'Create Playground' }
+              },
+              {
+                path: 'edit/:id',
+                name: 'Edit-Playground',
+                component: () => import('@/views/calendar/playgrounds/EditPlayground.vue'),
+                meta: { title: 'Edit Playground' }
+              }
+            ]
           }
         ]
       }
@@ -192,7 +210,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  linkExactActiveClass: 'active',
+  // linkExactActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   routes
 })
