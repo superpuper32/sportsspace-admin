@@ -5,7 +5,9 @@
         <h3>Управление игровой площадкой {{ id }}</h3>
 
         <div v-if="!playground">Загрузка данных ...</div>
-        <playground-form v-else :playground="playground" />
+        <playground-form v-else v-model="playground" />
+
+        <button type="button" class="button button__main" @click="save">Сохранить</button>
       </div>
     </div>
   </section>
@@ -37,6 +39,13 @@ export default {
       axios
         .get('http://localhost:3004/playgrounds/' + this.id)
         .then(response => (this.playground = response.data))
+        .catch(error => console.error(error))
+    },
+
+    save() {
+      axios
+        .patch('http://localhost:3004/playgrounds/' + this.id, this.playground)
+        .then(() => this.$router.push('/calendar/playgrounds'))
         .catch(error => console.error(error))
     }
   }

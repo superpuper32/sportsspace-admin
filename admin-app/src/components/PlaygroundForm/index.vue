@@ -2,29 +2,66 @@
   <section class="create-form">
     <div class="simple-input">
       <label for="name">Название</label>
-      <input type="text" name="name" placeholder="Введите название" :value="playground.title" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Введите название"
+        v-model="localPlayground.title"
+      />
     </div>
 
     <div class="create-form__columns">
       <div class="create-form__column">
         <div class="simple-input">
-          <label for="name">Количество участников</label>
-          <input type="text" name="name" placeholder="8/16/32" :value="playground.title" />
+          <label for="quantity">Количество участников</label>
+
+          <input
+            type="text"
+            name="quantity"
+            placeholder="8/16/32"
+            v-model="localPlayground.quantityPlayers"
+          />
         </div>
 
-        <simple-input title="Вид спорта" placeholder="Футбол" :value="playground.sport.kind" />
+        <div class="simple-input">
+          <label for="sport">Вид спорта</label>
+
+          <!-- <input
+            type="text"
+            name="sport"
+            placeholder="Выберите вид спорта"
+            v-model="localPlayground.sport.kind"
+          />-->
+          <select name="sport" v-model="localPlayground.sport.kind">
+            <option value>-Выберите спорт -</option>
+            <option value="voleyball">Волейбол</option>
+            <option value="football">Футбол</option>
+          </select>
+        </div>
       </div>
 
       <div class="create-form__column">
-        <simple-input title="Стоимость" placeholder="0" />
+        <div class="simple-input">
+          <label for="name">Стоимость</label>
+
+          <input type="text" name="name" placeholder="0" v-model="localPlayground.price" />
+        </div>
 
         <div class="create-form__columns">
           <div class="create-form__column">
-            <simple-input title="Начало игры" placeholder="00:00" />
+            <div class="simple-input">
+              <label for="start">Начало работы</label>
+
+              <input type="time" name="start" v-model="localPlayground.workHours.start" />
+            </div>
           </div>
 
           <div class="create-form__column">
-            <simple-input title="Конец игры" placeholder="00:00" />
+            <div class="simple-input">
+              <label for="close">Конец работы</label>
+
+              <input type="time" name="close" v-model="localPlayground.workHours.close" />
+            </div>
           </div>
         </div>
       </div>
@@ -32,19 +69,73 @@
 
     <div class="create-form__columns">
       <div class="create-form__column2">
-        <simple-input title="Длина (м)" placeholder="0" />
+        <div class="simple-input">
+          <label for="length">Длина (м)</label>
+
+          <input
+            type="number"
+            name="length"
+            placeholder="0"
+            v-model="localPlayground.parameters.length"
+          />
+        </div>
       </div>
 
       <div class="create-form__column2">
-        <simple-input title="Ширина (м)" placeholder="0" />
+        <div class="simple-input">
+          <label for="width">Ширина (м)</label>
+
+          <input
+            type="number"
+            name="width"
+            placeholder="0"
+            v-model="localPlayground.parameters.width"
+          />
+        </div>
       </div>
 
       <div class="create-form__column2">
-        <simple-input title="Высота (м)" placeholder="0" />
+        <div class="simple-input">
+          <label for="covering">Покрытие</label>
+
+          <input
+            type="text"
+            name="covering"
+            placeholder="0"
+            v-model="localPlayground.parameters.covering"
+          />
+        </div>
       </div>
     </div>
 
-    <simple-input title="Описание" placeholder="Введите описание" />
+    <div class="simple-input">
+      <label for="description">Описание</label>
+
+      <input
+        type="text"
+        name="description"
+        placeholder="Введите описание"
+        v-model="localPlayground.description"
+      />
+    </div>
+
+    <h3>Карта владельца</h3>
+
+    <div class="create-form__columns">
+      <div class="create-form__column">
+        <div>
+          <input type="checkbox" name="locker-room" checked />
+          <label for="locker-room">Раздевалка</label>
+        </div>
+      </div>
+
+      <div class="create-form__column">
+        <div>
+          <input type="checkbox" name="tribune" />
+          <label for="tribune">Трибуна</label>
+        </div>
+      </div>
+    </div>
 
     <div class="create-form__logo">
       <span>Загрузить фотографии</span>
@@ -53,19 +144,46 @@
       </div>
     </div>
 
-    <simple-input title="Адрес" placeholder="Введите адрес" />
+    <div class="simple-input">
+      <label for="address">Адрес</label>
+
+      <input
+        type="text"
+        name="address"
+        placeholder="Введите адрес"
+        v-model="localPlayground.address"
+      />
+    </div>
 
     <div class="create-form__map"></div>
 
     <div class="create-form__columns">
       <div class="create-form__column">
-        <simple-input title="Дни недели встреч" placeholder="30.05.2020" />
+        <div class="simple-input">
+          <label for="playdays">Дни недели встреч</label>
+
+          <input
+            type="date"
+            name="playdays"
+            placeholder="Введите адрес"
+            v-model="localPlayground.address"
+          />
+        </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
       </div>
 
       <div class="create-form__column">
-        <simple-input title="Время тренировки" placeholder="16:00" />
+        <div class="simple-input">
+          <label for="playtime">Дни недели встреч</label>
+
+          <input
+            type="time"
+            name="playtime"
+            placeholder="Время тренировки"
+            v-model="localPlayground.address"
+          />
+        </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
       </div>
@@ -79,10 +197,40 @@ export default {
   components: {
     SimpleInput: () => import('@/components/SimpleInput')
   },
+  model: {
+    prop: 'playground',
+    event: 'ultrasave'
+  },
   props: {
     playground: {
       type: Object,
       required: true
+    }
+  },
+  data: () => ({
+    localPlayground: null
+  }),
+  watch: {
+    // playground: { // if updates from parent
+    //   deep: true,
+    //   handler() {
+    //     if (deepEqual(this.playground, this.localPlayground)) {
+    //       return
+    //     }
+    //     this.localPlayground = Object.assign({}, this.playground)
+    //   }
+    // },
+    localPlayground: {
+      deep: true,
+      handler: 'updatePlayground'
+    }
+  },
+  created() {
+    this.localPlayground = Object.assign({}, this.playground)
+  },
+  methods: {
+    updatePlayground() {
+      this.$emit('ultrasave', Object.assign({}, this.localPlayground))
     }
   }
 }
@@ -105,7 +253,7 @@ export default {
     line-height: 17px
     color: $font-black
 
-  input
+  input, select
     width: 100%
     margin-bottom: 26px
     padding: 20px 0 20px 16px
