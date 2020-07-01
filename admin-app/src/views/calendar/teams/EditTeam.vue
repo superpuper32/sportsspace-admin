@@ -5,28 +5,6 @@
         <h3>Редактирование команды {{ id }}</h3>
 
         <team-form v-model="team" />
-
-        <div class="create-team__map"></div>
-
-        <simple-input title="Тренер" placeholder="Выберите тренера" />
-
-        <div class="create-team__columns">
-          <div class="create-team__column">
-            <simple-input title="Дни недели встреч" placeholder="30.05.2020" />
-
-            <simple-input placeholder="Понедельник — 30.05.2020" />
-          </div>
-
-          <div class="create-team__column">
-            <simple-input title="Время тренировки" placeholder="16:00" />
-
-            <simple-input placeholder="Понедельник — 30.05.2020" />
-          </div>
-        </div>
-
-        <simple-input title="Описание" placeholder="Введите информацию" />
-
-        <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
       </div>
 
       <div class="calendar__help">
@@ -45,7 +23,7 @@ import axios from 'axios'
 export default {
   name: 'EditTeam',
   components: {
-    SimpleInput: () => import('@/components/SimpleInput'),
+    // SimpleInput: () => import('@/components/SimpleInput'),
     TeamForm: () => import('@/components/TeamForm')
   },
   data: () => ({

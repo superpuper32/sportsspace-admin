@@ -34,9 +34,17 @@
     </div>
 
     <div class="playground-card__buttons">
-      <button class="button button__main">Записаться</button>
+      <router-link
+        tag="button"
+        :to="`/calendar/playgrounds/edit/${playground.id}`"
+        class="button playground-card__button"
+      >
+        <a>Управлять</a>
+      </router-link>
 
-      <button class="button button__resting">Подробнее</button>
+      <button class="button playground-card__button playground-card__button_resting">
+        <a>Подробнее</a>
+      </button>
     </div>
   </div>
 </template>
@@ -162,5 +170,30 @@ export default {
   &__buttons
     margin-top: 24px
     display: flex
+    flex-direction: column
     justify-content: space-between
+
+  &__button
+    margin-bottom: 8px
+    padding: 0
+    border: 0
+    outline: none
+
+    a
+      display: block
+      padding-top: 10px
+      padding-bottom: 8px
+      border-radius: 4px
+      background: #008DFF
+      color: #fff
+
+      &:hover
+        color: #30CFD0
+        text-decoration: none
+
+    &_resting
+
+      a
+        background: #F8FAFB
+        color: #98A9BC
 </style>

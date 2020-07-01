@@ -1,32 +1,61 @@
 <template>
-  <section>
+  <section class="create-form">
+    <div class="simple-input">
+      <label for="name">Название</label>
+      <input type="text" name="name" placeholder="Введите название" :value="playground.title" />
+    </div>
+
     <div class="create-form__columns">
       <div class="create-form__column">
-        <simple-input title="Название" placeholder="Введите название" />
+        <div class="simple-input">
+          <label for="name">Количество участников</label>
+          <input type="text" name="name" placeholder="8/16/32" :value="playground.title" />
+        </div>
 
-        <simple-input title="Капитан" placeholder="Выберите капитана" />
-
-        <simple-input title="Вид спорта" placeholder="Выберите капитана" />
-
-        <simple-input title="Местоположение команды" placeholder="Выберите местоположение" />
+        <simple-input title="Вид спорта" placeholder="Футбол" :value="playground.sport.kind" />
       </div>
 
       <div class="create-form__column">
-        <div class="create-form__logo">
-          <span>Логотип команды</span>
-          <div class="create-form__img">
-            <span>Загрузить изображение</span>
+        <simple-input title="Стоимость" placeholder="0" />
+
+        <div class="create-form__columns">
+          <div class="create-form__column">
+            <simple-input title="Начало игры" placeholder="00:00" />
+          </div>
+
+          <div class="create-form__column">
+            <simple-input title="Конец игры" placeholder="00:00" />
           </div>
         </div>
-        <simple-input title="Город" placeholder="Выберите город" />
-
-        <simple-input title="Адрес домашней  площадки" placeholder="Выберите адрес площадки" />
       </div>
     </div>
 
-    <div class="create-form__map"></div>
+    <div class="create-form__columns">
+      <div class="create-form__column2">
+        <simple-input title="Длина (м)" placeholder="0" />
+      </div>
 
-    <simple-input title="Тренер" placeholder="Выберите тренера" />
+      <div class="create-form__column2">
+        <simple-input title="Ширина (м)" placeholder="0" />
+      </div>
+
+      <div class="create-form__column2">
+        <simple-input title="Высота (м)" placeholder="0" />
+      </div>
+    </div>
+
+    <simple-input title="Описание" placeholder="Введите описание" />
+
+    <div class="create-form__logo">
+      <span>Загрузить фотографии</span>
+      <div class="create-form__img">
+        <span>Загрузить документ</span>
+      </div>
+    </div>
+
+    <simple-input title="Адрес" placeholder="Введите адрес" />
+
+    <div class="create-form__map"></div>
 
     <div class="create-form__columns">
       <div class="create-form__column">
@@ -41,44 +70,19 @@
         <simple-input placeholder="Понедельник — 30.05.2020" />
       </div>
     </div>
-
-    <simple-input title="Описание" placeholder="Введите информацию" />
-
-    <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
   </section>
 </template>
 
 <script>
 export default {
-  name: 'TeamForm',
+  name: 'PlaygroundForm',
   components: {
     SimpleInput: () => import('@/components/SimpleInput')
   },
-  model: {
-    prop: 'team',
-    event: 'ultrasave'
-  },
   props: {
-    team: {
+    playground: {
       type: Object,
       required: true
-    }
-  },
-  data: () => ({
-    localTeam: null
-  }),
-  watch: {
-    localTeam: {
-      deep: true,
-      handler: 'updateTeam'
-    }
-  },
-  created() {
-    this.localTeam = Object.assign({}, this.team)
-  },
-  methods: {
-    updateTeam() {
-      this.$emit('ultrasave', this.localTeam)
     }
   }
 }
@@ -120,6 +124,9 @@ export default {
 
   &__column
     width: 49%
+
+  &__column2
+    width: 31%
 
   &__map
     margin-bottom: 26px
