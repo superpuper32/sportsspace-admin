@@ -2,13 +2,39 @@
   <section>
     <div class="create-form__columns">
       <div class="create-form__column">
-        <simple-input title="Название" placeholder="Введите название" />
+        <div class="simple-input">
+          <label for="name">Название</label>
+          <input type="text" name="name" placeholder="Введите название" v-model="localTeam.title" />
+        </div>
 
-        <simple-input title="Капитан" placeholder="Выберите капитана" />
+        <div class="simple-input">
+          <label for="captain">Капитан</label>
+          <input
+            type="text"
+            name="captain"
+            placeholder="Выберите капитана"
+            v-model="localTeam.fullName"
+          />
+        </div>
 
-        <simple-input title="Вид спорта" placeholder="Выберите капитана" />
+        <div class="simple-input">
+          <label for="sport">Вид спорта</label>
 
-        <simple-input title="Местоположение команды" placeholder="Выберите местоположение" />
+          <select name="sport" v-model="localTeam.sport.kind">
+            <option value="voleyball">Волейбол</option>
+            <option value="football">Футбол</option>
+          </select>
+        </div>
+
+        <div class="simple-input">
+          <label for="address-team">Местоположение команды</label>
+          <input
+            type="text"
+            name="address-team"
+            placeholder="Выберите местоположение"
+            v-model="localTeam.address"
+          />
+        </div>
       </div>
 
       <div class="create-form__column">
@@ -18,31 +44,86 @@
             <span>Загрузить изображение</span>
           </div>
         </div>
-        <simple-input title="Город" placeholder="Выберите город" />
 
-        <simple-input title="Адрес домашней  площадки" placeholder="Выберите адрес площадки" />
+        <div class="simple-input">
+          <label for="address">Город</label>
+
+          <input
+            type="text"
+            name="address"
+            placeholder="Выберите город"
+            v-model="localTeam.address"
+          />
+        </div>
+
+        <div class="simple-input">
+          <label for="address">Адрес домашней площадки</label>
+
+          <input
+            type="text"
+            name="address-playground"
+            placeholder="Выберите адрес площадки"
+            v-model="localTeam.addressPlayground"
+          />
+        </div>
       </div>
     </div>
 
     <div class="create-form__map"></div>
 
-    <simple-input title="Тренер" placeholder="Выберите тренера" />
+    <div class="simple-input">
+      <label for="trainer">Тренер</label>
+
+      <input
+        type="text"
+        name="trainer"
+        placeholder="Выберите тренера"
+        v-model="localTeam.trainer"
+      />
+    </div>
 
     <div class="create-form__columns">
       <div class="create-form__column">
-        <simple-input title="Дни недели встреч" placeholder="30.05.2020" />
+        <div class="simple-input">
+          <label for="playdays">Дни недели встреч</label>
+
+          <input
+            type="date"
+            name="playdays"
+            placeholder="30.05.2020"
+            v-model="localTeam.playdays"
+          />
+        </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
       </div>
 
       <div class="create-form__column">
-        <simple-input title="Время тренировки" placeholder="16:00" />
+        <div class="simple-input">
+          <label for="playtime">Время тренировки</label>
+
+          <input
+            type="time"
+            name="playtime"
+            placeholder="Время тренировки"
+            v-model="localTeam.playtime"
+          />
+        </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
       </div>
     </div>
 
-    <simple-input title="Описание" placeholder="Введите информацию" />
+    <div class="simple-input">
+      <label for="description">Описание</label>
+
+      <input
+        type="text"
+        name="description"
+        placeholder="Введите информацию"
+        v-model="localTeam.description"
+      />
+    </div>
 
     <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
   </section>
@@ -67,6 +148,11 @@ export default {
   data: () => ({
     localTeam: null
   }),
+  computed: {
+    fullName() {
+      return `${this.team.captainName.first} ${this.team.captainName.last}`
+    }
+  },
   watch: {
     localTeam: {
       deep: true,
@@ -78,7 +164,7 @@ export default {
   },
   methods: {
     updateTeam() {
-      this.$emit('ultrasave', this.localTeam)
+      this.$emit('ultrasave', Object.assign({}, this.localTeam))
     }
   }
 }
@@ -101,7 +187,7 @@ export default {
     line-height: 17px
     color: $font-black
 
-  input
+  input, select
     width: 100%
     margin-bottom: 26px
     padding: 20px 0 20px 16px

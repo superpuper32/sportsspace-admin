@@ -36,9 +36,6 @@ export default {
     },
     url() {
       return `${this.restUrl}${this.id}`
-    },
-    fullName() {
-      return `${this.team.captainName.first} ${this.team.captainName.last}`
     }
   },
   // watch: {

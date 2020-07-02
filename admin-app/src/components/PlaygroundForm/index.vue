@@ -26,12 +26,6 @@
         <div class="simple-input">
           <label for="sport">Вид спорта</label>
 
-          <!-- <input
-            type="text"
-            name="sport"
-            placeholder="Выберите вид спорта"
-            v-model="localPlayground.sport.kind"
-          />-->
           <select name="sport" v-model="localPlayground.sport.kind">
             <option value>-Выберите спорт -</option>
             <option value="voleyball">Волейбол</option>
@@ -165,7 +159,7 @@
           <input
             type="date"
             name="playdays"
-            placeholder="Введите адрес"
+            placeholder="30.05.2020"
             v-model="localPlayground.address"
           />
         </div>
@@ -175,12 +169,12 @@
 
       <div class="create-form__column">
         <div class="simple-input">
-          <label for="playtime">Дни недели встреч</label>
+          <label for="playtime">Время тренировки</label>
 
           <input
             type="time"
             name="playtime"
-            placeholder="Время тренировки"
+            placeholder="16:00"
             v-model="localPlayground.address"
           />
         </div>
