@@ -23,12 +23,16 @@ export default {
   },
   data: function() {
     return {
-      playground: null
+      playground: null,
+      restUrl: 'http://localhost:3004/playgrounds/'
     }
   },
   computed: {
     id() {
       return this.$route.params.id
+    },
+    url() {
+      return `${this.restUrl}${this.id}`
     }
   },
   mounted() {
@@ -37,15 +41,19 @@ export default {
   methods: {
     loadPlayground() {
       axios
-        .get('http://localhost:3004/playgrounds/' + this.id)
+        .get(this.url)
         .then(response => (this.playground = response.data))
         .catch(error => console.error(error))
     },
 
+    backToPlaygounds() {
+      this.$router.push({ path: '/calendar/playgrounds' })
+    },
+
     save() {
       axios
-        .patch('http://localhost:3004/playgrounds/' + this.id, this.playground)
-        .then(() => this.$router.push('/calendar/playgrounds'))
+        .patch(this.url, this.playground)
+        .then(() => this.backToPlaygounds())
         .catch(error => console.error(error))
     }
   }

@@ -211,7 +211,7 @@ export default {
     localPlayground: null
   }),
   watch: {
-    // playground: { // if updates from parent
+    // playground: { // if updates from parent need deep equals func
     //   deep: true,
     //   handler() {
     //     if (deepEqual(this.playground, this.localPlayground)) {

@@ -4,7 +4,8 @@
       <div class="form__create-team create-team">
         <h3>Редактирование команды {{ id }}</h3>
 
-        <team-form v-model="team" />
+        <div v-if="!team">Загрузка данных ...</div>
+        <team-form v-else v-model="team" />
       </div>
 
       <div class="calendar__help">
@@ -23,7 +24,6 @@ import axios from 'axios'
 export default {
   name: 'EditTeam',
   components: {
-    // SimpleInput: () => import('@/components/SimpleInput'),
     TeamForm: () => import('@/components/TeamForm')
   },
   data: () => ({
@@ -41,9 +41,9 @@ export default {
       return `${this.team.captainName.first} ${this.team.captainName.last}`
     }
   },
-  watch: {
-    $route: 'loadTeam'
-  },
+  // watch: {
+  //   $route: 'loadTeam'
+  // },
   mounted() {
     this.loadTeam()
   },
