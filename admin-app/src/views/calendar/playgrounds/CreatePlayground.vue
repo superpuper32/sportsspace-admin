@@ -4,17 +4,53 @@
       <div class="form__create">
         <h3>Добавление игровой площадки</h3>
 
-        <playground-form />
+        <playground-form v-model="playground" />
+
+        <button type="button" class="button button__main" @click="create">Сохранить</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import axios from 'axios'
+
+const defaultPlayground = {
+  id: null,
+  index: '',
+  title: '',
+  quantityPlayers: 0,
+  address: '',
+  created: '',
+  status: '',
+  rate: '',
+  latitude: '',
+  longitude: '',
+  sport: { kind: '' },
+  workHours: { start: '', close: '' },
+  parameters: { length: '', width: '', covering: '' },
+  price: '',
+  about: '',
+  description: ''
+}
+
 export default {
   name: 'CreatePlayground',
   components: {
     PlaygroundForm: () => import('@/components/PlaygroundForm')
+  },
+  data: () => ({
+    playground: defaultPlayground,
+    url: 'http://localhost:3004/playgrounds/'
+  }),
+  methods: {
+    backToPlaygounds() {
+      this.$router.push({ path: '/calendar/playgrounds' })
+    },
+
+    create() {
+      axios.post(this.url, this.playground).then(() => this.backToPlaygounds())
+    }
   }
 }
 </script>
