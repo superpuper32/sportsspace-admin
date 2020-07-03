@@ -6,7 +6,8 @@
 
         <playground-form v-model="playground" />
 
-        <button type="button" class="button button__main" @click="create">Сохранить</button>
+        <button type="button" class="button button__main" @click="create">Создать</button>
+        <button class="button button__resting" @click="backToPlaygounds">Отменить</button>
       </div>
     </div>
   </section>

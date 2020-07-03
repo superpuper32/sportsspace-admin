@@ -4,68 +4,57 @@
       <div class="form__create-team create-team">
         <h3>Создание команды</h3>
 
-        <div class="create-team__columns">
-          <div class="create-team__column">
-            <simple-input title="Название" placeholder="Введите название" />
-
-            <simple-input title="Капитан" placeholder="Выберите капитана" />
-
-            <simple-input title="Вид спорта" placeholder="Выберите капитана" />
-
-            <simple-input title="Местоположение команды" placeholder="Выберите местоположение" />
-          </div>
-
-          <div class="create-team__column">
-            <div class="create-team__logo">
-              <span>Логотип команды</span>
-              <div class="create-team__img">
-                <span>Загрузить изображение</span>
-              </div>
-            </div>
-            <simple-input title="Город" placeholder="Выберите город" />
-
-            <simple-input title="Адрес домашней  площадки" placeholder="Выберите адрес площадки" />
-          </div>
-        </div>
-
-        <div class="create-team__map"></div>
-
-        <simple-input title="Тренер" placeholder="Выберите тренера" />
-
-        <div class="create-team__columns">
-          <div class="create-team__column">
-            <simple-input title="Дни недели встреч" placeholder="30.05.2020" />
-
-            <simple-input placeholder="Понедельник — 30.05.2020" />
-          </div>
-
-          <div class="create-team__column">
-            <simple-input title="Время тренировки" placeholder="16:00" />
-
-            <simple-input placeholder="Понедельник — 30.05.2020" />
-          </div>
-        </div>
-
-        <simple-input title="Описание" placeholder="Введите информацию" />
-
-        <simple-input title="Пригласить участников " placeholder="Введите имя участника" />
+        <team-form v-model="team" />
       </div>
 
       <div class="calendar__help">
         <h5>Подсказка</h5>
 
-        <button class="button button__main">Создать</button>
-        <button class="button button__resting">Отменить</button>
+        <button class="button button__main" @click="create">Создать</button>
+        <button class="button button__resting" @click="backToTeams">Отменить</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import axios from 'axios'
+
+const defaultTeam = {
+  id: null,
+  index: '',
+  title: '',
+  logo: 0,
+  address: '',
+  addressPlayground: '',
+  created: '',
+  captainName: { first: '', last: '' },
+  sport: { kind: '' },
+  players: '',
+  wins: '',
+  loses: '',
+  trainer: '',
+  about: '',
+  description: ''
+}
+
 export default {
   name: 'CreateTeam',
   components: {
-    SimpleInput: () => import('@/components/SimpleInput')
+    TeamForm: () => import('@/components/TeamForm')
+  },
+  data: () => ({
+    team: defaultTeam,
+    url: 'http://localhost:3004/teams/'
+  }),
+  methods: {
+    backToTeams() {
+      this.$router.push({ path: '/calendar/teams' })
+    },
+
+    create() {
+      axios.post(this.url, this.team).then(() => this.backToTeams())
+    }
   }
 }
 </script>
