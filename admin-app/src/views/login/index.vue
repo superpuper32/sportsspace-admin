@@ -1,7 +1,7 @@
 <template>
   <section class="login">
-    <div class="login__content">
-      <h1>Форма входа</h1>
+    <div v-if="registered" class="login__content">
+      <h1>Регистрация</h1>
 
       <div class="simple-input">
         <label for="name">ФИО</label>
@@ -19,18 +19,93 @@
       </div>
 
       <label class="simple-checkbox">
-        Запомнить пароль
-        <input type="checkbox" checked="checked" />
+        Принять политику
+        <input type="checkbox" />
         <span class="checkmark"></span>
       </label>
 
       <div class="login__btn">
-        <button class="button button__main">Зарегистрироваться</button>
+        <button class="button button__login-main">Зарегистрироваться</button>
+      </div>
+
+      <div class="login__line">
+        <div></div>
+        Или
+        <div></div>
+      </div>
+
+      <div class="login__btns">
+        <div>
+          <button class="button button__facebook">Facebook</button>
+        </div>
+
+        <div>
+          <button class="button button__twitter">Twitter</button>
+        </div>
+
+        <div>
+          <button class="button button__google">Google</button>
+        </div>
       </div>
 
       <div class="login__link">
         <span>Уже есть аккаунт?</span>
-        Войти
+        <a @click="toggleButton">Войти</a>
+      </div>
+    </div>
+
+    <div v-else class="login__content">
+      <h1>Форма входа</h1>
+
+      <div class="simple-input">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Введите email" />
+      </div>
+
+      <div class="simple-input">
+        <label for="password">Пароль</label>
+        <input type="password" name="password" placeholder="Введите пароль" />
+      </div>
+
+      <div class="login__flex">
+        <label class="simple-checkbox">
+          Запомнить пароль
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+
+        <div class="login__link">
+          <a>Восстановить пароль</a>
+        </div>
+      </div>
+
+      <div class="login__btn">
+        <button class="button button__login-main">Войти</button>
+      </div>
+
+      <div class="login__line">
+        <div></div>
+        Или
+        <div></div>
+      </div>
+
+      <div class="login__btns">
+        <div>
+          <button class="button button__facebook">Facebook</button>
+        </div>
+
+        <div>
+          <button class="button button__twitter">Twitter</button>
+        </div>
+
+        <div>
+          <button class="button button__google">Google</button>
+        </div>
+      </div>
+
+      <div class="login__link">
+        <span>Нет аккаунта?</span>
+        <a @click="toggleButton">Зарегистрироваться</a>
       </div>
     </div>
 
@@ -42,7 +117,15 @@
 
 <script>
 export default {
-  name: 'Login'
+  name: 'Login',
+  data: () => ({
+    registered: true
+  }),
+  methods: {
+    toggleButton() {
+      this.registered = !this.registered
+    }
+  }
 }
 </script>
 
@@ -66,6 +149,10 @@ export default {
             line-height: 41px
             color: #2C2E3F
 
+    &__flex
+        display: flex
+        justify-content: space-between
+
     &__background
         width: 50%
         background: url(../../assets/login_background.jpg) center center no-repeat
@@ -77,19 +164,55 @@ export default {
         background: linear-gradient(180deg, #12C99B 0%, #32BF84 100%)
         opacity: .3
 
-    &__btn
+    &__line
+        position: relative
+        padding: 30px 0
+        text-align: center
+        color: #98A9BC
+
+        &:before
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50px
+            width: 110px
+            padding-top: 1px
+            border-top: 1px solid #98A9BC
+
+        &:after
+            content: ''
+            position: absolute
+            top: 50%
+            right: 50px
+            width: 110px
+            padding-top: 1px
+            border-top: 1px solid #98A9BC
+
+    &__btns
         margin-bottom: 150px
+        display: flex
+        justify-content: space-between
+
+        div
+            width: 31%
 
     &__link
-        color: #008DFF
+        font-family: SF Pro Display
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 21px
 
         span
-            font-family: SF Pro Display
-            font-style: normal
-            font-weight: normal
-            font-size: 14px
-            line-height: 21px
             color: #98A9BC
+
+        a
+            margin-left: 8px
+            color: #008DFF
+            cursor: pointer
+
+            &:hover
+                border-bottom: 1px solid #008DFF
 
 .simple-input
     display: inline-block
