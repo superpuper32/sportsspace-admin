@@ -18,6 +18,12 @@
         <input type="password" name="password" placeholder="Введите пароль" />
       </div>
 
+      <label class="simple-checkbox">
+        Запомнить пароль
+        <input type="checkbox" checked="checked" />
+        <span class="checkmark"></span>
+      </label>
+
       <div class="login__btn">
         <button class="button button__main">Зарегистрироваться</button>
       </div>
@@ -69,7 +75,7 @@ export default {
         width: 100%
         height: 100%
         background: linear-gradient(180deg, #12C99B 0%, #32BF84 100%)
-        opacity: .1
+        opacity: .3
 
     &__btn
         margin-bottom: 150px
@@ -109,4 +115,58 @@ export default {
         &::placeholder
             line-height: 21px
             color: #98a9bc
+
+.simple-checkbox
+    margin-bottom: 26px
+    padding-left: 35px
+    display: block
+    position: relative
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    color: #485C73
+    cursor: pointer
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+
+    input
+        position: absolute
+        opacity: 0
+        cursor: pointer
+        height: 0
+        width: 0
+
+    input:checked ~ .checkmark
+        background-color: #008DFF
+        border-radius: 2px
+
+        &:after
+            display: block
+
+    .checkmark:after
+        top: 50%
+        left: 2px
+        width: 16px
+        height: 16px
+        background: url(../../assets/checkmark.svg) center center no-repeat
+        transform: translateY(-50%)
+
+.checkmark
+    position: absolute
+    top: 0
+    left: 0
+    height: 20px
+    width: 20px
+    background-color: #E8ECEF
+    border-radius: 2px
+    opacity: .9
+
+    &:after
+        content: ""
+        position: absolute
+        display: none
 </style>
