@@ -2,6 +2,10 @@
   <section>
     <div class="calendar__grid">
       <div>
+        <div v-if="notification">
+          <calendar-notification title="Вам одобрена аккредитация!" />
+        </div>
+
         <calendar-card
           title="Мои площадки"
           add="свою площадку"
@@ -39,11 +43,13 @@ export default {
     PlaygroundCard: () => import('@/components/PlaygroundCard'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
-    NoteCard: () => import('@/components/NoteCard')
+    NoteCard: () => import('@/components/NoteCard'),
+    CalendarNotification: () => import('@/components/CalendarNotification')
   },
   data: function() {
     return {
-      playgrounds: []
+      playgrounds: [],
+      notification: false
     }
   },
   mounted() {
