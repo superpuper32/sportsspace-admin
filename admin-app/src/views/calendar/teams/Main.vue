@@ -2,12 +2,13 @@
   <section>
     <div class="calendar__grid">
       <div>
-        <div v-if="haveTeams" class="calendar__cards">
-          <div v-for="team in teams" :key="team.index" class="calendar__card">
-            <team-card v-bind:team="team" />
+        <calendar-card title="Мои команды" add="свою команду" to="/calendar/teams/create-team">
+          <div v-if="haveTeams" class="calendar__cards">
+            <div v-for="team in teams" :key="team.index" class="calendar__card">
+              <team-card v-bind:team="team" />
+            </div>
           </div>
-        </div>
-        <calendar-card title="Мои команды" add="свою команду" to="/calendar/teams/create-team" />
+        </calendar-card>
       </div>
 
       <div class="calendar__package">

@@ -2,12 +2,7 @@
   <section class="create-form">
     <div class="simple-input">
       <label for="name">Название</label>
-      <input
-        type="text"
-        name="name"
-        placeholder="Введите название"
-        v-model="localPlayground.title"
-      />
+      <input type="text" name="name" placeholder="Введите название" v-model="localPlayground.title" />
     </div>
 
     <div class="create-form__columns">
@@ -116,18 +111,54 @@
     <h3>Карта владельца</h3>
 
     <div class="create-form__columns">
-      <div class="create-form__column">
+      <!-- <div class="create-form__column">
         <div>
           <input type="checkbox" name="locker-room" checked />
           <label for="locker-room">Раздевалка</label>
         </div>
+      </div>-->
+      <div class="create-form__column">
+        <label class="simple-checkbox">
+          Раздевалка
+          <input type="checkbox" checked />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="simple-checkbox">
+          Парковка
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
       </div>
 
       <div class="create-form__column">
-        <div>
-          <input type="checkbox" name="tribune" />
-          <label for="tribune">Трибуна</label>
-        </div>
+        <label class="simple-checkbox">
+          Трибуна
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="simple-checkbox">
+          Буфет
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="create-form__column">
+        <label class="simple-checkbox">
+          Душ
+          <input type="checkbox" checked />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="create-form__column">
+        <label class="simple-checkbox">
+          Свет
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
       </div>
     </div>
 
@@ -171,12 +202,7 @@
         <div class="simple-input">
           <label for="playtime">Время тренировки</label>
 
-          <input
-            type="time"
-            name="playtime"
-            placeholder="16:00"
-            v-model="localPlayground.address"
-          />
+          <input type="time" name="playtime" placeholder="16:00" v-model="localPlayground.address" />
         </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
@@ -232,6 +258,9 @@ export default {
 
 <style lang="sass" scoped>
 @import '../../styles/colors.sass'
+
+h3
+  margin-bottom: 24px
 
 .simple-input
   display: inline-block

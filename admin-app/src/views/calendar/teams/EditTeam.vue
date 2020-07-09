@@ -12,7 +12,7 @@
         <h5>Подсказка</h5>
 
         <button class="button button__main" @click="save">Изменить</button>
-        <button class="button button__resting">Отменить</button>
+        <button class="button button__resting" @click="remove">Удалить</button>
       </div>
     </div>
   </section>
@@ -38,9 +38,6 @@ export default {
       return `${this.restUrl}${this.id}`
     }
   },
-  // watch: {
-  //   $route: 'loadTeam'
-  // },
   mounted() {
     this.loadTeam()
   },
@@ -61,6 +58,15 @@ export default {
         .patch(this.url, this.team)
         .then(() => this.backToTeams())
         .catch(error => console.error(error))
+    },
+
+    remove() {
+      const confirmed = confirm('Удалить команду?')
+      if (!confirmed) {
+        return
+      }
+
+      axios.delete(this.url).then(() => this.backToTeams())
     }
   }
 }

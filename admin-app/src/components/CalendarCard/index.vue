@@ -7,7 +7,7 @@
     </div>
 
     <div class="calendar-card__content">
-      <slot></slot>
+      <slot>Не акредитован</slot>
     </div>
 
     <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
