@@ -6,8 +6,10 @@
 
         <playground-form v-model="playground" />
 
-        <button type="button" class="button button__main" @click="create">Создать</button>
-        <button class="button button__resting" @click="backToPlaygounds">Отменить</button>
+        <div class="calendar__flex">
+          <button type="button" class="button button__main" @click="create">Создать</button>
+          <button class="button button__resting" @click="backToPlaygounds">Отменить</button>
+        </div>
       </div>
     </div>
   </section>

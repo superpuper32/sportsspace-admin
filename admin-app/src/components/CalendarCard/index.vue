@@ -6,7 +6,9 @@
       <button class="calendar-card__button"></button>
     </div>
 
-    <div class="calendar-card__content"></div>
+    <div class="calendar-card__content">
+      <slot></slot>
+    </div>
 
     <router-link class="calendar-card__add" v-bind:to="to" data-page="calendar">
       <span>Создать {{ add }}</span>
