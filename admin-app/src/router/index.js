@@ -34,41 +34,41 @@ const routes = [
     children: [
       {
         path: '/settings',
-        redirect: '/settings/main',
+        // redirect: '/settings/main',
         component: () => import('@/views/settings'),
-        name: 'ProfileSettings',
-        children: [
-          {
-            path: 'main',
-            name: 'Main',
-            component: () => import('@/views/settings/main'),
-            meta: { title: 'Main' }
-          },
-          {
-            path: 'social',
-            name: 'Social',
-            component: () => import('@/views/settings/social'),
-            meta: { title: 'Social' }
-          },
-          {
-            path: 'password',
-            name: 'Password',
-            component: () => import('@/views/settings/password'),
-            meta: { title: 'Password' }
-          },
-          {
-            path: 'payment',
-            name: 'Payment',
-            component: () => import('@/views/settings/payment'),
-            meta: { title: 'Payment' }
-          },
-          {
-            path: 'notification',
-            name: 'Notification',
-            component: () => import('@/views/settings/notification'),
-            meta: { title: 'Notification' }
-          }
-        ]
+        name: 'ProfileSettings'
+        // children: [
+        //   {
+        //     path: 'main',
+        //     name: 'Main',
+        //     component: () => import('@/views/settings/main'),
+        //     meta: { title: 'Main' }
+        //   },
+        //   {
+        //     path: 'social',
+        //     name: 'Social',
+        //     component: () => import('@/views/settings/social'),
+        //     meta: { title: 'Social' }
+        //   },
+        //   {
+        //     path: 'password',
+        //     name: 'Password',
+        //     component: () => import('@/views/settings/password'),
+        //     meta: { title: 'Password' }
+        //   },
+        //   {
+        //     path: 'payment',
+        //     name: 'Payment',
+        //     component: () => import('@/views/settings/payment'),
+        //     meta: { title: 'Payment' }
+        //   },
+        //   {
+        //     path: 'notification',
+        //     name: 'Notification',
+        //     component: () => import('@/views/settings/notification'),
+        //     meta: { title: 'Notification' }
+        //   }
+        // ]
       }
     ]
   },
@@ -216,7 +216,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  // linkExactActiveClass: 'active',
+  linkExactActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   routes
 })

@@ -8,7 +8,7 @@
 
     <form class="settings__form">
       <div class="settings__input">
-        <label for="name">{{ settings.name }}</label>
+        <label for="name">ФИО</label>
         <input type="text" name="name" placeholder="Иванов" />
       </div>
 

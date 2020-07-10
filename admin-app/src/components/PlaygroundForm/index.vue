@@ -2,7 +2,12 @@
   <section class="create-form">
     <div class="simple-input">
       <label for="name">Название</label>
-      <input type="text" name="name" placeholder="Введите название" v-model="localPlayground.title" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Введите название"
+        v-model="localPlayground.title"
+      />
     </div>
 
     <div class="create-form__columns">
@@ -202,7 +207,12 @@
         <div class="simple-input">
           <label for="playtime">Время тренировки</label>
 
-          <input type="time" name="playtime" placeholder="16:00" v-model="localPlayground.address" />
+          <input
+            type="time"
+            name="playtime"
+            placeholder="16:00"
+            v-model="localPlayground.address"
+          />
         </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
