@@ -4,11 +4,16 @@
       <!-- <nav-settings /> -->
       <nav class="settings__nav">
         <ul>
-          <li v-for="tab in tabs" v-bind:key="tab.name" v-on:click="currentTab = tab">
-            <a class="settings__link settings__link_active">
-              <i class="icon-main"></i>
-              <span class="settings__title">{{ tab.name }}</span>
-              <span class="settings__description">Профиль фото, имя, язык</span>
+          <li
+            v-for="tab in tabs"
+            v-bind:key="tab.name"
+            v-bind:class="[{ active: currentTab === tab }]"
+            v-on:click="currentTab = tab"
+          >
+            <a class="settings__link">
+              <i :class="`icon-${tab.name.toLowerCase()}`"></i>
+              <span class="settings__title">{{ tab.title }}</span>
+              <span class="settings__description">{{ tab.description }}</span>
             </a>
           </li>
         </ul>
@@ -28,11 +33,33 @@ import axios from 'axios'
 var tabs = [
   {
     name: 'Home',
-    component: () => import('@/views/settings/main/index.vue')
+    component: () => import('@/views/settings/main/index.vue'),
+    title: 'Основная информация',
+    description: 'Профиль фото, имя, язык'
   },
   {
     name: 'Social',
-    component: () => import('@/views/settings/social/index.vue')
+    component: () => import('@/views/settings/social/index.vue'),
+    title: 'Соц. сети',
+    description: 'Аккаунт, ссылка'
+  },
+  {
+    name: 'Password',
+    component: () => import('@/views/settings/password/index.vue'),
+    title: 'Безопасность',
+    description: 'Изменить пароль'
+  },
+  {
+    name: 'Payment',
+    component: () => import('@/views/settings/payment/index.vue'),
+    title: 'Оплата',
+    description: 'Способы оплаты, история платежей'
+  },
+  {
+    name: 'Notification',
+    component: () => import('@/views/settings/notification/index.vue'),
+    title: 'Уведомления',
+    description: 'Обновления, комментарии'
   }
 ]
 
@@ -45,7 +72,6 @@ export default {
     return {
       settings: [],
       currentTab: tabs[0],
-      // tabs: ['Home', 'Social', 'Password', 'Payment', 'Notification']
       tabs
     }
   },
@@ -56,9 +82,8 @@ export default {
     // key() {
     //   return this.$route.path
     // },
-
-    currentTabComponent() {
-      return 'tab-' + this.currentTab.toLowerCase()
+    currentIconComponent() {
+      return 'icon-' + this.tab.name.toLowerCase()
     }
   },
   methods: {
@@ -68,6 +93,10 @@ export default {
         .then(response => (this.settings = response.data))
         .catch(error => console.error(error))
     }
+
+    // currentIconComponent() {
+    //   return 'icon-' + this.currentTab.toLowerCase()
+    // }
   }
 }
 </script>
