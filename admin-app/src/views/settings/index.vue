@@ -1,7 +1,6 @@
 <template>
   <div class="settings">
     <aside class="settings__aside">
-      <!-- <nav-settings /> -->
       <nav class="settings__nav">
         <ul>
           <li
@@ -21,8 +20,8 @@
     </aside>
 
     <section class="settings__content">
-      <!-- <router-view :key="key" v-bind:settings="settings" /> -->
-      <component :is="currentTab.component"></component>
+      <component :is="currentTab.component" v-model="settings"></component>
+      <button class="button button__main" @click="save">Обновить</button>
     </section>
   </div>
 </template>
@@ -70,33 +69,42 @@ export default {
   },
   data: function() {
     return {
-      settings: [],
+      settings: null,
       currentTab: tabs[0],
-      tabs
+      tabs,
+      restUrl: 'http://localhost:3004/settings/'
+    }
+  },
+  computed: {
+    url() {
+      return `${this.restUrl}0`
+    },
+
+    currentIconComponent(name) {
+      return 'icon-' + name.toLowerCase()
     }
   },
   mounted() {
     this.loadProfileSettings()
   },
-  computed: {
-    // key() {
-    //   return this.$route.path
-    // },
-    currentIconComponent() {
-      return 'icon-' + this.tab.name.toLowerCase()
-    }
-  },
   methods: {
     loadProfileSettings() {
       axios
-        .get('http://localhost:3004/settings/0')
+        .get(this.url)
         .then(response => (this.settings = response.data))
         .catch(error => console.error(error))
-    }
+    },
 
-    // currentIconComponent() {
-    //   return 'icon-' + this.currentTab.toLowerCase()
-    // }
+    backToDashboard() {
+      this.$router.push({ path: '/dashboard' })
+    },
+
+    save() {
+      axios
+        .patch(this.url, this.settings)
+        .then(() => this.backToDashboard())
+        .catch(error => console.error(error))
+    }
   }
 }
 </script>
