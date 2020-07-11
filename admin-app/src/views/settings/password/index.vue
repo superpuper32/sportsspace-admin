@@ -37,11 +37,6 @@
         <input type="text" name="position" placeholder="Введите ответ" />
       </div>
     </form>
-
-    <div class="settings__btns">
-      <button class="button button__resting">Отмена</button>
-      <button class="button button__main">Обновить</button>
-    </div>
   </div>
 </template>
 

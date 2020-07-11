@@ -2,28 +2,23 @@
   <div>
     <h3>Уведомления</h3>
 
-    <settings-notification />
-    <settings-notification />
-    <settings-notification />
-
-    <div class="settings__btns">
-      <button class="button button__resting">Отмена</button>
-      <button class="button button__main">Обновить</button>
-    </div>
+    <settings-notification title="Обновления" />
+    <settings-notification title="Комментарии" />
+    <settings-notification title="Уведомления" />
   </div>
 </template>
 
 <script>
 export default {
   name: 'Notification',
+  components: {
+    SettingsNotification: () => import('@/components/SettingsNotification')
+  },
   props: {
     settings: {
       type: Object,
       required: true
     }
-  },
-  components: {
-    SettingsNotification: () => import('@/components/SettingsNotification')
   }
 }
 </script>

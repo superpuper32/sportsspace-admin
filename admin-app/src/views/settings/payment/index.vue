@@ -9,26 +9,21 @@
 
     <payment-history />
     <payment-history />
-
-    <div class="settings__btns">
-      <button class="button button__resting">Отмена</button>
-      <button class="button button__main">Обновить</button>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Payment',
+  components: {
+    PaymentHistory: () => import('@/components/PaymentHistory'),
+    PaymentDetail: () => import('@/components/PaymentDetail')
+  },
   props: {
     settings: {
       type: Object,
       required: true
     }
-  },
-  components: {
-    PaymentHistory: () => import('@/components/PaymentHistory'),
-    PaymentDetail: () => import('@/components/PaymentDetail')
   }
 }
 </script>

@@ -21,7 +21,11 @@
 
     <section class="settings__content">
       <component :is="currentTab.component" v-model="settings"></component>
-      <button class="button button__main" @click="save">Обновить</button>
+
+      <div class="calendar__flex">
+        <button class="button button__main" @click="save">Обновить</button>
+        <button class="button button__resting" @click="backToDashboard">Отменить</button>
+      </div>
     </section>
   </div>
 </template>
