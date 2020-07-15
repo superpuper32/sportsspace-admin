@@ -133,6 +133,12 @@ const routes = [
                 meta: { title: 'Playgrounds' }
               },
               {
+                path: 'accreditation',
+                name: 'Accreditation-Playground',
+                component: () => import('@/views/calendar/playgrounds/AccreditationPlayground.vue'),
+                meta: { title: 'Accreditation Playground' }
+              },
+              {
                 path: 'create-playground',
                 name: 'Create-Playground',
                 component: () => import('@/views/calendar/playgrounds/CreatePlayground.vue'),
