@@ -117,11 +117,23 @@ const routes = [
           },
           {
             path: 'tournaments',
-            name: 'Tournaments',
-            props: true,
             component: () => import('@/views/calendar/tournaments'),
-            meta: { title: 'Tournaments' }
+            children: [
+              {
+                path: '',
+                name: 'Tournaments',
+                component: () => import('@/views/calendar/tournaments/MainTournaments.vue'),
+                meta: { title: 'Tournaments' }
+              },
+              {
+                path: 'accreditation',
+                name: 'Accreditation-Tournament',
+                component: () => import('@/views/calendar/tournaments/AccreditationTournament.vue'),
+                meta: { title: 'Accreditation Tournament' }
+              }
+            ]
           },
+
           {
             path: 'playgrounds',
             component: () => import('@/views/calendar/playgrounds'),
