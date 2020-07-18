@@ -130,6 +130,12 @@ const routes = [
                 name: 'Accreditation-Tournament',
                 component: () => import('@/views/calendar/tournaments/AccreditationTournament.vue'),
                 meta: { title: 'Accreditation Tournament' }
+              },
+              {
+                path: 'create-tournament',
+                name: 'Create-Tournament',
+                component: () => import('@/views/calendar/tournaments/CreateTournament.vue'),
+                meta: { title: 'Create Tournament' }
               }
             ]
           },
