@@ -2,7 +2,12 @@
   <section class="create-form">
     <div class="simple-input">
       <label for="name">Название</label>
-      <input type="text" name="name" placeholder="Введите название" v-model="localTournament.title" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Введите название"
+        v-model="localTournament.title"
+      />
     </div>
 
     <div class="create-form__columns">
@@ -118,7 +123,12 @@
         <div class="simple-input">
           <label for="playtime">Время тренировки</label>
 
-          <input type="time" name="playtime" placeholder="16:00" v-model="localTournament.address" />
+          <input
+            type="time"
+            name="playtime"
+            placeholder="16:00"
+            v-model="localTournament.address"
+          />
         </div>
       </div>
     </div>

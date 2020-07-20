@@ -136,6 +136,12 @@ const routes = [
                 name: 'Create-Tournament',
                 component: () => import('@/views/calendar/tournaments/CreateTournament.vue'),
                 meta: { title: 'Create Tournament' }
+              },
+              {
+                path: 'agreement',
+                name: 'Agreement-Tournament',
+                component: () => import('@/views/calendar/tournaments/AgreementTournament.vue'),
+                meta: { title: 'Agreement Tournament' }
               }
             ]
           },
