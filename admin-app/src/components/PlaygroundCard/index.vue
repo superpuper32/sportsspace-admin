@@ -61,7 +61,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .playground-card
   margin-bottom: 20px
   padding: 20px 16px

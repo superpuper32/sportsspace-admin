@@ -15,8 +15,11 @@
           </div>
         </div>
 
-        <div class="card-agreement__button">
-          <div class="dashboard-card__status dashboard-card__status_success">Новые</div>
+        <div class="card-agreement__buttons">
+          <button class="button card-agreement__btn">
+            <a>Новые</a>
+          </button>
+          <button class="card-agreement__button"></button>
         </div>
       </div>
 
@@ -33,12 +36,15 @@
             </div>
 
             <div class="card-agreement__title">
-              12 / 12
+              <div>12 / 12</div>
               <span>Участников</span>
             </div>
           </div>
 
-          <div>Статус</div>
+          <div class="card-agreement__buttons">
+            <div class="card-agreement__status card-agreement__status_success">Статус</div>
+            <button class="card-agreement__button"></button>
+          </div>
         </div>
 
         <div class="card-agreement__team">
@@ -47,6 +53,17 @@
         </div>
       </div>
     </div>
+
+    <p>Пригласить команду</p>
+
+    <div class="simple-input">
+      <input type="text" name="teams" placeholder="Введите название команды" />
+    </div>
+
+    <p>Приглашенные команды</p>
+
+    <button class="button button__main">Согласовать</button>
+    <button class="button button__resting">Отменить</button>
   </section>
 </template>
 
@@ -71,6 +88,55 @@ export default {
 
   &__title
     display: inline-block
+
+  &__buttons
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__status
+    padding: 10px
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    border-radius: 4px
+    text-align: center
+
+    &_success
+      background-color: rgba(30, 215, 96, .08)
+      color: #1ED760
+
+    &_warning
+      background-color: rgba(255, 199, 0, .08)
+      color: #FFC700
+
+  &__button
+    margin-left: 34px
+    width: 16px
+    height: 16px
+    border: 0
+    outline: none
+    background-color: transparent
+    background: url(../../../assets/dashboard_btn.svg) center center no-repeat
+
+  &__btn
+    margin-bottom: 8px
+    padding: 0
+    border: 0
+    outline: none
+
+    a
+      display: block
+      padding: 10px 26px 8px
+      border-radius: 4px
+      background: #008DFF
+      color: #fff
+
+      &:hover
+        color: #30CFD0
+        text-decoration: none
 
   &__content
     padding: 24px 30px 0 24px
