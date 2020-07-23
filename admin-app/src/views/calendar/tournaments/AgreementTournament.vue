@@ -1,22 +1,22 @@
 <template>
-  <section>
+  <div class="agreement">
     <h2>Согласование команд участников</h2>
 
     <div class="card-agreement">
       <div class="card-agreement__header">
         <div class="card-agreement__title">
           <div class="card-agreement__img">
-            <img src="../../../assets/tournament_icon.svg" alt class="card-agreement__img" />
+            <img src="../../../assets/tournament_icon.svg" />
           </div>
 
-          <div class="card-agreement__title">
+          <div class="card-agreement__info">
             <h4>Любительская Волебольная Лига 2 круга ЮВ</h4>
             <span>Заявки | Москва, п. Коммунарка</span>
           </div>
         </div>
 
         <div class="card-agreement__buttons">
-          <button class="button card-agreement__btn">
+          <button class="button button__blue">
             <a>Новые</a>
           </button>
           <button class="card-agreement__button"></button>
@@ -27,7 +27,7 @@
         <div class="card-agreement__team">
           <div>
             <div class="card-agreement__img">
-              <img src="../../../assets/agreement_team.svg" alt class="card-agreement__img" />
+              <img src="../../../assets/agreement_team.svg" />
             </div>
 
             <div class="card-agreement__title">
@@ -64,7 +64,7 @@
 
     <button class="button button__main">Согласовать</button>
     <button class="button button__resting">Отменить</button>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -74,6 +74,11 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+.agreement
+
+  h2
+    margin-bottom: 24px
+
 .card-agreement
   background-color: #fff
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
@@ -87,7 +92,26 @@ export default {
     border-bottom: 1px solid #F8FAFB
 
   &__title
-    display: inline-block
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__img
+    margin-right: 24px
+
+  &__info
+
+    h4
+      margin-bottom: 3px
+
+    span
+      display: block
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: 500
+      font-size: 14px
+      line-height: 17px
+      color: #98A9BC
 
   &__buttons
     display: flex
@@ -122,7 +146,6 @@ export default {
     background: url(../../../assets/dashboard_btn.svg) center center no-repeat
 
   &__btn
-    margin-bottom: 8px
     padding: 0
     border: 0
     outline: none
@@ -151,8 +174,4 @@ export default {
 
     &:first-child
       padding-top: 0px
-
-  &__img
-    display: inline-block
-    margin-right: 24px
 </style>
