@@ -19,37 +19,58 @@
           <button class="button button__blue">
             <a>Новые</a>
           </button>
-          <button class="card-agreement__button"></button>
+
+          <button class="button button__points"></button>
         </div>
       </div>
 
       <div class="card-agreement__content">
-        <div class="card-agreement__team">
-          <div>
-            <div class="card-agreement__img">
+        <div class="team-agreement">
+          <div class="team-agreement__title">
+            <div class="team-agreement__img">
               <img src="../../../assets/agreement_team.svg" />
             </div>
 
-            <div class="card-agreement__title">
+            <div class="team-agreement__info">
               <h5>Меззище</h5>
               <span>г. Сочи</span>
             </div>
 
-            <div class="card-agreement__title">
+            <div class="team-agreement__info">
               <div>12 / 12</div>
               <span>Участников</span>
             </div>
           </div>
 
-          <div class="card-agreement__buttons">
-            <div class="card-agreement__status card-agreement__status_success">Статус</div>
-            <button class="card-agreement__button"></button>
+          <div class="team-agreement__buttons">
+            <div class="team-agreement__status team-agreement__status_success">Статус</div>
+
+            <button class="team-agreement__button"></button>
           </div>
         </div>
 
-        <div class="card-agreement__team">
-          <h5>Меззище</h5>
-          <span>г. Сочи</span>
+        <div class="team-agreement">
+          <div class="team-agreement__title">
+            <div class="team-agreement__img">
+              <img src="../../../assets/agreement_team.svg" />
+            </div>
+
+            <div class="team-agreement__info">
+              <h5>Меззище</h5>
+              <span>г. Сочи</span>
+            </div>
+
+            <div class="team-agreement__info">
+              <div>10 / 12</div>
+              <span>Участников</span>
+            </div>
+          </div>
+
+          <div class="team-agreement__buttons">
+            <div class="team-agreement__methods">Удалить</div>
+
+            <button class="team-agreement__button"></button>
+          </div>
         </div>
       </div>
     </div>
@@ -80,6 +101,7 @@ export default {
     margin-bottom: 24px
 
 .card-agreement
+  margin-bottom: 26px
   background-color: #fff
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
   border-radius: 4px
@@ -103,6 +125,7 @@ export default {
 
     h4
       margin-bottom: 3px
+      font-weight: 600
 
     span
       display: block
@@ -118,8 +141,55 @@ export default {
     justify-content: space-between
     align-items: center
 
+  &__content
+    padding: 24px 30px 0 24px
+
+.team-agreement
+  padding: 24px 0px 30px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  border-bottom: 1px solid #F8FAFB
+  border-radius: 1px
+
+  &:first-child
+    padding-top: 0px
+
+  &__title
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__img
+    margin-right: 24px
+
+  &__info
+    width: 100px
+    margin-right: 24px
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    color: #485C73
+
+    h5
+      margin-bottom: 1px
+      font-weight: normal
+      font-size: 17px
+      line-height: 22px
+
+    span
+      font-weight: normal
+      font-size: 14px
+      line-height: 21px
+      color: #98A9BC
+
+  &__buttons
+    display: flex
+    justify-content: space-between
+    align-items: center
+
   &__status
-    padding: 10px
+    padding: 10px 42px 9px
     font-family: SF Pro Display
     font-style: normal
     font-weight: 500
@@ -145,33 +215,12 @@ export default {
     background-color: transparent
     background: url(../../../assets/dashboard_btn.svg) center center no-repeat
 
-  &__btn
-    padding: 0
-    border: 0
-    outline: none
-
-    a
-      display: block
-      padding: 10px 26px 8px
-      border-radius: 4px
-      background: #008DFF
-      color: #fff
-
-      &:hover
-        color: #30CFD0
-        text-decoration: none
-
-  &__content
-    padding: 24px 30px 0 24px
-
-  &__team
-    padding: 24px 0px 30px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    border-bottom: 1px solid #F8FAFB
-    border-radius: 1px
-
-    &:first-child
-      padding-top: 0px
+  &__methods
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 12px
+    line-height: 14px
+    text-transform: uppercase
+    color: #485C73
 </style>
