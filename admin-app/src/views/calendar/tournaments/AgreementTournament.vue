@@ -45,7 +45,7 @@
           <div class="team-agreement__buttons">
             <div class="team-agreement__status team-agreement__status_success">Статус</div>
 
-            <button class="team-agreement__button"></button>
+            <button class="button button__points"></button>
           </div>
         </div>
 
@@ -67,9 +67,15 @@
           </div>
 
           <div class="team-agreement__buttons">
-            <div class="team-agreement__methods">Удалить</div>
+            <div class="team-agreement__methods">
+              <div class="team-agreement__button team-agreement__button_reject">Отклонить</div>
 
-            <button class="team-agreement__button"></button>
+              <div class="team-agreement__button team-agreement__button_approve">Согласовать</div>
+
+              <div class="team-agreement__button team-agreement__button_remove">Удалить</div>
+            </div>
+
+            <button class="button button__points"></button>
           </div>
         </div>
       </div>
@@ -206,16 +212,10 @@ export default {
       background-color: rgba(255, 199, 0, .08)
       color: #FFC700
 
-  &__button
-    margin-left: 34px
-    width: 16px
-    height: 16px
-    border: 0
-    outline: none
-    background-color: transparent
-    background: url(../../../assets/dashboard_btn.svg) center center no-repeat
-
   &__methods
+    display: flex
+    border: 1px solid #F8FAFB
+    border-radius: 4px
     font-family: SF Pro Display
     font-style: normal
     font-weight: 500
@@ -223,4 +223,30 @@ export default {
     line-height: 14px
     text-transform: uppercase
     color: #485C73
+
+  &__button
+    position: relative
+    padding: 12px 25px 10px 39px
+
+    &_approve
+      border-left: 1px solid #F8FAFB
+      border-right: 1px solid #F8FAFB
+
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 8px
+      width: 20px
+      height: 20px
+      transform: translateY(-50%)
+
+    &_reject::before
+      background: url(../../../assets/team-agreement_reject.svg) center center no-repeat
+
+    &_approve::before
+      background: url(../../../assets/team-agreement_approve.svg) center center no-repeat
+
+    &_remove::before
+      background: url(../../../assets/team-agreement_remove.svg) center center no-repeat
 </style>
