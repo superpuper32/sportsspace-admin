@@ -83,11 +83,19 @@
 
     <p>Пригласить команду</p>
 
-    <div class="simple-input">
+    <div class="input-invite">
       <input type="text" name="teams" placeholder="Введите название команды" />
+
+      <button class="input-invite__btn input-invite__btn_gray"></button>
     </div>
 
     <p>Приглашенные команды</p>
+
+    <div class="input-invite">
+      <input type="text" name="teams" placeholder="Введите название команды" />
+
+      <button class="input-invite__btn input-invite__btn_blue"></button>
+    </div>
 
     <button class="button button__main">Согласовать</button>
     <button class="button button__resting">Отменить</button>
@@ -105,6 +113,15 @@ export default {
 
   h2
     margin-bottom: 24px
+
+  p
+    margin-bottom: 13px
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    color: #2C2E3F
 
 .card-agreement
   margin-bottom: 26px
@@ -249,4 +266,39 @@ export default {
 
     &_remove::before
       background: url(../../../assets/team-agreement_remove.svg) center center no-repeat
+
+.input-invite
+  margin-bottom: 47px
+  padding: 14px 16px 16px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  background: #FFFFFF
+  border: 1px solid #E8ECEF
+  box-sizing: border-box
+  border-radius: 4px
+
+  input
+    display: block
+    width: 200px
+    border: none
+    outline: none
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 21px
+    color: #2C2E3F
+
+  &__btn
+    width: 20px
+    height: 20px
+    border: none
+    outline: none
+
+    &_gray
+      background: url(../../../assets/add-circle_gray.svg) center center no-repeat
+
+    &_blue
+      background: url(../../../assets/add-circle_blue.svg) center center no-repeat
 </style>
