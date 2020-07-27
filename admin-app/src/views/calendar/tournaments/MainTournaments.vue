@@ -1,14 +1,17 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <div v-if="haveTournaments" class="calendar__cards">
-        <div v-for="tournament in tournaments" :key="tournament.index" class="calendar__card">
-          <tournament-card v-bind:tournament="tournament" />
+      <calendar-card title="Мои турниры" add="свой турнир" to="/calendar/teams/create-team">
+        <div v-if="haveTournaments" class="calendar__cards">
+          <div
+            v-for="tournament in tournaments"
+            :key="tournament.index"
+            class="calendar__tournament"
+          >
+            <tournament-card v-bind:tournament="tournament" />
+          </div>
         </div>
-      </div>
-      <div v-else>
-        <calendar-card title="Мои турниры" add="свой турнир" to="/calendar/teams/create-team" />
-      </div>
+      </calendar-card>
 
       <div class="calendar__package">
         <h4>Стартовый комплект</h4>

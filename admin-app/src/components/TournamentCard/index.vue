@@ -1,49 +1,62 @@
 <template>
   <div class="tournament-card">
-    <div class="tournament-card__status">
-      <span>В процессе</span>
-      <img
-        src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&d=retro"
-        alt="avatar"
-      />
+    <div class="tournament-card__left">
+      <div class="tournament-card__title">
+        <div class="tournament-card__img">
+          <img src="../../assets/tournament_icon.svg" alt="avatar" />
+        </div>
+
+        <div>
+          <h4>{{ tournament.title }}</h4>
+
+          <span>Дата создания: {{ tournament.created }}</span>
+
+          <p>
+            Положение о проведении соревнований по классическому волейболу среди любительских
+            мужских (смешанных) и женских команд в рамках Любительской Волейбольной Лиги Юго-Востока
+            Московской области (ЛВЛ ЮВ МО).
+          </p>
+        </div>
+      </div>
+
+      <div class="tournament-card__status">
+        <span>В процессе</span>
+
+        <div class="tournament-card__buttons">
+          <button class="tournament-card__settings"></button>
+
+          <button class="button button__blue">
+            <a>Согласовать</a>
+          </button>
+
+          <button class="button button__card-resting">Удалить</button>
+        </div>
+      </div>
     </div>
 
-    <div class="tournament-card__title">
-      <div>
-        <h4>{{ tournament.title }}</h4>
-        <span>Дата создания:</span>
-        {{ tournament.created }}
+    <div class="tournament-card__info">
+      <div class="tournament-card__place">
+        <span>Место проведения турнира</span>
+        Спортивный комплекс - СК «Прометей»
+        <br />пос. Коммунарка, 11а, Москва, 108814
       </div>
 
-      <div class="tournament-card__icons">
-        <img src="../../assets/tournament-card_trophy.svg" alt="logo tournament" />
-        <img src="../../assets/voleyball_logo.svg" alt="logo voleyball" />
-      </div>
-    </div>
-
-    <div class="tournament-card__teams">
-      <div>
-        <span>Команды</span>
-        <div class="tournament-card__occupancy">{{ tournament.occupancy }}</div>
+      <div class="tournament-card__team">
+        <span>Команда</span>
+        Команда «Зенит»
       </div>
 
-      <div class="tournament-card__team-icons">
-        <img src="../../assets/avatar_team.svg" alt="avatar team" />
-      </div>
-    </div>
-
-    <div class="tournament-card__date-info">
-      <span>Дата проведения</span>
       <div class="tournament-card__date">
-        {{ tournament.date }} {{ tournament.time }}
-        <span>- Осталось 3 дня</span>
+        <span>Информация</span>
+        {{ tournament.date }}
+        <br />
+        Начало в {{ tournament.time }}
       </div>
-    </div>
 
-    <div class="tournament-card__buttons">
-      <button class="tournament-card__settings"></button>
-      <button class="button button__card-main">Согласовать</button>
-      <button class="button button__card-resting">Удалить</button>
+      <div class="tournament-card__price">
+        <span>Цена</span>
+        420 ₽
+      </div>
     </div>
   </div>
 </template>
@@ -62,35 +75,71 @@ export default {
 
 <style lang="sass" scoped>
 .tournament-card
+  margin-bottom: 12px
   display: flex
-  flex-direction: column
   border: 1px solid #E8ECEF
   background: #FFFFFF
   border-radius: 4px
 
-  span
-    font-family: SF Pro Text
-    font-style: normal
-    font-weight: normal
-    font-size: 8px
-    line-height: 12px
-    color: #98A9BC
+  &__left
+    border-right: 1px solid #F8FAFB
+
+  &__title
+    padding: 30px 24px 30px
+    display: flex
+    border-bottom: 1px solid #F8FAFB
+
+    h4
+      margin-bottom: 8px
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: 600
+      font-size: 22px
+      line-height: 27px
+      color: #2C2E3F
+
+    span
+      margin-bottom: 8px
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 21px
+      color: #98A9BC
+
+    p
+      max-width: 500px
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 21px
+      text-align: justify
+      color: #485C73
+
+  &__img
+    margin-right: 30px
+
+    img
+      width: 128px
+      height: 128px
 
   &__status
-    padding: 10px 20px
+    padding: 48px 24px 38px 30px
     display: flex
     justify-content: space-between
     align-items: center
-    border-bottom: 0.5px solid #E8ECEF
 
     span
       margin-left: 30px
+      display: block
       position: relative
       font-family: SF Pro Display
       font-style: normal
-      font-weight: 500
-      font-size: 12px
-      line-height: 14px
+      font-weight: normal
+      font-size: 14px
+      line-height: 21px
+      text-align: right
       text-transform: uppercase
       color: #FFC700
 
@@ -104,110 +153,38 @@ export default {
         background: url(../../assets/tournament-card_status.svg) center center no-repeat
         transform: translateY(-50%)
 
-    img
-      width: 32px
-      height: 32px
-      border-radius: 50%
-
-  &__title
-    padding: 20px 20px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    border-bottom: 0.5px solid #E8ECEF
-    font-size: 8px
-    line-height: 12px
-    color: #485C73
-
-    h4
-      margin-bottom: 6px
-      font-family: SF Pro Display
-      font-weight: 600
-      font-size: 20px
-      line-height: 25px
-      color: #485C73
-
-    span
-      margin-right: 8px
-
-  &__icons
-    display: flex
-    justify-content: space-between
-
-    img
-      width: 32px
-      height: 32px
-
-      &:first-child
-        margin-right: 8px
-
-  &__teams
-    padding: 14px 20px
-    display: flex
-    justify-content: space-between
-    align-items: center
-    border-bottom: 0.5px solid #E8ECEF
-
-  &__occupancy
-    position: relative
-    padding-left: 24px
-    font-size: 14px
-    line-height: 21px
-    color: #485C73
-
-    &:before
-      content: ''
-      position: absolute
-      top: 50%
-      left: 0
-      width: 18px
-      height: 18px
-      background: url(../../assets/tournament-card_occupancy.svg) center center no-repeat
-      transform: translateY(-50%)
-
-  &__date-info
-    padding: 16px 20px
-    border-bottom: 0.5px solid #E8ECEF
-
-    span
-      display: block
-
-  &__date
-    position: relative
-    margin-top: 10px
-    padding-left: 22px
-    font-family: SF Pro Text
-    font-style: normal
-    font-weight: 600
-    font-size: 12px
-    line-height: 16px
-    color: #485C73
-
-    &:before
-      content: ''
-      position: absolute
-      top: 50%
-      left: 0
-      width: 18px
-      height: 18px
-      background: url(../../assets/tournament-card_date.svg) center center no-repeat
-      transform: translateY(-50%)
-
-    span
-      display: inline
-      font-size: 14px
-      line-height: 21px
-      color: #98A9BC
-
   &__buttons
-    padding: 54px 20px 20px
     display: flex
     justify-content: flex-end
+    align-items: center
 
   &__settings
+    margin-right: 12px
     width: 32px
     height: 32px
     background: url(../../assets/button_settings.svg) center center no-repeat
     border: 1px dashed #F8FAFB
     border-radius: 50%
+
+  &__info
+    padding: 30px 33px 38px 24px
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 21px
+    color: #2C2E3F
+
+    span
+      margin-bottom: 4px
+      display: block
+      font-family: SF Pro Text
+      font-style: normal
+      font-weight: normal
+      font-size: 11px
+      line-height: 13px
+      color: #98A9BC
+
+    div
+      margin-bottom: 20px
 </style>
