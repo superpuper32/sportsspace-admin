@@ -23,11 +23,19 @@
         <span>В процессе</span>
 
         <div class="tournament-card__buttons">
-          <button class="tournament-card__settings"></button>
+          <router-link
+            tag="button"
+            :to="`/calendar/tournaments/edit/${tournament.id}`"
+            class="tournament-card__settings"
+          />
 
-          <button class="button button__blue">
+          <router-link
+            tag="button"
+            :to="`/calendar/tournaments/agreement`"
+            class="button button__blue"
+          >
             <a>Согласовать</a>
-          </button>
+          </router-link>
 
           <button class="button button__card-resting">Удалить</button>
         </div>
@@ -165,6 +173,7 @@ export default {
     background: url(../../assets/button_settings.svg) center center no-repeat
     border: 1px dashed #F8FAFB
     border-radius: 50%
+    outline: none
 
   &__info
     padding: 30px 33px 38px 24px

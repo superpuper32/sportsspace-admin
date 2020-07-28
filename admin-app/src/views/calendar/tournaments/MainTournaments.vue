@@ -1,7 +1,11 @@
 <template>
   <section>
     <div class="calendar__grid">
-      <calendar-card title="Мои турниры" add="свой турнир" to="/calendar/teams/create-team">
+      <calendar-card
+        title="Мои турниры"
+        add="свой турнир"
+        to="/calendar/tournaments/create-tournament"
+      >
         <div v-if="haveTournaments" class="calendar__cards">
           <div
             v-for="tournament in tournaments"

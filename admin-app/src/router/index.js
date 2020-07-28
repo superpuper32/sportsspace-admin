@@ -142,6 +142,12 @@ const routes = [
                 name: 'Agreement-Tournament',
                 component: () => import('@/views/calendar/tournaments/AgreementTournament.vue'),
                 meta: { title: 'Agreement Tournament' }
+              },
+              {
+                path: 'edit/:id',
+                name: 'Edit-Tournament',
+                component: () => import('@/views/calendar/tournaments/EditTournament.vue'),
+                meta: { title: 'Edit Tournament' }
               }
             ]
           },
