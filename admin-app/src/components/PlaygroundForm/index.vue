@@ -116,12 +116,6 @@
     <h3>Карта владельца</h3>
 
     <div class="create-form__columns">
-      <!-- <div class="create-form__column">
-        <div>
-          <input type="checkbox" name="locker-room" checked />
-          <label for="locker-room">Раздевалка</label>
-        </div>
-      </div>-->
       <div class="create-form__column">
         <label class="simple-checkbox">
           Раздевалка

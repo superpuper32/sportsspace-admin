@@ -138,7 +138,7 @@ const routes = [
                 meta: { title: 'Create Tournament' }
               },
               {
-                path: 'agreement',
+                path: 'agreement/:id',
                 name: 'Agreement-Tournament',
                 component: () => import('@/views/calendar/tournaments/AgreementTournament.vue'),
                 meta: { title: 'Agreement Tournament' }

@@ -92,19 +92,27 @@
     <p>Приглашенные команды</p>
 
     <div class="input-invite">
-      <input type="text" name="teams" placeholder="Введите название команды" />
+      <div class="input-invite__teams">
+        <div class="input-invite__team">Команда #1</div>
+        <div class="input-invite__team">Команда #2</div>
+      </div>
 
       <button class="input-invite__btn input-invite__btn_blue"></button>
     </div>
 
     <button class="button button__main">Согласовать</button>
-    <button class="button button__resting">Отменить</button>
+    <button class="button button__resting" @click="backToTournaments">Отменить</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AgreementTournament'
+  name: 'AgreementTournament',
+  methods: {
+    backToTournaments() {
+      this.$router.push({ path: '/calendar/tournaments' })
+    }
+  }
 }
 </script>
 
@@ -301,4 +309,31 @@ export default {
 
     &_blue
       background: url(../../../assets/add-circle_blue.svg) center center no-repeat
+
+  &__teams
+    display: flex
+
+  &__team
+    margin-right: 16px
+    padding: 10px 20px 9px
+    min-width: 170px
+    position: relative
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    background: #F8FAFB
+    border-radius: 4px
+    color: #98A9BC
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 14px
+      width: 12px
+      height: 12px
+      background: url(../../../assets/close-icon.svg) center center no-repeat
+      transform: translateY(-50%)
 </style>

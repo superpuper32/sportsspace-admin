@@ -61,7 +61,7 @@ export default {
     },
 
     remove() {
-      const confirmed = confirm('Удалить пользователя?')
+      const confirmed = confirm('Удалить площадку?')
       if (!confirmed) {
         return
       }

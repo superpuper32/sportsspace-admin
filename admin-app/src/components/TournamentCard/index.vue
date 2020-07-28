@@ -31,13 +31,11 @@
 
           <router-link
             tag="button"
-            :to="`/calendar/tournaments/agreement`"
+            :to="`/calendar/tournaments/agreement/${tournament.id}`"
             class="button button__blue"
           >
             <a>Согласовать</a>
           </router-link>
-
-          <button class="button button__card-resting">Удалить</button>
         </div>
       </div>
     </div>
