@@ -89,12 +89,17 @@
         <span>Команда</span>
       </div>
     </div>
+
+    <tournament-panel />
   </section>
 </template>
 
 <script>
 export default {
   name: 'ManageTournament',
+  components: {
+    TournamentPanel: () => import('@/components/TournamentPanel')
+  },
   data: () => ({
     teams: [
       'Команда A',
@@ -117,6 +122,7 @@ export default {
         margin-bottom: 24px
 
     &__teams
+        margin-right: 320px
         margin-bottom: 50px
         padding-left: 0px
         display: flex
