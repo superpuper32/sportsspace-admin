@@ -111,6 +111,18 @@
         <div class="tournament-panel__name tournament-panel__name_judge">
           <span>Иванов Иван Иванович</span>
         </div>
+
+        <div class="tournament-panel__img">
+          <span>Загрузить документ</span>
+        </div>
+
+        <button class="button button__blue">
+          <a>Сохранить</a>
+        </button>
+
+        <button class="button button__resting">
+          <a>Редактировать</a>
+        </button>
       </div>
     </div>
   </div>
@@ -306,6 +318,36 @@ export default {
       font-size: 14px
       line-height: 17px
       text-align: center
+
+  &__img
+    margin: 16px 0px
+    height: 64px
+    display: flex
+    justify-content: center
+    align-items: center
+    border: 1px dashed #E8ECEF
+    border-radius: 4px
+
+    span
+      position: relative
+      font-family: SF Pro Display
+      font-style: normal
+      font-weight: 500
+      font-size: 12px
+      line-height: 14px
+      text-transform: uppercase
+      color: #98A9BC
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 50%
+        left: -32px
+        width: 24px
+        height: 24px
+        background: url(../../assets/create_img.svg) center center no-repeat
+        transform: translateY(-50%)
 
 .score-table
   margin: 0px 0px 16px
