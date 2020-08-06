@@ -23,7 +23,11 @@
       <span>Поражений</span>
     </div>
 
-    <div class="dashboard-card__status dashboard-card__status_primary">Перейти</div>
+    <div class="dashboard-card__status dashboard-card__status_primary">
+      <router-link tag="button" :to="`/teams/edit/${team.id}`" class="button button__card-main">
+        <a>Перейти</a>
+      </router-link>
+    </div>
     <button class="dashboard-card__button"></button>
   </div>
 </template>

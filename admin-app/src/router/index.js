@@ -208,12 +208,25 @@ const routes = [
   {
     path: '/teams',
     component: Layout,
+    meta: { title: 'AllTeams' },
     children: [
       {
         path: '/teams',
-        name: 'AllTeams',
-        component: () => import('@/views/Teams.vue'),
-        meta: { requiresAuth: true }
+        component: () => import('@/views/Teams'),
+        children: [
+          {
+            path: '',
+            name: 'AllTeams',
+            component: () => import('@/views/calendar/teams/Main.vue'),
+            meta: { title: 'Teams' }
+          },
+          {
+            path: 'edit/:id',
+            name: 'Edit-AllTeam',
+            component: () => import('@/views/Teams/Edit.vue'),
+            meta: { title: 'Edit Team' }
+          }
+        ]
       }
     ]
   },
