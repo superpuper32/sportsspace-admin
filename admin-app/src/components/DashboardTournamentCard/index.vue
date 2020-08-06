@@ -1,11 +1,12 @@
 <template>
   <div class="dashboard-card">
     <div class="dashboard-card__img">
-      <img src="../../assets/voleyball_logo.svg" />
+      <!-- <img src="../../assets/voleyball_logo.svg" /> -->
+      <img :src="imageUrl" />
     </div>
     <div class="dashboard-card__sport">{{ tournament.sport }}</div>
-    <div class="dashboard-card__title">{{ tournament.title.toLowerCase() }}</div>
-    <div class="dashboard-card__date">{{ tournament.date }}</div>
+    <div class="dashboard-card__title">{{ tournament.name.toLowerCase() }}</div>
+    <div class="dashboard-card__date">{{ tournament.data_and_time }}</div>
     <div class="dashboard-card__status dashboard-card__status_warning">Стартовал</div>
     <button class="dashboard-card__button"></button>
   </div>
@@ -18,6 +19,11 @@ export default {
     tournament: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    imageUrl() {
+      return `https://sportsspace.ru/images/tournaments/${this.tournament.id}/logo/${this.tournament.id}.jpg`
     }
   }
 }
@@ -33,6 +39,15 @@ export default {
   background-color: #fff
   border-radius: 4px
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+
+  &__img
+    width: 40px
+    height: 40px
+
+    img
+      height: 100%
+      width: 100%
+      border-radius: 50%
 
   &__sport
     font-family: SF Pro Display

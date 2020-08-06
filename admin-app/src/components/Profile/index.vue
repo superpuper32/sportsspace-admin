@@ -132,7 +132,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .profile
 
   &__cards
