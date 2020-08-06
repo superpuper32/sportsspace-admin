@@ -2,13 +2,14 @@
   <div class="dashboard-card">
     <div class="dashboard-card__img">
       <img src="../../assets/voleyball_logo.svg" />
+      <!-- <img :src="imageUrl" /> -->
     </div>
     <div class="dashboard-card__sport">
       {{ playground.sport }}
       <span>{{ playground.role }}</span>
     </div>
     <div class="dashboard-card__title">
-      {{ playground.title.toLowerCase() }}
+      {{ playground.name.toLowerCase() }}
       <span>{{ playground.address }}</span>
     </div>
     <div class="dashboard-card__date">{{ playground.date }}</div>
@@ -25,6 +26,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    imageUrl() {
+      return `https://sportsspace.ru/images/playground_image/${this.team.id}/original/${this.team.id}.jpg`
+    }
   }
 }
 </script>
@@ -39,6 +45,15 @@ export default {
     background-color: #fff
     border-radius: 4px
     box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+
+    &__img
+        width: 40px
+        height: 40px
+
+        img
+            height: 100%
+            width: 100%
+            border-radius: 50%
 
     &__sport
         font-family: SF Pro Display
