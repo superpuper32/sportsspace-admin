@@ -1,11 +1,16 @@
 <template>
   <div class="dashboard-card">
-    <div v-if="imageUrl" class="dashboard-card__img">
+    <div v-if="team.avatar_file_name" class="dashboard-card__img">
       <img :src="imageUrl" alt />
     </div>
+
+    <div v-else class="dashboard-card__img">
+      <img src="../../assets/avatar_team.svg" alt />
+    </div>
+
     <div class="dashboard-card__title">
       {{ team.name }}
-      <span>{{ team.role }}</span>
+      <span>{{ team.address }}</span>
     </div>
     <div class="dashboard-card__sport">{{ team.sport }}</div>
     <div class="dashboard-card__title">
@@ -43,7 +48,11 @@ export default {
   },
   computed: {
     imageUrl() {
-      return `https://sportsspace.ru/images/command/${this.team.id}/logo/${this.team.id}.jpg`
+      const imageUrl = `https://sportsspace.ru/images/command/${this.team.id}/logo/${this.team.id}`
+
+      return this.team.avatar_file_name.split('.')[1] === 'jpeg'
+        ? `${imageUrl}.jpeg`
+        : `${imageUrl}.jpg`
     }
   }
 }
