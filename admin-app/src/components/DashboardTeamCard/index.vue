@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-card">
-    <div class="dashboard-card__img">
+    <div v-if="imageUrl" class="dashboard-card__img">
       <img :src="imageUrl" alt />
     </div>
     <div class="dashboard-card__title">

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h3>{{ team.name }}</h3>
+    <h3>Кoманда {{ team.name }}</h3>
   </section>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'EditAllTeam',
   data: () => ({
     team: null,
-    restUrl: 'https://devtest.sportsspace.ru/api/v1/commands'
+    restUrl: 'https://devtest.sportsspace.ru/api/v1/commands/'
   }),
   computed: {
     id() {

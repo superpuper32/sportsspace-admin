@@ -14,7 +14,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'Teams',
+  name: 'AllTeams',
   components: {
     DashboardTeamCard: () => import('@/components/DashboardTeamCard')
   },

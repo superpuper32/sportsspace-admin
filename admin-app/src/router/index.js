@@ -211,22 +211,15 @@ const routes = [
     meta: { title: 'AllTeams' },
     children: [
       {
-        path: '/teams',
-        component: () => import('@/views/Teams'),
-        children: [
-          {
-            path: '',
-            name: 'AllTeams',
-            component: () => import('@/views/calendar/teams/Main.vue'),
-            meta: { title: 'Teams' }
-          },
-          {
-            path: 'edit/:id',
-            name: 'Edit-AllTeam',
-            component: () => import('@/views/Teams/Edit.vue'),
-            meta: { title: 'Edit Team' }
-          }
-        ]
+        path: '',
+        name: 'AllTeams',
+        component: () => import('@/views/Teams')
+      },
+      {
+        path: 'edit/:id',
+        name: 'EditAllTeam',
+        component: () => import('@/views/Teams/Edit.vue'),
+        meta: { title: 'Edit Team' }
       }
     ]
   },
