@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Площадки</h2>
+    <h2>Все Площадки</h2>
 
     <div class="profile__cards">
       <div v-for="playground in playgrounds" v-bind:key="playground.index">

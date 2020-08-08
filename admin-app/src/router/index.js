@@ -77,7 +77,7 @@ const routes = [
     path: '/calendar',
     component: Layout,
     name: 'Calendar',
-    meta: { title: 'Calendar' },
+    meta: { title: 'Календарь' },
     children: [
       {
         path: '/calendar',
@@ -89,7 +89,7 @@ const routes = [
             path: 'practice',
             name: 'Practice',
             component: () => import('@/views/calendar/practice'),
-            meta: { title: 'Practice' }
+            meta: { title: 'Занятия' }
           },
           {
             path: 'teams',
@@ -99,19 +99,19 @@ const routes = [
                 path: '',
                 name: 'Teams',
                 component: () => import('@/views/calendar/teams/Main.vue'),
-                meta: { title: 'Teams' }
+                meta: { title: 'Команды' }
               },
               {
                 path: 'create-team',
                 name: 'Create-Team',
                 component: () => import('@/views/calendar/teams/CreateTeam.vue'),
-                meta: { title: 'Create Team' }
+                meta: { title: 'Создать команду' }
               },
               {
                 path: 'edit/:id',
                 name: 'Edit-Team',
                 component: () => import('@/views/calendar/teams/EditTeam.vue'),
-                meta: { title: 'Edit Team' }
+                meta: { title: 'Редактировать команду' }
               }
             ]
           },
@@ -123,37 +123,37 @@ const routes = [
                 path: '',
                 name: 'Tournaments',
                 component: () => import('@/views/calendar/tournaments/MainTournaments.vue'),
-                meta: { title: 'Tournaments' }
+                meta: { title: 'Турниры' }
               },
               {
                 path: 'accreditation',
                 name: 'Accreditation-Tournament',
                 component: () => import('@/views/calendar/tournaments/AccreditationTournament.vue'),
-                meta: { title: 'Accreditation Tournament' }
+                meta: { title: 'Аккредитация' }
               },
               {
                 path: 'create-tournament',
                 name: 'Create-Tournament',
                 component: () => import('@/views/calendar/tournaments/CreateTournament.vue'),
-                meta: { title: 'Create Tournament' }
+                meta: { title: 'Создание' }
               },
               {
                 path: 'agreement/:id',
                 name: 'Agreement-Tournament',
                 component: () => import('@/views/calendar/tournaments/AgreementTournament.vue'),
-                meta: { title: 'Agreement Tournament' }
+                meta: { title: 'Согласование' }
               },
               {
                 path: 'edit/:id',
                 name: 'Edit-Tournament',
                 component: () => import('@/views/calendar/tournaments/EditTournament.vue'),
-                meta: { title: 'Edit Tournament' }
+                meta: { title: 'Редактирование' }
               },
               {
                 path: 'manage/:id',
                 name: 'Manage-Tournament',
                 component: () => import('@/views/calendar/tournaments/ManageTournament.vue'),
-                meta: { title: 'Manage Tournament' }
+                meta: { title: 'Управление' }
               }
             ]
           },
@@ -166,25 +166,25 @@ const routes = [
                 path: '',
                 name: 'Playgrounds',
                 component: () => import('@/views/calendar/playgrounds/MainPlaygrounds.vue'),
-                meta: { title: 'Playgrounds' }
+                meta: { title: 'Площадки' }
               },
               {
                 path: 'accreditation',
                 name: 'Accreditation-Playground',
                 component: () => import('@/views/calendar/playgrounds/AccreditationPlayground.vue'),
-                meta: { title: 'Accreditation Playground' }
+                meta: { title: 'Аккредитация' }
               },
               {
                 path: 'create-playground',
                 name: 'Create-Playground',
                 component: () => import('@/views/calendar/playgrounds/CreatePlayground.vue'),
-                meta: { title: 'Create Playground' }
+                meta: { title: 'Создание' }
               },
               {
                 path: 'edit/:id',
                 name: 'Edit-Playground',
                 component: () => import('@/views/calendar/playgrounds/EditPlayground.vue'),
-                meta: { title: 'Edit Playground' }
+                meta: { title: 'Редактирование' }
               }
             ]
           }
@@ -200,7 +200,8 @@ const routes = [
       {
         path: '/tournaments',
         name: 'AllTournaments',
-        component: () => import('@/views/Tournaments.vue')
+        component: () => import('@/views/Tournaments.vue'),
+        meta: { title: 'Турниры' }
       }
     ]
   },
@@ -208,18 +209,18 @@ const routes = [
   {
     path: '/teams',
     component: Layout,
-    meta: { title: 'AllTeams' },
     children: [
       {
         path: '',
         name: 'AllTeams',
-        component: () => import('@/views/Teams')
+        component: () => import('@/views/Teams'),
+        meta: { title: 'Все Команды' }
       },
       {
         path: 'edit/:id',
         name: 'EditAllTeam',
         component: () => import('@/views/Teams/Edit.vue'),
-        meta: { title: 'Edit Team' }
+        meta: { title: 'О команде' }
       }
     ]
   },
@@ -232,7 +233,7 @@ const routes = [
         path: '/trainers',
         name: 'Trainers',
         component: () => import('@/views/trainers'),
-        meta: { title: 'Trainers', icon: 'trainers' }
+        meta: { title: 'Тренера', icon: 'trainers' }
       }
     ]
   },
@@ -244,7 +245,8 @@ const routes = [
       {
         path: '/playgrounds',
         name: 'AllPlaygrounds',
-        component: () => import('@/views/Playgrounds.vue')
+        component: () => import('@/views/Playgrounds.vue'),
+        meta: { title: 'Площадки' }
       }
     ]
   },

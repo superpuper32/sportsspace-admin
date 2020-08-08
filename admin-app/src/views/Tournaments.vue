@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Турниры</h2>
+    <h2>Все Турниры</h2>
 
     <div class="profile__cards">
       <div v-for="tournament in tournaments" v-bind:key="tournament.index">

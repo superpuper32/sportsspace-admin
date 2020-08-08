@@ -5,12 +5,7 @@
         <button></button>
       </div>
 
-      <div class="top-bar__add">
-        <button></button>
-      </div>
-
       <div class="top-bar__title">
-        <!-- <h3>Календарь</h3> -->
         <breadcrumb class="breadcrumb-container" />
       </div>
     </div>
@@ -93,3 +88,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover
+  color: #0D9372
+</style>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2>Команды</h2>
+    <h2>Все Команды</h2>
 
     <div class="profile__cards">
       <div v-for="team in teams" v-bind:key="team.index">
