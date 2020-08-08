@@ -10,7 +10,8 @@
       </div>
 
       <div class="top-bar__title">
-        <h3>Календарь</h3>
+        <!-- <h3>Календарь</h3> -->
+        <breadcrumb class="breadcrumb-container" />
       </div>
     </div>
 
@@ -72,10 +73,13 @@
 </template>
 
 <script>
+import Breadcrumb from '@/components/Breadcrumb'
+
 export default {
   name: 'NavBar',
   components: {
-    InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue')
+    InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue'),
+    Breadcrumb
   },
   data: function() {
     return {
