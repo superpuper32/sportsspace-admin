@@ -1,4 +1,8 @@
-@import './sidebar.sass'
+@import './element-ui.sass'
+@import "./variables.scss"
+@import "./mixin.sass"
+@import './transition.sass'
+@import './sidebar.scss'
 @import './main.sass'
 @import './main-content.sass'
 @import './top-bar.sass'
@@ -23,6 +27,7 @@ body
         display: none
 
 h1, h2, h3, h4, h5, h6
+    margin: 0px
     font-family: SF Pro Display
     font-style: normal
     font-weight: normal
@@ -42,29 +47,5 @@ h5
     font-size: 17px
     line-height: 22px
 
-.no-redirect
-    font-style: normal
-    font-weight: normal
-    font-size: 20px
-    line-height: 25px
-    color: #98a9bc !important
-
-.app-breadcrumb.el-breadcrumb.breadcrumb-container
-    margin-left: 0
-    line-height: 25px
-
-.el-breadcrumb__inner a, .el-breadcrumb__inner.is-link
-    font-style: normal
-    font-weight: normal
-    font-size: 20px
-    line-height: 25px
-    color: #2C2E3F
-
-    &:hover
-        color: #0D9372
-
-.el-breadcrumb__separator
-    font-weight: normal
-    font-size: 20px
-    line-height: 25px
-    color: #98a9bc
+a
+    text-decoration: none

@@ -1,28 +1,17 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import getters from './getters'
+import app from './modules/app'
+import settings from './modules/settings'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  strict: process.env.NODE_ENV !== 'production',
-  state: {
-    teams: []
+  modules: {
+    app,
+    settings
   },
-  getters: {
-    titleCount: state => state.title.length
-  },
-  mutations: {
-    setTeams: (state, payload) => (state.teams = payload)
-  },
-  actions: {
-    loadUsers({ commit }) {
-      axios
-        .get('http://localhost:3004/teams')
-        .then(response => commit('setTeams', response.data))
-        .catch(error => console.error(error))
-    }
-  }
+  getters
 })
 
 export default store

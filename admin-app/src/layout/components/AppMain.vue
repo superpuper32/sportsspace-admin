@@ -1,5 +1,5 @@
 <template>
-  <section class="main-content">
+  <section class="app-main">
     <transition name="fade-transform" mode="out-in">
       <router-view :key="key" />
     </transition>
@@ -16,3 +16,27 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.app-main {
+  /*50 = navbar  */
+  padding: 24px;
+  min-height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f8fafb;
+}
+.fixed-header + .app-main {
+  padding-top: 50px;
+}
+</style>
+
+<style lang="scss">
+// fix css style bug in open el-dialog
+.el-popup-parent--hidden {
+  .fixed-header {
+    padding-right: 15px;
+  }
+}
+</style>

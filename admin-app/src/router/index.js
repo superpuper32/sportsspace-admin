@@ -10,12 +10,13 @@ const routes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
+    hidden: true,
     children: [
       {
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard' }
+        meta: { title: 'Dashboard' }
       }
     ]
   },
@@ -23,7 +24,8 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/login/index')
+    component: () => import('@/views/login/index'),
+    hidden: true
   },
 
   {
@@ -31,6 +33,7 @@ const routes = [
     component: Layout,
     name: 'Settings',
     meta: { title: 'Settings' },
+    hidden: true,
     children: [
       {
         path: '/settings',
@@ -77,7 +80,7 @@ const routes = [
     path: '/calendar',
     component: Layout,
     name: 'Calendar',
-    meta: { title: 'Календарь' },
+    meta: { title: 'Календарь', icon: 'calendar-sidebar' },
     children: [
       {
         path: '/calendar',
@@ -196,12 +199,13 @@ const routes = [
   {
     path: '/tournaments',
     component: Layout,
+    meta: { title: 'Турниры', icon: 'tournaments' },
     children: [
       {
         path: '/tournaments',
         name: 'AllTournaments',
-        component: () => import('@/views/Tournaments.vue'),
-        meta: { title: 'Турниры' }
+        component: () => import('@/views/Tournaments.vue')
+        // meta: { title: 'Турниры', icon: 'tournaments' }
       }
     ]
   },
@@ -209,18 +213,17 @@ const routes = [
   {
     path: '/teams',
     component: Layout,
+    meta: { title: 'Команды', icon: 'teams' },
     children: [
       {
         path: '',
         name: 'AllTeams',
-        component: () => import('@/views/Teams'),
-        meta: { title: 'Все Команды' }
+        component: () => import('@/views/Teams')
       },
       {
         path: 'edit/:id',
         name: 'EditAllTeam',
-        component: () => import('@/views/Teams/Edit.vue'),
-        meta: { title: 'О команде' }
+        component: () => import('@/views/Teams/Edit.vue')
       }
     ]
   },
@@ -228,12 +231,12 @@ const routes = [
   {
     path: '/trainers',
     component: Layout,
+    meta: { title: 'Тренера', icon: 'trainers' },
     children: [
       {
         path: '/trainers',
         name: 'Trainers',
-        component: () => import('@/views/trainers'),
-        meta: { title: 'Тренера', icon: 'trainers' }
+        component: () => import('@/views/trainers')
       }
     ]
   },
@@ -241,12 +244,13 @@ const routes = [
   {
     path: '/playgrounds',
     component: Layout,
+    meta: { title: 'Площадки', icon: 'playgrounds' },
     children: [
       {
         path: '/playgrounds',
         name: 'AllPlaygrounds',
-        component: () => import('@/views/Playgrounds.vue'),
-        meta: { title: 'Площадки' }
+        component: () => import('@/views/Playgrounds.vue')
+        // meta: { title: 'Площадки', icon: 'playgrounds' }
       }
     ]
   },
@@ -254,38 +258,48 @@ const routes = [
   {
     path: '/contacts',
     component: Layout,
+    meta: { title: 'Контакты', icon: 'contacts' },
     children: [
       {
         path: '/contacts',
         name: 'Contacts',
         component: () => import('@/views/Contacts.vue')
+        // meta: { title: 'Контакты', icon: 'contacts' }
       }
     ]
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  linkExactActiveClass: 'active',
-  scrollBehavior: () => ({ y: 0 }),
-  routes
-})
+const createRouter = () =>
+  new VueRouter({
+    mode: 'history',
+    linkExactActiveClass: 'active',
+    scrollBehavior: () => ({ y: 0 }),
+    routes
+  })
 
-const token = '123'
+const router = createRouter()
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (token !== '123') {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
-      })
-    } else {
-      next()
-    }
-  } else {
-    next()
-  }
-})
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
+
+// const token = '123'
+
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     if (token !== '123') {
+//       next({
+//         path: '/login',
+//         query: { redirect: to.fullPath }
+//       })
+//     } else {
+//       next()
+//     }
+//   } else {
+//     next()
+//   }
+// })
 
 export default router
