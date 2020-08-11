@@ -105,10 +105,11 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  position: relative;
+  position: sticky;
+  top: 0;
   background: #fff;
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12);
+  z-index: 500;
 
   .hamburger-container {
     margin-right: 66px;

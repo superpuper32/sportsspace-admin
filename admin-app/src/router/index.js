@@ -16,7 +16,7 @@ const routes = [
         path: 'dashboard',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard' }
+        meta: { title: 'Профиль' }
       }
     ]
   },
@@ -32,7 +32,7 @@ const routes = [
     path: '/settings',
     component: Layout,
     name: 'Settings',
-    meta: { title: 'Settings' },
+    meta: { title: 'Настройки' },
     hidden: true,
     children: [
       {

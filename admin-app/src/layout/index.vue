@@ -7,7 +7,7 @@
     />
     <sidebar class="sidebar-container" />
 
-    <div class="main-container">
+    <main class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
         <nav-bar />
       </div>
@@ -15,7 +15,7 @@
       <app-main />
 
       <footer-bar />
-    </div>
+    </main>
   </div>
 </template>
 

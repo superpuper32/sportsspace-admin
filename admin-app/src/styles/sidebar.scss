@@ -34,17 +34,28 @@
     }
 
     .sidebar__title {
-      padding-top: 26px;
-      margin-bottom: 24px;
+      position: relative;
+      padding-top: 64px;
       text-align: center;
-      font-size: 18px;
 
-      a {
-        color: #008dff;
-        text-decoration: none;
-        &:hover {
-          text-decoration: none;
-        }
+      a:before {
+        content: '';
+        position: absolute;
+        width: 107px;
+        height: 21px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &_opened:before {
+        background: url(../assets/sidebar-logo.svg) center center no-repeat;
+      }
+
+      &_closed:before {
+        width: 20px;
+        height: 20px;
+        background: url(../assets/sidebar-logo_closed.svg) center center no-repeat;
       }
     }
 
