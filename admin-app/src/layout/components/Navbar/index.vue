@@ -1,12 +1,14 @@
 <template>
   <nav class="navbar">
-    <hamburger
-      :is-active="sidebar.opened"
-      class="hamburger-container"
-      @toggleClick="toggleSideBar"
-    />
+    <div>
+      <hamburger
+        :is-active="sidebar.opened"
+        class="hamburger-container"
+        @toggleClick="toggleSideBar"
+      />
 
-    <breadcrumb class="breadcrumb-container" />
+      <breadcrumb class="breadcrumb-container" />
+    </div>
 
     <div class="top-bar__settings">
       <input-search />
@@ -98,23 +100,22 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  height: 50px;
+  padding: 0px 24px;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   overflow: hidden;
   position: relative;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12);
 
   .hamburger-container {
-    line-height: 46px;
+    margin-right: 66px;
     height: 100%;
     float: left;
     cursor: pointer;
-    transition: background 0.3s;
     -webkit-tap-highlight-color: transparent;
-
-    &:hover {
-      background: rgba(0, 0, 0, 0.025);
-    }
   }
 
   .breadcrumb-container {
