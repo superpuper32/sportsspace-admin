@@ -1,11 +1,15 @@
 <template>
   <nav class="navbar">
-    <div>
+    <div class="navbar__menu">
       <hamburger
         :is-active="sidebar.opened"
         class="hamburger-container"
         @toggleClick="toggleSideBar"
       />
+
+      <div class="navbar__add">
+        <button></button>
+      </div>
 
       <breadcrumb class="breadcrumb-container" />
     </div>
@@ -75,7 +79,7 @@ import Hamburger from '@/components/Hamburger'
 export default {
   name: 'NavBar',
   components: {
-    InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue'),
+    // InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue'),
     Breadcrumb,
     Hamburger
   },
@@ -111,8 +115,34 @@ export default {
   box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12);
   z-index: 500;
 
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button {
+      display: flex;
+      align-items: center;
+      height: 24px;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  &__add {
+    margin-right: 12px;
+
+    button {
+      width: 24px;
+      height: 24px;
+      border: 0;
+      outline: none;
+      background-color: transparent;
+      background: url(../../../assets/top-bar_add.svg) center center no-repeat;
+    }
+  }
+
   .hamburger-container {
-    margin-right: 66px;
+    margin-right: 20px;
     height: 100%;
     float: left;
     cursor: pointer;
@@ -120,59 +150,10 @@ export default {
   }
 
   .breadcrumb-container {
+    display: flex;
+    align-items: center;
+    line-height: 24px !important;
     float: left;
-  }
-
-  .right-menu {
-    float: right;
-    height: 100%;
-    line-height: 50px;
-
-    &:focus {
-      outline: none;
-    }
-
-    .right-menu-item {
-      display: inline-block;
-      padding: 0 8px;
-      height: 100%;
-      font-size: 18px;
-      color: #5a5e66;
-      vertical-align: text-bottom;
-
-      &.hover-effect {
-        cursor: pointer;
-        transition: background 0.3s;
-
-        &:hover {
-          background: rgba(0, 0, 0, 0.025);
-        }
-      }
-    }
-
-    .avatar-container {
-      margin-right: 30px;
-
-      .avatar-wrapper {
-        margin-top: 5px;
-        position: relative;
-
-        .user-avatar {
-          cursor: pointer;
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-        }
-
-        .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
-        }
-      }
-    }
   }
 }
 </style>

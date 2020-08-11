@@ -205,7 +205,6 @@ const routes = [
         path: '/tournaments',
         name: 'AllTournaments',
         component: () => import('@/views/Tournaments.vue')
-        // meta: { title: 'Турниры', icon: 'tournaments' }
       }
     ]
   },
@@ -221,7 +220,7 @@ const routes = [
         component: () => import('@/views/Teams')
       },
       {
-        path: 'edit/:id',
+        path: ':id',
         name: 'EditAllTeam',
         component: () => import('@/views/Teams/Edit.vue')
       }
@@ -232,6 +231,7 @@ const routes = [
     path: '/trainers',
     component: Layout,
     meta: { title: 'Тренера', icon: 'trainers' },
+    hidden: true,
     children: [
       {
         path: '/trainers',
@@ -250,7 +250,6 @@ const routes = [
         path: '/playgrounds',
         name: 'AllPlaygrounds',
         component: () => import('@/views/Playgrounds.vue')
-        // meta: { title: 'Площадки', icon: 'playgrounds' }
       }
     ]
   },
@@ -259,12 +258,12 @@ const routes = [
     path: '/contacts',
     component: Layout,
     meta: { title: 'Контакты', icon: 'contacts' },
+    hidden: true,
     children: [
       {
         path: '/contacts',
         name: 'Contacts',
         component: () => import('@/views/Contacts.vue')
-        // meta: { title: 'Контакты', icon: 'contacts' }
       }
     ]
   }

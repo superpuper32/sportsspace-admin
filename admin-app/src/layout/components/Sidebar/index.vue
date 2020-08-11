@@ -1,11 +1,7 @@
 <template>
   <aside>
-    <!-- <h2 class="sidebar__title">
-      <router-link to="/" data-page="dashboard">SportsSpace</router-link>
-    </h2>-->
     <div class="sidebar__title">
-      <router-link v-if="sidebar.opened" to="/" class="sidebar__title_opened"></router-link>
-      <router-link v-else to="/" class="sidebar__title_closed"></router-link>
+      <router-link to="/" :class="sidebarLogo"></router-link>
     </div>
 
     <div :class="{ 'has-logo': showLogo }">
@@ -61,6 +57,12 @@ export default {
     },
     isCollapse() {
       return !this.sidebar.opened
+    },
+    sidebarLogo() {
+      if (this.sidebar.opened) {
+        return 'sidebar__title_opened'
+      }
+      return 'sidebar__title_closed'
     }
   }
 }

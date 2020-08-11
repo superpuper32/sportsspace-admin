@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-card">
     <div v-if="team.avatar_file_name" class="dashboard-card__img">
-      <img :src="imageUrl" alt />
+      <img :src="imageUrl" />
     </div>
 
     <div v-else class="dashboard-card__img">
@@ -12,7 +12,9 @@
       {{ team.name }}
       <span>{{ team.address }}</span>
     </div>
+
     <div class="dashboard-card__sport">{{ team.sport }}</div>
+
     <div class="dashboard-card__title">
       {{ team.occupancy }}
       <span>Игроков</span>
@@ -28,11 +30,13 @@
       <span>Поражений</span>
     </div>
 
-    <div class="dashboard-card__status dashboard-card__status_primary">
-      <router-link tag="button" :to="`/teams/edit/${team.id}`" class="button button__card-main">
-        <a>Перейти</a>
-      </router-link>
-    </div>
+    <!-- <div class="dashboard-card__status dashboard-card__status_primary">
+    </div>-->
+    <router-link
+      :to="`/teams/${team.id}`"
+      class="dashboard-card__status dashboard-card__status_primary"
+    >Перейти</router-link>
+
     <button class="dashboard-card__button"></button>
   </div>
 </template>
