@@ -31,19 +31,13 @@
 
       <div class="top-bar__avatar">
         <button @click="toggle" class="top-bar__img">
-          <img
-            src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&amp;d=retro"
-            alt="Avatar"
-          />
+          <img src="https://sportsspace.ru/images/users/40/avatar/40.jpeg" alt="Avatar" />
         </button>
 
         <div v-show="isOpen" class="top-bar__avatar-menu">
           <div class="top-bar__profile">
             <div class="top-bar__avatar-img">
-              <img
-                src="https://www.gravatar.com/avatar/e3c4bc11e6b5852d8709c907104ef048?s=140&amp;d=retro"
-                alt="Avatar"
-              />
+              <img src="https://sportsspace.ru/images/users/40/avatar/40.jpeg" alt="Avatar" />
             </div>
 
             <div class="top-bar__user-details">

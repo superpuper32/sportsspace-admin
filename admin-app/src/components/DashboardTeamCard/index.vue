@@ -70,7 +70,7 @@ export default {
         : `${imageUrl}.jpg`
     },
     captainName() {
-      return `${this.team.user.nickname}`
+      return `${this.team.user_id}`
     }
   }
 }

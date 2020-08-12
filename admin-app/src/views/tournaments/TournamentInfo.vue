@@ -1,8 +1,9 @@
 <template>
   <section class="team-info">
     <div v-if="!tournament">Loading >>></div>
+
     {{ tournament.name }}
-    {{ tournament.address }}
+    <div>{{ tournament.address }}</div>
   </section>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <profile-user :profile="profile" />
+  <profile-user :profile="profile" :teams="teams" :tournaments="tournaments" />
 </template>
 
 <script>
@@ -12,17 +12,33 @@ export default {
   },
   data: function() {
     return {
-      profile: null
+      profile: null,
+      teams: [],
+      tournaments: []
     }
   },
   mounted() {
     this.loadProfile()
+    this.loadTeams()
+    this.loadTournaments()
   },
   methods: {
-    loadProfile() {
-      axios
-        .get('http://localhost:3004/profile/0')
-        .then(response => (this.profile = response.data))
+    async loadProfile() {
+      await axios
+        .get('https://devtest.sportsspace.ru/api/v1/current_user.json')
+        .then(response => (this.profile = response.data.current_user))
+        .catch(error => console.error(error))
+    },
+    async loadTeams() {
+      await axios
+        .get('https://devtest.sportsspace.ru/api/v1/current_user.json')
+        .then(response => (this.teams = response.data.i_cap_teams))
+        .catch(error => console.error(error))
+    },
+    async loadTournaments() {
+      await axios
+        .get('https://devtest.sportsspace.ru/api/v1/current_user.json')
+        .then(response => (this.tournaments = response.data.i_cap_tournaments))
         .catch(error => console.error(error))
     }
   }
