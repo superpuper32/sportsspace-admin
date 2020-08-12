@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .app-main {
   /*50 = navbar  */
   padding: 24px;
@@ -26,7 +26,11 @@ export default {
   overflow: hidden;
   background-color: #f8fafb;
   z-index: 499;
+  @media (max-width: 540px) {
+    padding: 15px;
+  }
 }
+
 .fixed-header + .app-main {
   padding-top: 50px;
 }

@@ -1,5 +1,5 @@
 <template>
-  <profile :profile="profile" />
+  <profile-user :profile="profile" />
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import axios from 'axios'
 export default {
   name: 'Dashboard',
   components: {
-    Profile: () => import('@/components/Profile/index.vue')
+    ProfileUser: () => import('@/components/ProfileUser/index.vue')
   },
   data: function() {
     return {

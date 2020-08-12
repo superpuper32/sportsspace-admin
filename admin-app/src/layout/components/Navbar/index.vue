@@ -139,6 +139,10 @@ export default {
       background-color: transparent;
       background: url(../../../assets/top-bar_add.svg) center center no-repeat;
     }
+
+    @media (max-width: 540px) {
+      display: none;
+    }
   }
 
   .hamburger-container {

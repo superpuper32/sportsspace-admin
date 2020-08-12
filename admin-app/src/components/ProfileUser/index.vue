@@ -102,7 +102,7 @@
 
 <script>
 export default {
-  name: 'Profile',
+  name: 'ProfileUser',
   components: {
     DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
     DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
