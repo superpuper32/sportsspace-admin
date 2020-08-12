@@ -202,9 +202,14 @@ const routes = [
     meta: { title: 'Турниры', icon: 'tournaments' },
     children: [
       {
-        path: '/tournaments',
+        path: '',
         name: 'AllTournaments',
-        component: () => import('@/views/Tournaments.vue')
+        component: () => import('@/views/tournaments/index.vue')
+      },
+      {
+        path: ':id',
+        name: 'TiurnamentInfo',
+        component: () => import('@/views/tournaments/TournamentInfo.vue')
       }
     ]
   },

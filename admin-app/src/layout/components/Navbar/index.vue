@@ -79,7 +79,7 @@ import Hamburger from '@/components/Hamburger'
 export default {
   name: 'NavBar',
   components: {
-    // InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue'),
+    InputSearch: () => import('@/layout/components/NavBar/InputSearch.vue'),
     Breadcrumb,
     Hamburger
   },

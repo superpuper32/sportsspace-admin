@@ -1,14 +1,22 @@
 <template>
   <div class="dashboard-card">
-    <div class="dashboard-card__img">
-      <!-- <img src="../../assets/voleyball_logo.svg" /> -->
+    <div v-if="tournament.avatar_file_name" class="dashboard-card__img">
       <img :src="imageUrl" />
     </div>
-    <div class="dashboard-card__sport">{{ tournament.sport }}</div>
-    <div class="dashboard-card__title">{{ tournament.name.toLowerCase() }}</div>
+
+    <div v-else class="dashboard-card__img">
+      <img src="../../assets/voleyball_logo.svg" />
+    </div>
+
+    <div class="dashboard-card__sport">{{ sportName }}</div>
+
+    <div class="dashboard-card__title">{{ tournamentName }}</div>
+
     <div class="dashboard-card__date">{{ tournament.data_and_time }}</div>
+
     <div class="dashboard-card__status dashboard-card__status_warning">Стартовал</div>
-    <button class="dashboard-card__button"></button>
+
+    <router-link tag="button" :to="`/tournaments/${tournament.id}`" class="dashboard-card__button"></router-link>
   </div>
 </template>
 
@@ -23,7 +31,18 @@ export default {
   },
   computed: {
     imageUrl() {
-      return `https://sportsspace.ru/images/tournaments/${this.tournament.id}/logo/${this.tournament.id}.jpg`
+      const imageUrl = `https://sportsspace.ru/images/tournaments/${this.tournament.id}/logo/${this.tournament.id}`
+
+      return this.tournament.avatar_file_name.split('.')[1] === 'jpeg'
+        ? `${imageUrl}.jpeg`
+        : `${imageUrl}.jpg`
+    },
+    tournamentName() {
+      return this.tournament.name.toLowerCase()
+    },
+    sportName() {
+      const str = this.tournament.sport
+      return str[0].toUpperCase() + str.slice(1).toLowerCase()
     }
   }
 }
@@ -99,4 +118,5 @@ export default {
     outline: none
     background-color: transparent
     background: url(../../assets/dashboard_btn.svg) center center no-repeat
+    cursor: pointer
 </style>

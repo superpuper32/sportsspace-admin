@@ -6,7 +6,7 @@
       </div>
 
       <div v-else class="dashboard-card__img">
-        <img src="../../assets/avatar_team.svg" alt />
+        <img src="../../assets/avatar_team.svg" />
       </div>
 
       <div class="dashboard-card__title">

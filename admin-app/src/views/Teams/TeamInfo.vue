@@ -77,16 +77,6 @@ export default {
     },
     url() {
       return `${this.restUrl}${this.id}.json`
-    },
-    haveImg() {
-      return this.team.avatar_file_name !== null
-    },
-    imageUrl() {
-      const imageUrl = `https://sportsspace.ru/images/command/${this.team.id}/logo/${this.team.id}`
-
-      return this.team.avatar_file_name.split('.')[1] === 'jpeg'
-        ? `${imageUrl}.jpeg`
-        : `${imageUrl}.jpg`
     }
   },
   mounted() {
