@@ -18,11 +18,9 @@ export default {
   components: {
     DashboardTeamCard: () => import('@/components/DashboardTeamCard')
   },
-  data: function() {
-    return {
-      teams: []
-    }
-  },
+  data: () => ({
+    teams: []
+  }),
   mounted() {
     this.loadTeams()
   },

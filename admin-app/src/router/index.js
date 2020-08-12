@@ -217,12 +217,12 @@ const routes = [
       {
         path: '',
         name: 'AllTeams',
-        component: () => import('@/views/Teams')
+        component: () => import('@/views/teams/index.vue')
       },
       {
         path: ':id',
-        name: 'EditAllTeam',
-        component: () => import('@/views/Teams/Edit.vue')
+        name: 'TeamInfo',
+        component: () => import('@/views/teams/TeamInfo.vue')
       }
     ]
   },
