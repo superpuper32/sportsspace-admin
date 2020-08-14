@@ -41,9 +41,9 @@
             </div>
 
             <div class="top-bar__user-details">
-              <div class="top-bar__name">User Name</div>
+              <div class="top-bar__name">{{ fullName }}</div>
 
-              <div class="top-bar__mail">mail@sportsspace.ru</div>
+              <div class="top-bar__mail">{{ profile.email }}</div>
             </div>
           </div>
 
@@ -83,7 +83,20 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['sidebar'])
+    ...mapGetters(['sidebar', 'profile']),
+    avatar() {
+      if (this.profile) {
+        return `https://sportsspace.ru/images/users/${this.profile.id}/avatar/${this.profile.id}.jpeg`
+      }
+
+      return ''
+    },
+    fullName() {
+      return `${this.profile.first_name}  ${this.profile.last_name}`
+    }
+  },
+  mounted() {
+    this.$store.dispatch('profile/GET_PROFILE')
   },
   methods: {
     toggleSideBar() {

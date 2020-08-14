@@ -16,7 +16,7 @@
               </div>
             </div>
 
-            <div class="profile__name">{{ profile.first_name }} {{ profile.last_name }}</div>
+            <div class="profile__name">{{ fullName }}</div>
 
             <div class="profile__position">{{ profile.role }}</div>
 
@@ -114,22 +114,17 @@ export default {
     // DashboardPracticeCard: () => import('@/components/DashboardPracticeCard'),
     DashboardPlaygroundCard: () => import('@/components/DashboardPlaygroundCard')
   },
-  props: {
-    teams: {
-      type: Array
-    },
-    tournaments: {
-      type: Array
-    }
-  },
   computed: {
-    ...mapGetters(['profile']),
+    ...mapGetters(['profile', 'teams', 'tournaments']),
     avatar() {
       if (this.profile) {
         return `https://sportsspace.ru/images/users/${this.profile.id}/avatar/${this.profile.id}.jpeg`
       }
 
       return ''
+    },
+    fullName() {
+      return `${this.profile.first_name}  ${this.profile.last_name}`
     },
     balance() {
       return this.profile.balans || '0'
@@ -143,6 +138,8 @@ export default {
   },
   mounted() {
     this.$store.dispatch('profile/GET_PROFILE')
+    this.$store.dispatch('profile/GET_TEAMS')
+    this.$store.dispatch('profile/GET_TOURNAMENTS')
   }
 }
 </script>
