@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Teams',
@@ -37,25 +37,14 @@ export default {
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')
   },
-  data: function() {
-    return {
-      teams: []
-    }
-  },
   mounted() {
-    this.loadTeams()
+    // this.loadTeams()
+    this.$store.dispatch('profile/GET_TEAMS')
   },
   computed: {
+    ...mapGetters(['teams']),
     haveTeams() {
       return this.teams.length > 0
-    }
-  },
-  methods: {
-    loadTeams() {
-      axios
-        .get('http://localhost:3004/teams')
-        .then(response => (this.teams = response.data))
-        .catch(error => console.error(error))
     }
   }
 }

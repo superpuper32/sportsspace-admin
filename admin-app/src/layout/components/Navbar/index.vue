@@ -31,19 +31,19 @@
 
       <div class="top-bar__avatar">
         <button @click="toggle" class="top-bar__img">
-          <img src="https://sportsspace.ru/images/users/40/avatar/40.jpeg" alt="Avatar" />
+          <img :src="avatar" alt="Avatar" />
         </button>
 
         <div v-show="isOpen" class="top-bar__avatar-menu">
           <div class="top-bar__profile">
             <div class="top-bar__avatar-img">
-              <img src="https://sportsspace.ru/images/users/40/avatar/40.jpeg" alt="Avatar" />
+              <img :src="avatar" alt="Avatar" />
             </div>
 
             <div class="top-bar__user-details">
               <div class="top-bar__name">{{ fullName }}</div>
 
-              <div class="top-bar__mail">{{ profile.email }}</div>
+              <div class="top-bar__mail">{{ emailUser }}</div>
             </div>
           </div>
 
@@ -92,7 +92,16 @@ export default {
       return ''
     },
     fullName() {
-      return `${this.profile.first_name}  ${this.profile.last_name}`
+      if (this.profile) {
+        return `${this.profile.first_name}  ${this.profile.last_name}`
+      }
+      return ''
+    },
+    emailUser() {
+      if (this.profile) {
+        return this.profile.email
+      }
+      return ''
     }
   },
   mounted() {

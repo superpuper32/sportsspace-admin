@@ -7,9 +7,9 @@
         </div>
 
         <div>
-          <h4>{{ tournament.title }}</h4>
+          <h4>{{ tournament.name }}</h4>
 
-          <span>Дата создания: {{ tournament.created }}</span>
+          <span>Дата создания: {{ createdAt }}</span>
 
           <p>
             Положение о проведении соревнований по классическому волейболу среди любительских
@@ -44,7 +44,8 @@
       <div class="tournament-card__place">
         <span>Место проведения турнира</span>
         Спортивный комплекс - СК «Прометей»
-        <br />пос. Коммунарка, 11а, Москва, 108814
+        <br />
+        {{ tournament.address }}
       </div>
 
       <div class="tournament-card__team">
@@ -54,14 +55,14 @@
 
       <div class="tournament-card__date">
         <span>Информация</span>
-        {{ tournament.date }}
+        {{ dateTour }}
         <br />
-        Начало в {{ tournament.time }}
+        Начало в {{ timeTour }}
       </div>
 
       <div class="tournament-card__price">
         <span>Цена</span>
-        420 ₽
+        {{ priceTour }} ₽
       </div>
     </div>
   </div>
@@ -74,6 +75,23 @@ export default {
     tournament: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    createdAt() {
+      return this.tournament.created_at.slice(0, 10)
+    },
+    priceTour() {
+      if (this.tournament.price) {
+        return this.tournament.price
+      }
+      return '0'
+    },
+    dateTour() {
+      return this.tournament.data_and_time.slice(0, 10)
+    },
+    timeTour() {
+      return this.tournament.data_and_time.slice(11, 16)
     }
   }
 }

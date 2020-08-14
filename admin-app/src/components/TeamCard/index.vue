@@ -6,30 +6,30 @@
       </div>
 
       <div class="team-card__heading">
-        <h4>{{ team.title }}</h4>
+        <h4>{{ team.name }}</h4>
         <span>{{ team.address }}</span>
       </div>
 
       <div class="team-card__rate-info">
-        <div class="team-card__status">{{ team.players }}</div>
+        <div class="team-card__status">23</div>
 
-        <div class="team-card__rate">{{ team.wins }}</div>
+        <div class="team-card__rate">{{ ratingTeam }}</div>
       </div>
     </div>
 
     <div class="team-card__created">
-      <span>создан {{ team.created }}</span>
+      <span>создан {{ createdDate }}</span>
     </div>
 
     <div class="team-card__properties">
       <div class="team-card__property">
         <div class="team-card__key">Вид спорта:</div>
-        <div class="team-card__value">{{ team.sport.kind }}</div>
+        <div class="team-card__value">Воллейбол</div>
       </div>
 
       <div class="team-card__property">
         <div class="team-card__key">Капитан:</div>
-        <div class="team-card__value">{{ fullName }}</div>
+        <div class="team-card__value">Имя Фамилия</div>
       </div>
     </div>
 
@@ -59,6 +59,12 @@ export default {
   computed: {
     fullName() {
       return `${this.team.captainName.first} ${this.team.captainName.last}`
+    },
+    createdDate() {
+      return this.team.created_at.slice(0, 10)
+    },
+    ratingTeam() {
+      return '0'
     }
   }
 }
