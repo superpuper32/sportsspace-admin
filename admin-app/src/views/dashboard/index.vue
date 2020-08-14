@@ -1,9 +1,10 @@
 <template>
-  <profile-user :profile="profile" :teams="teams" :tournaments="tournaments" />
+  <profile-user :teams="teams" :tournaments="tournaments" />
 </template>
 
 <script>
 import axios from 'axios'
+// import { mapGetters } from 'vuex'
 
 export default {
   name: 'Dashboard',
@@ -12,23 +13,15 @@ export default {
   },
   data: function() {
     return {
-      profile: null,
       teams: [],
       tournaments: []
     }
   },
   mounted() {
-    this.loadProfile()
     this.loadTeams()
     this.loadTournaments()
   },
   methods: {
-    async loadProfile() {
-      await axios
-        .get('https://devtest.sportsspace.ru/api/v1/current_user.json')
-        .then(response => (this.profile = response.data.current_user))
-        .catch(error => console.error(error))
-    },
     async loadTeams() {
       await axios
         .get('https://devtest.sportsspace.ru/api/v1/current_user.json')

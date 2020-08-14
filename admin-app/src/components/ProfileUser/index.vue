@@ -104,6 +104,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'ProfileUser',
   components: {
@@ -113,10 +115,6 @@ export default {
     DashboardPlaygroundCard: () => import('@/components/DashboardPlaygroundCard')
   },
   props: {
-    profile: {
-      type: Object,
-      required: true
-    },
     teams: {
       type: Array
     },
@@ -125,6 +123,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['profile']),
     avatar() {
       if (this.profile) {
         return `https://sportsspace.ru/images/users/${this.profile.id}/avatar/${this.profile.id}.jpeg`
@@ -141,6 +140,9 @@ export default {
     playgrounds() {
       return this.profile.i_cap_playgrounds
     }
+  },
+  mounted() {
+    this.$store.dispatch('profile/GET_PROFILE')
   }
 }
 </script>

@@ -45,7 +45,8 @@
       <router-link
         :to="`/teams/${team.id}`"
         class="dashboard-card__status dashboard-card__status_primary"
-      >Перейти</router-link>
+        >Перейти</router-link
+      >
 
       <button class="dashboard-card__button"></button>
     </div>

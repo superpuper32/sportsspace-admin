@@ -16,7 +16,11 @@
 
     <div class="dashboard-card__status dashboard-card__status_warning">Стартовал</div>
 
-    <router-link tag="button" :to="`/tournaments/${tournament.id}`" class="dashboard-card__button"></router-link>
+    <router-link
+      tag="button"
+      :to="`/tournaments/${tournament.id}`"
+      class="dashboard-card__button"
+    ></router-link>
   </div>
 </template>
 
