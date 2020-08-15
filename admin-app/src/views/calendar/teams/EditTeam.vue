@@ -28,7 +28,7 @@ export default {
   },
   data: () => ({
     team: null,
-    restUrl: 'http://localhost:3004/teams/'
+    restUrl: 'https://devtest.sportsspace.ru/api/v1/commands/'
   }),
   computed: {
     id() {

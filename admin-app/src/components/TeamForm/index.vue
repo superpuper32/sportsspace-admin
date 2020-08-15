@@ -4,7 +4,7 @@
       <div class="create-form__column">
         <div class="simple-input">
           <label for="name">Название</label>
-          <input type="text" name="name" placeholder="Введите название" v-model="localTeam.title" />
+          <input type="text" name="name" placeholder="Введите название" v-model="localTeam.name" />
         </div>
 
         <div class="simple-input">
@@ -13,14 +13,14 @@
             type="text"
             name="captain"
             placeholder="Выберите капитана"
-            v-model="localTeam.fullName"
+            v-model="localTeam.user_id"
           />
         </div>
 
         <div class="simple-input">
           <label for="sport">Вид спорта</label>
 
-          <select name="sport" v-model="localTeam.sport.kind">
+          <select name="sport">
             <option value="voleyball">Волейбол</option>
             <option value="football">Футбол</option>
           </select>
@@ -63,7 +63,7 @@
             type="text"
             name="address-playground"
             placeholder="Выберите адрес площадки"
-            v-model="localTeam.addressPlayground"
+            v-model="localTeam.address_zal"
           />
         </div>
       </div>
@@ -74,12 +74,7 @@
     <div class="simple-input">
       <label for="trainer">Тренер</label>
 
-      <input
-        type="text"
-        name="trainer"
-        placeholder="Выберите тренера"
-        v-model="localTeam.trainer"
-      />
+      <input type="text" name="trainer" placeholder="Выберите тренера" v-model="localTeam.trainer" />
     </div>
 
     <div class="create-form__columns">
@@ -87,12 +82,7 @@
         <div class="simple-input">
           <label for="playdays">Дни недели встреч</label>
 
-          <input
-            type="date"
-            name="playdays"
-            placeholder="30.05.2020"
-            v-model="localTeam.playdays"
-          />
+          <input type="date" name="playdays" placeholder="30.05.2020" v-model="localTeam.playdays" />
         </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
