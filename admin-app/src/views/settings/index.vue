@@ -20,10 +20,10 @@
     </aside>
 
     <section class="settings__content">
-      <component :is="currentTab.component" v-model="settings"></component>
+      <component :is="currentTab.component" :profile="profile"></component>
 
       <div class="calendar__flex">
-        <button class="button button__main" @click="save">Обновить</button>
+        <button class="button button__main">Обновить</button>
         <button class="button button__resting" @click="backToDashboard">Отменить</button>
       </div>
     </section>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters } from 'vuex'
 
 var tabs = [
   {
@@ -71,7 +71,7 @@ export default {
   components: {
     NavSettings: () => import('@/components/NavSettings')
   },
-  data: function() {
+  data: () => {
     return {
       settings: null,
       currentTab: tabs[0],
@@ -80,6 +80,8 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['profile']),
+
     url() {
       return `${this.restUrl}0`
     },
@@ -89,26 +91,27 @@ export default {
     }
   },
   mounted() {
-    this.loadProfileSettings()
+    // this.loadProfileSettings()
+    this.$store.dispatch('profile/GET_PROFILE')
   },
   methods: {
-    loadProfileSettings() {
-      axios
-        .get(this.url)
-        .then(response => (this.settings = response.data))
-        .catch(error => console.error(error))
-    },
+    // loadProfileSettings() {
+    //   axios
+    //     .get(this.url)
+    //     .then(response => (this.settings = response.data))
+    //     .catch(error => console.error(error))
+    // },
 
     backToDashboard() {
       this.$router.push({ path: '/dashboard' })
-    },
-
-    save() {
-      axios
-        .patch(this.url, this.settings)
-        .then(() => this.backToDashboard())
-        .catch(error => console.error(error))
     }
+
+    // save() {
+    //   axios
+    //     .patch(this.url, this.settings)
+    //     .then(() => this.backToDashboard())
+    //     .catch(error => console.error(error))
+    // }
   }
 }
 </script>

@@ -5,12 +5,12 @@
     <form class="settings__form">
       <div class="settings__input">
         <label for="name">Аккаунт</label>
-        <input type="text" name="name" placeholder="Facebook" />
+        <input type="text" name="name" placeholder="Skype" />
       </div>
 
       <div class="settings__input">
         <label for="email">Ссылка</label>
-        <input type="email" name="email" placeholder="fb.com/iotask" />
+        <input type="email" name="email" placeholder="skype.com/iotask" v-model="profile.skype" />
       </div>
 
       <div class="settings__input">
@@ -20,17 +20,17 @@
 
       <div class="settings__input">
         <label for="email">Ссылка</label>
-        <input type="email" name="email" placeholder="fb.com/iotask" />
+        <input type="email" name="email" placeholder="twitter.com/iotask" v-model="profile.twitter" />
       </div>
 
       <div class="settings__input">
         <label for="position">Аккаунт</label>
-        <input type="text" name="position" placeholder="Slack" />
+        <input type="text" name="position" placeholder="Vk" />
       </div>
 
       <div class="settings__input">
         <label for="email">Ссылка</label>
-        <input type="email" name="email" placeholder="fb.com/iotask" />
+        <input type="email" name="email" placeholder="vk.com/iotask" v-model="profile.vk" />
       </div>
     </form>
 
@@ -45,9 +45,17 @@
 export default {
   name: 'Social',
   props: {
-    settings: {
+    profile: {
       type: Object,
       required: true
+    }
+  },
+  computed: {
+    socialLink() {
+      if (this.profile.skype) {
+        return 'skype'
+      }
+      return ''
     }
   }
 }

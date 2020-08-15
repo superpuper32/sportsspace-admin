@@ -37,15 +37,14 @@ export default {
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')
   },
-  mounted() {
-    // this.loadTeams()
-    this.$store.dispatch('profile/GET_TEAMS')
-  },
   computed: {
     ...mapGetters(['teams']),
     haveTeams() {
       return this.teams.length > 0
     }
+  },
+  mounted() {
+    this.$store.dispatch('profile/GET_TEAMS')
   }
 }
 </script>

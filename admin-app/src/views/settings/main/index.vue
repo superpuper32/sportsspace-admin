@@ -8,18 +8,23 @@
 
     <form class="settings__form">
       <div class="settings__input">
+        <label for="nickname">Ник</label>
+        <input type="text" name="nickname" placeholder="Ник" v-model="profile.nickname" />
+      </div>
+
+      <div class="settings__input">
         <label for="name">ФИО</label>
-        <input type="text" name="name" placeholder="Иванов" v-model="settings.name" />
+        <input type="text" name="name" placeholder="Иванов" v-model="profile.first_name" />
       </div>
 
       <div class="settings__input">
         <label for="position">Должность</label>
-        <input type="text" name="position" placeholder="Тренер" v-model="settings.position" />
+        <input type="text" name="position" placeholder="Тренер" v-model="profile.role" />
       </div>
 
       <div class="settings__input">
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="Введите email" v-model="settings.email" />
+        <input type="email" name="email" placeholder="Введите email" v-model="profile.email" />
       </div>
 
       <div class="settings__input">
@@ -28,17 +33,15 @@
           type="tel"
           name="phone"
           placeholder="Введите номер телефона"
-          v-model="settings.phone"
+          v-model="profile.mob_tel"
         />
       </div>
 
       <div class="settings__input">
         <label for="phone">Язык</label>
-        <input type="tel" name="phone" placeholder="Русский" v-model="settings.lang" />
+        <input type="tel" name="phone" placeholder="Русский" v-model="profile.lang" />
       </div>
     </form>
-
-    <!-- <button class="button button__main">Обновить</button> -->
   </div>
 </template>
 
@@ -46,11 +49,11 @@
 export default {
   name: 'Main',
   model: {
-    prop: 'settings',
+    prop: 'profile',
     event: 'ultrachange'
   },
   props: {
-    settings: {
+    profile: {
       type: Object,
       required: true
     }
@@ -59,15 +62,6 @@ export default {
     localSettings: null
   }),
   watch: {
-    // playground: { // if updates from parent need deep equals func
-    //   deep: true,
-    //   handler() {
-    //     if (deepEqual(this.playground, this.localPlayground)) {
-    //       return
-    //     }
-    //     this.localPlayground = Object.assign({}, this.playground)
-    //   }
-    // },
     localSettings: {
       deep: true,
       handler: 'updateSettings'

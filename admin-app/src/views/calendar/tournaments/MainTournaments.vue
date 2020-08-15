@@ -43,13 +43,7 @@ export default {
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')
   },
-  // data: function() {
-  //   return {
-  //     tournaments: []
-  //   }
-  // },
   mounted() {
-    // this.loadTournaments()
     this.$store.dispatch('profile/GET_TOURNAMENTS')
   },
   computed: {
@@ -58,13 +52,5 @@ export default {
       return this.tournaments.length > 0
     }
   }
-  // methods: {
-  //   loadTournaments() {
-  //     axios
-  //       .get('http://localhost:3004/tournaments')
-  //       .then(response => (this.tournaments = response.data))
-  //       .catch(error => console.error(error))
-  //   }
-  // }
 }
 </script>
