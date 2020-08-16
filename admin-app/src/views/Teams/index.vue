@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="profile_pagination">
+    <div v-if="haveTeams" class="profile_pagination">
       <PagesPagination v-model.number="selectedPage" :per-page="teamsPerPage" :total="totalTeams" />
     </div>
   </section>
@@ -51,7 +51,7 @@ export default {
   },
 
   watch: {
-    rowsPerPage() {
+    teamsPerPage() {
       this.selectedPage = 1
     }
   },

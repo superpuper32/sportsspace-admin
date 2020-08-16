@@ -254,7 +254,12 @@ const routes = [
       {
         path: '/playgrounds',
         name: 'AllPlaygrounds',
-        component: () => import('@/views/Playgrounds.vue')
+        component: () => import('@/views/playgrounds/Playgrounds.vue')
+      },
+      {
+        path: ':id',
+        name: 'PlaygroundInfo',
+        component: () => import('@/views/playgrounds/PlaygroundInfo.vue')
       }
     ]
   },
