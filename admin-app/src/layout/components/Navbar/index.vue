@@ -56,7 +56,9 @@
               <li class="top-bar__link top-bar__link_settings" @click="toggle">
                 <router-link to="/settings">Настройки</router-link>
               </li>
-              <li class="top-bar__link top-bar__link_log-out">Выйти</li>
+              <li class="top-bar__link top-bar__link_log-out">
+                <a>Выйти</a>
+              </li>
             </ul>
           </div>
         </div>

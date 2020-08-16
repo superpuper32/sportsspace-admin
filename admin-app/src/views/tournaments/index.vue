@@ -2,6 +2,8 @@
   <section>
     <h2>Все Турниры</h2>
 
+    <div v-if="!haveTournaments">...loading</div>
+
     <div class="profile__cards">
       <div v-for="tournament in tournaments" v-bind:key="tournament.index">
         <dashboard-tournament-card v-bind:tournament="tournament" />
@@ -21,6 +23,11 @@ export default {
   data: function() {
     return {
       tournaments: []
+    }
+  },
+  computed: {
+    haveTournaments() {
+      return this.tournaments.length > 0
     }
   },
   mounted() {
