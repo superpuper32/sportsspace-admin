@@ -1,10 +1,20 @@
 <template>
   <section>
-    <h2>Команды</h2>
+    <div class="content-list__header">
+      <div class="content-list__title">
+        <h2>Список команд</h2>
+        <p>
+          Выбирайте команду для активного отдыха в отличной компании. Или создайте свою команду и
+          участвуйте в турнирах
+        </p>
+      </div>
+
+      <div class="content-list__search"></div>
+    </div>
 
     <div v-if="!haveTeams">...loading</div>
 
-    <div v-else class="profile__cards">
+    <div v-else class="profile__cards profile__cards_teams">
       <div v-for="team in filteredTeams" v-bind:key="team.index">
         <dashboard-team-card v-bind:team="team" />
       </div>
@@ -21,16 +31,19 @@ import axios from 'axios'
 
 export default {
   name: 'AllTeams',
+
   components: {
     DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
     PagesPagination: () => import('@/components/dashboard/PagesPagination.vue')
   },
+
   data: () => ({
     teams: [],
-    teamsPerPage: 8,
+    teamsPerPage: 6,
     selectedPage: 1,
     loading: false
   }),
+
   computed: {
     haveTeams() {
       return this.teams.length > 0
@@ -70,3 +83,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.profile__cards_teams
+  margin-top: 2rem
+</style>

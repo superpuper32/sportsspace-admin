@@ -23,9 +23,11 @@
 <script>
 export default {
   name: 'PagesPagination',
+
   model: {
     prop: 'page'
   },
+
   props: {
     page: {
       type: Number,
@@ -40,11 +42,13 @@ export default {
       required: true
     }
   },
+
   computed: {
     maxPages() {
       return Math.ceil(this.total / this.perPage)
     }
   },
+
   methods: {
     selectPage(page) {
       this.$emit('input', page)

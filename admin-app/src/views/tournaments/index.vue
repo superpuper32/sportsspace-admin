@@ -26,14 +26,13 @@ export default {
     PagesPagination: () => import('@/components/dashboard/PagesPagination.vue')
   },
 
-  data: function() {
-    return {
-      tournaments: [],
-      toursPerPage: 8,
-      selectedPage: 1,
-      loading: false
-    }
-  },
+  data: () => ({
+    tournaments: [],
+    toursPerPage: 8,
+    selectedPage: 1,
+    loading: false
+  }),
+
   computed: {
     haveTournaments() {
       return this.tournaments.length > 0
