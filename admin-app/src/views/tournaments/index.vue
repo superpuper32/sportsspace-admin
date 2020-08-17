@@ -28,7 +28,7 @@ export default {
 
   data: () => ({
     tournaments: [],
-    toursPerPage: 8,
+    toursPerPage: 6,
     selectedPage: 1,
     loading: false
   }),

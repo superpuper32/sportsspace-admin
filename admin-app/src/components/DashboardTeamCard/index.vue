@@ -19,6 +19,7 @@
           <span>Капитан:</span>
           {{ captainName }}
         </div>
+
         <div>
           <span>Тренер:</span>
           -
@@ -45,8 +46,7 @@
       <router-link
         :to="`/teams/${team.id}`"
         class="dashboard-card__status dashboard-card__status_primary"
-        >Перейти</router-link
-      >
+      >Перейти</router-link>
 
       <button class="dashboard-card__button"></button>
     </div>
@@ -71,7 +71,9 @@ export default {
         : `${imageUrl}.jpg`
     },
     captainName() {
-      return `${this.team.user_id}`
+      return this.team.user
+        ? `${this.team.user.first_name} ${this.team.user.last_name}`
+        : `${this.team.user_id}`
     }
   }
 }
@@ -129,7 +131,10 @@ export default {
 
   &__name
     margin-right: 24px
-    width: 200px
+    width: 220px
+
+    div
+      color: #008dff
 
     span
       font-size: 14px

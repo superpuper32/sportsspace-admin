@@ -9,7 +9,9 @@
         </p>
       </div>
 
-      <div class="content-list__search"></div>
+      <div class="content-list__search">
+        <input type="search" aria-label="Search through teams cards" placeholder="Поиск" />
+      </div>
     </div>
 
     <div v-if="!haveTeams">...loading</div>
@@ -39,7 +41,7 @@ export default {
 
   data: () => ({
     teams: [],
-    teamsPerPage: 6,
+    teamsPerPage: 7,
     selectedPage: 1,
     loading: false
   }),
@@ -87,4 +89,33 @@ export default {
 <style lang="sass" scoped>
 .profile__cards_teams
   margin-top: 2rem
+
+.content-list
+
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__search
+    width: 360px
+    position: relative
+
+    input
+      width: 100%
+      padding: 14px 44px 16px 16px
+      border: 1px solid #E8ECEF
+      border-radius: 8px
+      outline: none
+
+    &:after
+      content: ''
+      position: absolute
+      width: 16px
+      height: 16px
+      top: 50%
+      right: 24px
+      background: url(../../assets/content-list_search.svg) center center no-repeat
+      transform: translateY(-50%)
+      cursor: pointer
 </style>
