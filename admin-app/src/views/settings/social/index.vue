@@ -20,7 +20,12 @@
 
       <div class="settings__input">
         <label for="email">Ссылка</label>
-        <input type="email" name="email" placeholder="twitter.com/iotask" v-model="profile.twitter" />
+        <input
+          type="email"
+          name="email"
+          placeholder="twitter.com/iotask"
+          v-model="profile.twitter"
+        />
       </div>
 
       <div class="settings__input">

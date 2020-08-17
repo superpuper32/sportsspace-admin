@@ -74,7 +74,12 @@
     <div class="simple-input">
       <label for="trainer">Тренер</label>
 
-      <input type="text" name="trainer" placeholder="Выберите тренера" v-model="localTeam.trainer" />
+      <input
+        type="text"
+        name="trainer"
+        placeholder="Выберите тренера"
+        v-model="localTeam.trainer"
+      />
     </div>
 
     <div class="create-form__columns">
@@ -82,7 +87,12 @@
         <div class="simple-input">
           <label for="playdays">Дни недели встреч</label>
 
-          <input type="date" name="playdays" placeholder="30.05.2020" v-model="localTeam.playdays" />
+          <input
+            type="date"
+            name="playdays"
+            placeholder="30.05.2020"
+            v-model="localTeam.playdays"
+          />
         </div>
 
         <simple-input placeholder="Понедельник — 30.05.2020" />
