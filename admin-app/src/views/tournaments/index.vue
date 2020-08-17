@@ -1,16 +1,28 @@
 <template>
   <section>
-    <h2>Все Турниры</h2>
+    <div class="content-list__header">
+      <div class="content-list__title">
+        <h2>Список турниров</h2>
+        <p>
+          Выбирайте турнир для активного отдыха в отличной компании. Или пройдите аккредитацию,
+          создайте свой турнир и участвуйте в играх
+        </p>
+      </div>
+
+      <div class="content-list__search">
+        <input type="search" aria-label="Search through teams cards" placeholder="Поиск" />
+      </div>
+    </div>
 
     <div v-if="!haveTournaments">...loading</div>
 
-    <div class="profile__cards">
+    <div class="profile__cards profile__cards_content-list">
       <div v-for="tournament in filteredTours" v-bind:key="tournament.index">
         <dashboard-tournament-card v-bind:tournament="tournament" />
       </div>
     </div>
 
-    <div v-if="haveTournaments" class="profile_pagination">
+    <div v-if="showPagination" class="profile_pagination">
       <PagesPagination v-model.number="selectedPage" :per-page="toursPerPage" :total="totalTours" />
     </div>
   </section>
@@ -28,7 +40,7 @@ export default {
 
   data: () => ({
     tournaments: [],
-    toursPerPage: 6,
+    toursPerPage: 7,
     selectedPage: 1,
     loading: false
   }),
@@ -36,6 +48,10 @@ export default {
   computed: {
     haveTournaments() {
       return this.tournaments.length > 0
+    },
+
+    showPagination() {
+      return this.tournaments.length > this.toursPerPage
     },
 
     totalTours() {

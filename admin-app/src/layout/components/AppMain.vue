@@ -21,18 +21,19 @@ export default {
 .app-main {
   /*50 = navbar  */
   padding: 24px;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 88px);
   position: relative;
   overflow: hidden;
   background-color: #f8fafb;
-  z-index: 499;
+  z-index: 99;
+
   @media (max-width: 540px) {
     padding: 15px;
   }
 }
 
 .fixed-header + .app-main {
-  padding-top: 50px;
+  padding-top: 88px;
 }
 </style>
 

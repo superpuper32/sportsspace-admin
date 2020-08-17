@@ -90,10 +90,11 @@ export default {
   z-index: 9;
   width: calc(100% - #{$sideBarWidth});
   transition: width 0.28s;
+  z-index: 100;
 }
 
 .hideSidebar .fixed-header {
-  width: calc(100% - 54px);
+  width: calc(100% - 76px);
 }
 
 .mobile .fixed-header {

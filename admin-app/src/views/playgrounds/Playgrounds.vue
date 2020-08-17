@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div v-if="havePlaygrounds" class="profile_pagination">
+    <div v-if="showPagination" class="profile_pagination">
       <PagesPagination
         v-model.number="selectedPage"
         :per-page="playgroundsPerPage"
@@ -31,13 +31,17 @@ export default {
   },
   data: () => ({
     playgrounds: [],
-    playgroundsPerPage: 8,
+    playgroundsPerPage: 7,
     selectedPage: 1,
     loading: false
   }),
   computed: {
     havePlaygrounds() {
       return this.playgrounds.length > 0
+    },
+
+    showPagination() {
+      return this.playgrounds.length > this.playgroundsPerPage
     },
 
     totalPlaygrounds() {

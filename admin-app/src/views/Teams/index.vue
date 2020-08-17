@@ -16,7 +16,7 @@
 
     <div v-if="!haveTeams">...loading</div>
 
-    <div v-else class="profile__cards profile__cards_teams">
+    <div v-else class="profile__cards profile__cards_content-list">
       <div v-for="team in filteredTeams" v-bind:key="team.index">
         <dashboard-team-card v-bind:team="team" />
       </div>
@@ -49,6 +49,10 @@ export default {
   computed: {
     haveTeams() {
       return this.teams.length > 0
+    },
+
+    showPagination() {
+      return this.teams.length > this.teamsPerPage
     },
 
     totalTeams() {
@@ -86,36 +90,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.profile__cards_teams
+<style lang="sass">
+.profile__cards_content-list
   margin-top: 2rem
-
-.content-list
-
-  &__header
-    display: flex
-    justify-content: space-between
-    align-items: center
-
-  &__search
-    width: 360px
-    position: relative
-
-    input
-      width: 100%
-      padding: 14px 44px 16px 16px
-      border: 1px solid #E8ECEF
-      border-radius: 8px
-      outline: none
-
-    &:after
-      content: ''
-      position: absolute
-      width: 16px
-      height: 16px
-      top: 50%
-      right: 24px
-      background: url(../../assets/content-list_search.svg) center center no-repeat
-      transform: translateY(-50%)
-      cursor: pointer
 </style>
