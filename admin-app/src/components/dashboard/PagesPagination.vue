@@ -2,9 +2,7 @@
   <nav aria-label="Page navigation">
     <ul class="pagination">
       <li class="page-item" :class="{ disabled: page === 1 }">
-        <a href="#" class="page-link" aria-label="Previous" @click.prevent="prevPage">
-          <!-- <span aria-hidden="true">&laquo;</span> -->
-        </a>
+        <a href="#" class="page-link" aria-label="Previous" @click.prevent="prevPage"></a>
       </li>
 
       <li v-for="item in maxPages" :key="item" class="page-item" :class="{ active: page === item }">
@@ -12,9 +10,7 @@
       </li>
 
       <li class="page-item" :class="{ disabled: page === maxPages }">
-        <a class="page-link" href="#" aria-label="Next" @click.prevent="nextPage">
-          <!-- <span aria-hidden="true">&raquo;</span> -->
-        </a>
+        <a class="page-link" href="#" aria-label="Next" @click.prevent="nextPage"></a>
       </li>
     </ul>
   </nav>
