@@ -2,8 +2,9 @@
   <section class="team-info">
     <div v-if="!tournament">Loading >>></div>
 
-    {{ tournament.name }}
-    <div>{{ tournament.address }}</div>
+    <div v-else>
+      <tournament-card v-bind:tournament="tournament" />
+    </div>
   </section>
 </template>
 
@@ -12,7 +13,9 @@ import axios from 'axios'
 
 export default {
   name: 'TournamentInfo',
-
+  components: {
+    TournamentCard: () => import('@/components/TournamentCard')
+  },
   data: () => ({
     tournament: null,
     restUrl: 'https://devtest.sportsspace.ru/api/v1/tournaments/'
@@ -51,7 +54,7 @@ export default {
 
 <style lang="sass" scoped>
 .tournament-info
-    padding: 20px 28px 75px 24px
-    background-color: #ffffff
-    box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+  padding: 20px 28px 75px 24px
+  background-color: #ffffff
+  box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
 </style>
