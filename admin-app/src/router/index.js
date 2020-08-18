@@ -202,14 +202,25 @@ const routes = [
     meta: { title: 'Турниры', icon: 'tournaments' },
     children: [
       {
-        path: '',
-        name: 'AllTournaments',
-        component: () => import('@/views/tournaments/index.vue')
-      },
-      {
-        path: ':id',
-        name: 'TiurnamentInfo',
-        component: () => import('@/views/tournaments/TournamentInfo.vue')
+        path: '/tournaments',
+        redirect: '/tournaments/tournaments-all',
+        component: () => import('@/views/tournaments'),
+        name: 'TournamentsContent',
+        children: [
+          {
+            path: 'tournaments-all',
+            name: 'AllTournaments',
+            component: () => import('@/views/tournaments/Tournaments.vue'),
+            meta: { title: 'Список' }
+          },
+
+          {
+            path: ':id',
+            name: 'TournamentInfo',
+            component: () => import('@/views/tournaments/TournamentInfo.vue'),
+            meta: { title: 'Concrete' }
+          }
+        ]
       }
     ]
   },

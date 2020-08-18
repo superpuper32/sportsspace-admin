@@ -27,11 +27,5 @@ export default {
     CalendarSchedule: () => import('@/components/CalendarSchedule.vue'),
     CalendarCard: () => import('@/components/CalendarCard')
   }
-  //   props: {
-  //     calendar: {
-  //       type: Object,
-  //       required: true
-  //     }
-  //   }
 }
 </script>
