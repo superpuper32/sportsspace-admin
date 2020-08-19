@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'TeamsContent',
+  name: 'TournamentsContent',
 
   computed: {
     key() {

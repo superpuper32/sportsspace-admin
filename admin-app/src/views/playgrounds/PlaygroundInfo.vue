@@ -1,12 +1,16 @@
 <template>
-  <section>{{ playground.name }}</section>
+  <section>
+    <div v-if="!playground">Loading >>></div>
+
+    <div v-else>{{ playground.name }}</div>
+  </section>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
-  name: 'PlaygeoundInfo',
+  name: 'PlaygroundInfo',
   data: () => ({
     playground: null,
     restUrl: 'https://devtest.sportsspace.ru/api/v1/playgrounds/'
@@ -20,10 +24,10 @@ export default {
     }
   },
   mounted() {
-    this.loadPlaygound()
+    this.loadPlayground()
   },
   methods: {
-    loadPlaygound() {
+    loadPlayground() {
       axios
         .get(this.url)
         .then(response => (this.playground = response.data))

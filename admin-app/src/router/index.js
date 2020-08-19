@@ -213,7 +213,6 @@ const routes = [
             component: () => import('@/views/tournaments/Tournaments.vue'),
             meta: { title: 'Список' }
           },
-
           {
             path: ':id',
             name: 'TournamentInfo',
@@ -231,14 +230,24 @@ const routes = [
     meta: { title: 'Команды', icon: 'teams' },
     children: [
       {
-        path: '',
-        name: 'AllTeams',
-        component: () => import('@/views/teams/index.vue')
-      },
-      {
-        path: ':id',
-        name: 'TeamInfo',
-        component: () => import('@/views/teams/TeamInfo.vue')
+        path: '/teams',
+        redirect: '/teams/teams-all',
+        component: () => import('@/views/teams'),
+        name: 'TeamsContent',
+        children: [
+          {
+            path: 'teams-all',
+            name: 'AllTeams',
+            component: () => import('@/views/teams/Teams.vue'),
+            meta: { title: 'Список' }
+          },
+          {
+            path: ':id',
+            name: 'TeamInfo',
+            component: () => import('@/views/teams/TeamInfo.vue'),
+            meta: { title: 'Concrete' }
+          }
+        ]
       }
     ]
   },
@@ -264,13 +273,23 @@ const routes = [
     children: [
       {
         path: '/playgrounds',
-        name: 'AllPlaygrounds',
-        component: () => import('@/views/playgrounds/Playgrounds.vue')
-      },
-      {
-        path: ':id',
-        name: 'PlaygroundInfo',
-        component: () => import('@/views/playgrounds/PlaygroundInfo.vue')
+        redirect: '/playgrounds/playgrounds-all',
+        component: () => import('@/views/playgrounds'),
+        name: 'PlaygroundsContent',
+        children: [
+          {
+            path: 'playgrounds-all',
+            name: 'AllPlaygrounds',
+            component: () => import('@/views/playgrounds/Playgrounds.vue'),
+            meta: { title: 'Список' }
+          },
+          {
+            path: ':id',
+            name: 'PlaygroundInfo',
+            component: () => import('@/views/playgrounds/PlaygroundInfo.vue'),
+            meta: { title: 'Concrete' }
+          }
+        ]
       }
     ]
   },
