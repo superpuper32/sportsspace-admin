@@ -15,7 +15,11 @@
     <div class="dashboard-card__date">{{ playground.date }}</div>
     <div class="dashboard-card__status dashboard-card__status_success">Идет набор</div>
 
-    <router-link tag="button" :to="`/playgrounds/${playground.id}`" class="dashboard-card__button"></router-link>
+    <router-link
+      tag="button"
+      :to="`/playgrounds/${playground.id}`"
+      class="dashboard-card__button"
+    ></router-link>
   </div>
 </template>
 

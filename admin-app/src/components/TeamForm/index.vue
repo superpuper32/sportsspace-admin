@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="create-form__columns">
-      <div class="create-form__column">
+      <div class="create-form__column create-form__column_left">
         <div class="simple-input">
           <label for="name">Название</label>
           <input type="text" name="name" placeholder="Введите название" v-model="localTeam.name" />
@@ -28,6 +28,7 @@
 
         <div class="simple-input">
           <label for="address-team">Местоположение команды</label>
+
           <input
             type="text"
             name="address-team"
@@ -37,9 +38,10 @@
         </div>
       </div>
 
-      <div class="create-form__column">
+      <div class="create-form__column create-form__column_right">
         <div class="create-form__logo">
           <span>Логотип команды</span>
+
           <div class="create-form__img">
             <span>Загрузить изображение</span>
           </div>
@@ -174,8 +176,11 @@ export default {
 @import '../../styles/colors.sass'
 
 .simple-input
-  display: inline-block
+  // display: inline-block
+  margin-right: 20px
   width: 100%
+  position: relative
+  width: auto
   font-size: 14px
 
   label
@@ -190,7 +195,7 @@ export default {
   input, select
     width: 100%
     margin-bottom: 26px
-    padding: 20px 0 20px 16px
+    padding: 20px 0px 20px 16px
     border: 1px solid #E8ECEF
     border-radius: 4px
 
@@ -201,11 +206,25 @@ export default {
 .create-form
 
   &__columns
+    margin: 0px -12px
     display: flex
-    justify-content: space-between
+    // justify-content: space-between
+    justify-content: center
+    align-items: center
 
   &__column
-    width: 49%
+    margin: 0px 12px
+    // width: 49%
+
+    &_left
+      display: inline-flex
+      flex: 2 1 200px
+      flex-direction: column
+
+    &_right
+      display: inline-flex
+      flex: 2 1 200px
+      flex-direction: column
 
   &__map
     margin-bottom: 26px
@@ -217,6 +236,7 @@ export default {
 
   &__logo
     margin-bottom: 26px
+    width: auto
 
     span
       display: block
