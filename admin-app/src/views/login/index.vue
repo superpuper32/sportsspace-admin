@@ -29,8 +29,7 @@
       </div>
 
       <div class="login__line">
-        <div></div>
-        Или
+        <div></div>Или
         <div></div>
       </div>
 
@@ -80,12 +79,11 @@
       </div>
 
       <div class="login__btn">
-        <button class="button button__login-main">Войти</button>
+        <button class="button button__login-main" @click="login">Войти</button>
       </div>
 
       <div class="login__line">
-        <div></div>
-        Или
+        <div></div>Или
         <div></div>
       </div>
 
@@ -116,14 +114,26 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Login',
   data: () => ({
-    registered: true
+    registered: true,
+    email: '',
+    password: '',
+    restUrl: 'https://devtest.sportsspace.ru/users/sign_in'
   }),
   methods: {
     toggleButton() {
       this.registered = !this.registered
+    },
+
+    login() {
+      axios
+        .patch(this.restUrl, { email: 'volleylub@gmail.com', password: 'aa23122010asd' })
+        .then(response => console.log(response.data))
+        .catch(error => console.error(error))
     }
   }
 }
@@ -140,79 +150,79 @@ export default {
     padding: 70px 220px 70px 150px
     width: 50%
 
-    h1
-      margin-bottom: 80px
-      font-family: SF Pro Display
-      font-style: normal
-      font-weight: normal
-      font-size: 34px
-      line-height: 41px
-      color: #2C2E3F
+  h1
+    margin-bottom: 80px
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: normal
+    font-size: 34px
+    line-height: 41px
+    color: #2C2E3F
 
-    &__flex
-      display: flex
-      justify-content: space-between
+  &__flex
+    display: flex
+    justify-content: space-between
 
-    &__background
-      width: 50%
-      background: url(../../assets/login_background.jpg) center center no-repeat
-      background-size: cover
+  &__background
+    width: 50%
+    background: url(../../assets/login_background.jpg) center center no-repeat
+    background-size: cover
 
-    &__background-blackout
-      width: 100%
-      height: 100%
-      background: linear-gradient(180deg, #12C99B 0%, #32BF84 100%)
-      opacity: .3
+  &__background-blackout
+    width: 100%
+    height: 100%
+    background: linear-gradient(180deg, #12C99B 0%, #32BF84 100%)
+    opacity: .3
 
-    &__line
-      position: relative
-      padding: 30px 0
-      text-align: center
+  &__line
+    position: relative
+    padding: 30px 0
+    text-align: center
+    color: #98A9BC
+
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50px
+      width: 110px
+      padding-top: 1px
+      border-top: 1px solid #98A9BC
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 50px
+      width: 110px
+      padding-top: 1px
+      border-top: 1px solid #98A9BC
+
+  &__btns
+    margin-bottom: 150px
+    display: flex
+    justify-content: space-between
+
+    div
+      width: 31%
+
+  &__link
+    font-family: SF Pro Display
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 21px
+
+    span
       color: #98A9BC
 
-      &:before
-        content: ''
-        position: absolute
-        top: 50%
-        left: 50px
-        width: 110px
-        padding-top: 1px
-        border-top: 1px solid #98A9BC
+      a
+        margin-left: 8px
+        color: #008DFF
+        cursor: pointer
 
-        &:after
-          content: ''
-          position: absolute
-          top: 50%
-          right: 50px
-          width: 110px
-          padding-top: 1px
-          border-top: 1px solid #98A9BC
-
-    &__btns
-      margin-bottom: 150px
-      display: flex
-      justify-content: space-between
-
-      div
-        width: 31%
-
-    &__link
-      font-family: SF Pro Display
-      font-style: normal
-      font-weight: normal
-      font-size: 14px
-      line-height: 21px
-
-      span
-        color: #98A9BC
-
-        a
-          margin-left: 8px
-          color: #008DFF
-          cursor: pointer
-
-          &:hover
-            border-bottom: 1px solid #008DFF
+        &:hover
+          border-bottom: 1px solid #008DFF
 
 .simple-input
   display: inline-block
@@ -228,16 +238,16 @@ export default {
     line-height: 17px
     color: $font-black
 
-    input
-      width: 100%
-      margin-bottom: 26px
-      padding: 20px 0 20px 16px
-      border: 1px solid #E8ECEF
-      border-radius: 4px
+  input
+    width: 100%
+    margin-bottom: 26px
+    padding: 20px 0 20px 16px
+    border: 1px solid #E8ECEF
+    border-radius: 4px
 
-      &::placeholder
-        line-height: 21px
-        color: #98a9bc
+    &::placeholder
+      line-height: 21px
+      color: #98a9bc
 
 .simple-checkbox
   margin-bottom: 26px
@@ -263,20 +273,20 @@ export default {
     height: 0
     width: 0
 
-    input:checked ~ .checkmark
-      background-color: #008DFF
-      border-radius: 2px
+  input:checked ~ .checkmark
+    background-color: #008DFF
+    border-radius: 2px
 
-      &:after
-        display: block
+    &:after
+      display: block
 
-    .checkmark:after
-      top: 50%
-      left: 2px
-      width: 16px
-      height: 16px
-      background: url(../../assets/checkmark.svg) center center no-repeat
-      transform: translateY(-50%)
+  .checkmark:after
+    top: 50%
+    left: 2px
+    width: 16px
+    height: 16px
+    background: url(../../assets/checkmark.svg) center center no-repeat
+    transform: translateY(-50%)
 
 .checkmark
   position: absolute

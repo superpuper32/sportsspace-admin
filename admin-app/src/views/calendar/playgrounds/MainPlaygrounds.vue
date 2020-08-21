@@ -46,12 +46,10 @@ export default {
     NoteCard: () => import('@/components/NoteCard'),
     CalendarNotification: () => import('@/components/CalendarNotification')
   },
-  data: function() {
-    return {
-      playgrounds: [],
-      notification: false
-    }
-  },
+  data: () => ({
+    playgrounds: [],
+    notification: false
+  }),
   mounted() {
     this.loadPlaygrounds()
   },

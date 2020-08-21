@@ -7,6 +7,13 @@ import Layout from '@/layout'
 
 const routes = [
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -15,17 +22,10 @@ const routes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/dashboard/Dashboard.vue'),
         meta: { title: 'Профиль' }
       }
     ]
-  },
-
-  {
-    path: '/login',
-    name: 'Login',
-    component: () => import('@/views/login/index'),
-    hidden: true
   },
 
   {

@@ -24,12 +24,10 @@ export default {
   components: {
     PlaygroundForm: () => import('@/components/PlaygroundForm')
   },
-  data: function() {
-    return {
-      playground: null,
-      restUrl: 'http://localhost:3004/playgrounds/'
-    }
-  },
+  data: () => ({
+    playground: null,
+    restUrl: 'http://localhost:3004/playgrounds/'
+  }),
   computed: {
     id() {
       return this.$route.params.id

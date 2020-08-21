@@ -24,12 +24,10 @@ export default {
   components: {
     TournamentForm: () => import('@/components/TournamentForm')
   },
-  data: function() {
-    return {
-      tournament: null,
-      restUrl: 'http://localhost:3004/tournaments/'
-    }
-  },
+  data: () => ({
+    tournament: null,
+    restUrl: 'http://localhost:3004/tournaments/'
+  }),
   computed: {
     id() {
       return this.$route.params.id
@@ -74,15 +72,15 @@ export default {
 
 <style lang="sass" scoped>
 .calendar-form
-    box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
-    border-radius: 4px
+  box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+  border-radius: 4px
 
 .form__create
-    padding: 20px 56px 20px 20px
-    background-color: #fff
-    border-left-top-radius: 4px
-    border-left-bottom-radius: 4px
+  padding: 20px 56px 20px 20px
+  background-color: #fff
+  border-left-top-radius: 4px
+  border-left-bottom-radius: 4px
 
 h3
-    margin-bottom: 30px
+  margin-bottom: 30px
 </style>
