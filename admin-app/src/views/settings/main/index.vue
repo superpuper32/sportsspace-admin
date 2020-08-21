@@ -38,8 +38,8 @@
       </div>
 
       <div class="settings__input">
-        <label for="phone">Язык</label>
-        <input type="tel" name="phone" placeholder="Русский" v-model="profile.lang" />
+        <label for="phone">Адрес</label>
+        <input type="tel" name="phone" placeholder="город улица дом" v-model="profile.address" />
       </div>
     </form>
   </div>

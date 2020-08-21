@@ -38,7 +38,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'Playgrounds',
+  name: 'CalendarPlaygrounds',
   components: {
     PlaygroundCard: () => import('@/components/PlaygroundCard'),
     CalendarCard: () => import('@/components/CalendarCard'),

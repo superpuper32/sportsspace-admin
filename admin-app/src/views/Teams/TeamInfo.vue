@@ -30,7 +30,8 @@
       <div class="team-info__scores">
         <div class="team-info__points">
           <div class="team-info__captain">
-            <span>{{ team.users[0].nickname }}</span>
+            <!-- <span>{{ team.users[0].nickname }}</span> -->
+            <span>{{ captainName }}</span>
             Капитан
           </div>
 
@@ -77,6 +78,13 @@ export default {
     },
     url() {
       return `${this.restUrl}${this.id}.json`
+    },
+
+    captainName() {
+      const captainId = +this.team.user_id
+      const captain = this.team.users.find(player => player.id === captainId)
+
+      return `${captain.nickname}`
     }
   },
   mounted() {

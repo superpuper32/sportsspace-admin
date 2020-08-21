@@ -1,9 +1,5 @@
 <template>
   <section>
-    <div class="profile__background">
-      <span>Загрузить изображение</span>
-    </div>
-
     <div class="profile__header">
       <div class="profile__info">
         <div>
@@ -18,6 +14,11 @@
           <div class="profile__position">{{ profile.role }}</div>
 
           <div class="profile__email">
+            <p>
+              На сайте с
+              <span>{{ profile.created_at }}</span>
+            </p>
+
             <p>
               E-mail:
               <span>{{ profile.email }}</span>
@@ -70,22 +71,21 @@
 <script>
 export default {
   name: 'ProfileUser',
+
   props: {
     profile: Object
   },
+
   computed: {
     avatar() {
       if (this.profile) {
         return `https://sportsspace.ru/images/users/${this.profile.id}/avatar/${this.profile.id}.jpeg`
       }
-
       return ''
     },
-
     fullName() {
       return `${this.profile.first_name}  ${this.profile.last_name}`
     },
-
     balance() {
       return this.profile.balans ?? '0'
     }

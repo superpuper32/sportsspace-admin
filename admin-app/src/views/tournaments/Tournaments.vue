@@ -34,7 +34,7 @@ import axios from 'axios'
 export default {
   name: 'AllTournaments',
   components: {
-    DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
+    DashboardTournamentCard: () => import('@/components/dashboard/DashboardTournamentCard.vue'),
     PagesPagination: () => import('@/components/dashboard/PagesPagination.vue')
   },
 

@@ -3,27 +3,40 @@
     <div v-if="!profile">Loading ...</div>
 
     <div v-else class="profile">
-      <profile-user :profile="profile" />
-      <h5>Команды</h5>
+      <div class="profile__background">
+        <span>Загрузить изображение</span>
+      </div>
 
-      <div v-if="teams" class="profile__cards">
-        <div v-for="team in teams" v-bind:key="team.index">
-          <dashboard-team-card v-bind:team="team" />
+      <profile-user :profile="profile" />
+
+      <div v-if="practices" class="profile__cards">
+        <h5>Practice</h5>
+
+        <div v-for="practice in practices" :key="practice.index">
+          <dashboard-practice-card :practice="practice" />
         </div>
       </div>
 
-      <h5>Турниры</h5>
+      <div v-if="teams" class="profile__cards">
+        <h5>Команды</h5>
 
-      <div class="profile__cards">
-        <div v-for="tournament in tournaments" v-bind:key="tournament.index">
+        <div v-for="team in teams" :key="team.index">
+          <dashboard-team-card :team="team" />
+        </div>
+      </div>
+
+      <div v-if="tournaments" class="profile__cards">
+        <h5>Турниры</h5>
+
+        <div v-for="tournament in tournaments" :key="tournament.index">
           <dashboard-tournament-card :tournament="tournament" />
         </div>
       </div>
 
-      <h5>Площадки</h5>
+      <div v-if="playgrounds" class="profile__cards">
+        <h5>Площадки</h5>
 
-      <div class="profile__cards">
-        <div v-for="playground in playgrounds" v-bind:key="playground.index">
+        <div v-for="playground in playgrounds" :key="playground.index">
           <dashboard-playground-card :playground="playground" />
         </div>
       </div>
@@ -37,11 +50,11 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Dashboard',
   components: {
-    ProfileUser: () => import('@/components/ProfileUser/index.vue'),
-    DashboardTournamentCard: () => import('@/components/DashboardTournamentCard'),
-    DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
-    // DashboardPracticeCard: () => import('@/components/DashboardPracticeCard'),
-    DashboardPlaygroundCard: () => import('@/components/DashboardPlaygroundCard')
+    ProfileUser: () => import('@/components/dashboard/ProfileUser.vue'),
+    DashboardTournamentCard: () => import('@/components/dashboard/DashboardTournamentCard.vue'),
+    DashboardTeamCard: () => import('@/components/dashboard/DashboardTeamCard.vue'),
+    DashboardPracticeCard: () => import('@/components/dashboard/DashboardPracticeCard.vue'),
+    DashboardPlaygroundCard: () => import('@/components/dashboard/DashboardPlaygroundCard.vue')
   },
   computed: {
     ...mapGetters(['profile', 'teams', 'tournaments']),

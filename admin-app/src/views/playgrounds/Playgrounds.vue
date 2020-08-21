@@ -26,7 +26,7 @@ import axios from 'axios'
 export default {
   name: 'Playgrounds',
   components: {
-    DashboardPlaygroundCard: () => import('@/components/DashboardPlaygroundCard'),
+    DashboardPlaygroundCard: () => import('@/components/dashboard/DashboardPlaygroundCard.vue'),
     PagesPagination: () => import('@/components/dashboard/PagesPagination.vue')
   },
   data: () => ({

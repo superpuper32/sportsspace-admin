@@ -5,6 +5,7 @@
         <h3>Редактирование команды {{ team.name }}</h3>
 
         <div v-if="!team">Загрузка данных ...</div>
+
         <team-form v-else v-model="team" />
       </div>
 

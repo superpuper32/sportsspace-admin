@@ -35,7 +35,7 @@ export default {
   name: 'AllTeams',
 
   components: {
-    DashboardTeamCard: () => import('@/components/DashboardTeamCard'),
+    DashboardTeamCard: () => import('@/components/dashboard/DashboardTeamCard.vue'),
     PagesPagination: () => import('@/components/dashboard/PagesPagination.vue')
   },
 
@@ -92,5 +92,5 @@ export default {
 
 <style lang="sass">
 .profile__cards_content-list
-    margin-top: 2rem
+  margin-top: 2rem
 </style>
