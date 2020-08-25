@@ -93,11 +93,13 @@
         box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
 
     &__day-of-week
-        padding-bottom: 20px
+        margin-bottom: 20px
         display: grid
         grid-template-columns: repeat(7, 1fr)
-        font-size: 14px
-        color: #252631
+
+        &> *
+            font-size: 14px
+            color: #252631
 
     &__date-grid
         display: grid

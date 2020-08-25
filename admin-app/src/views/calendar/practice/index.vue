@@ -6,7 +6,7 @@
       <div class="calendar__dates">
         <span class="calendar__day">Сегодня</span>
 
-        <div class="calendar__date">20.05.2020</div>
+        <div class="calendar__date">{{ today }}</div>
 
         <button class="calendar__button"></button>
       </div>
@@ -26,6 +26,20 @@ export default {
   components: {
     CalendarSchedule: () => import('@/components/CalendarSchedule.vue'),
     CalendarCard: () => import('@/components/CalendarCard')
+  },
+  computed: {
+    today() {
+      const day = new Date()
+
+      let d = day.getDate()
+      let m = day.getMonth() + 1
+      const y = day.getFullYear()
+
+      if (d < 10) d = '0' + d
+      if (m < 10) m = '0' + m
+
+      return `${d}.${m}.${y}`
+    }
   }
 }
 </script>
