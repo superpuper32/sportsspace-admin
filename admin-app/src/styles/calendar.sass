@@ -93,11 +93,13 @@
         box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
 
     &__day-of-week
+
         margin-bottom: 20px
         display: grid
         grid-template-columns: repeat(7, 1fr)
 
         &> *
+            margin-left: 10px
             font-size: 14px
             color: #252631
 
@@ -106,18 +108,22 @@
         grid-template-columns: repeat(7, 1fr)
 
     &__cell
+        margin: 0px 10px
+        padding-top: 14px
         position: relative
         border: 0
         border-top: 3px solid #e8ecef
-        width: 144px
-        height: 120px
-        font-weight: 600
+        height: 150px
+        font-weight: normal
         text-align: left
         background-color: transparent
-        color: #98a9bc
+        color: #2C2E3F
 
-        &:first-child
-            grid-column-start: 5
+        &_inactive
+            color: #98A9BC
+
+        &_today
+            color: #008DFF
 
     &__grid
         display: grid
