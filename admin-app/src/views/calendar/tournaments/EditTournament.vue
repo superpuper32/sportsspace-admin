@@ -22,7 +22,7 @@ import axios from 'axios'
 export default {
   name: 'EditTournament',
   components: {
-    TournamentForm: () => import('@/components/TournamentForm')
+    TournamentForm: () => import('@/components/calendar/tournaments/TournamentForm.vue')
   },
   data: () => ({
     tournament: null,
@@ -39,6 +39,7 @@ export default {
   mounted() {
     this.loadTournaments()
   },
+
   methods: {
     loadTournaments() {
       axios

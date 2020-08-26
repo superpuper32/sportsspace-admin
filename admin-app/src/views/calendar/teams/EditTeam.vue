@@ -25,7 +25,7 @@ import axios from 'axios'
 export default {
   name: 'EditTeam',
   components: {
-    TeamForm: () => import('@/components/TeamForm')
+    TeamForm: () => import('@/components/calendar/teams/TeamForm.vue')
   },
   data: () => ({
     team: null,

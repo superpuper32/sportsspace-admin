@@ -42,13 +42,16 @@ const defaultTournament = {
 
 export default {
   name: 'CreateTournament',
+
   components: {
-    TournamentForm: () => import('@/components/TournamentForm')
+    TournamentForm: () => import('@/components/calendar/tournaments/TournamentForm.vue')
   },
+
   data: () => ({
     tournament: defaultTournament,
     url: 'http://localhost:3004/tournaments/'
   }),
+
   methods: {
     backToTournaments() {
       this.$router.push({ path: '/calendar/tournaments' })
@@ -63,15 +66,15 @@ export default {
 
 <style lang="sass" scoped>
 .calendar-form
-    box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
-    border-radius: 4px
+  box-shadow: 0px 2px 16px rgba(153, 155, 168, 0.12)
+  border-radius: 4px
 
 .form__create
-    padding: 20px 56px 20px 20px
-    background-color: #fff
-    border-left-top-radius: 4px
-    border-left-bottom-radius: 4px
+  padding: 20px 56px 20px 20px
+  background-color: #fff
+  border-left-top-radius: 4px
+  border-left-bottom-radius: 4px
 
 h3
-    margin-bottom: 30px
+  margin-bottom: 30px
 </style>

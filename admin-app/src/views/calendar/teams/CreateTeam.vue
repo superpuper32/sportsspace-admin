@@ -41,7 +41,7 @@ const defaultTeam = {
 export default {
   name: 'CreateTeam',
   components: {
-    TeamForm: () => import('@/components/TeamForm')
+    TeamForm: () => import('@/components/calendar/teams/TeamForm.vue')
   },
   data: () => ({
     team: defaultTeam,

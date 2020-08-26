@@ -39,13 +39,16 @@ const defaultPlayground = {
 
 export default {
   name: 'CreatePlayground',
+
   components: {
-    PlaygroundForm: () => import('@/components/PlaygroundForm')
+    PlaygroundForm: () => import('@/components/calendar/playgrounds/PlaygroundForm.vue')
   },
+
   data: () => ({
     playground: defaultPlayground,
     url: 'http://localhost:3004/playgrounds/'
   }),
+
   methods: {
     backToPlaygounds() {
       this.$router.push({ path: '/calendar/playgrounds' })

@@ -2,11 +2,11 @@
   <div class="playground-card">
     <div class="playground-card__title">
       <div>
-        <img src="../../assets/playground-card__avatar.svg" alt />
+        <img src="../../../assets/playground-card__avatar.svg" alt />
       </div>
 
       <div class="playground-card__heading">
-        <h4>{{ playground.title }}</h4>
+        <h4>{{ playground.name }}</h4>
         <span>{{ playground.address }}</span>
       </div>
 
@@ -114,7 +114,7 @@ export default {
       left: 0
       width: 16px
       height: 16px
-      background: url(../../assets/playground-card_rate.svg) center center no-repeat
+      background: url(../../../assets/playground-card_rate.svg) center center no-repeat
       transform: translateY(-50%)
 
   &__created
@@ -155,7 +155,7 @@ export default {
       left: 0
       width: 16px
       height: 16px
-      background: url(../../assets/playground-card_ball.svg) center center no-repeat
+      background: url(../../../assets/playground-card_ball.svg) center center no-repeat
       transform: translateY(-50%)
 
   &__value

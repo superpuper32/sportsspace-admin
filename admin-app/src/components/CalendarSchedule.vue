@@ -14,9 +14,11 @@
       <div
         v-for="day in calendarDays"
         class="calendar__cell"
-        :class="{ 'calendar__cell_inactive': !day.isActive }"
+        :class="{ calendar__cell_inactive: !day.isActive }"
         :key="day.index"
-      >{{ day.value }}</div>
+      >
+        {{ day.value }}
+      </div>
     </div>
   </div>
 </template>

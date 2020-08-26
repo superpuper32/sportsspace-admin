@@ -173,7 +173,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-@import '../../styles/colors.sass'
+@import '../../../styles/colors.sass'
 
 .simple-input
   // display: inline-block
@@ -230,7 +230,7 @@ export default {
     margin-bottom: 26px
     width: 100%
     height: 248px
-    background: url(../../assets/Map.png) center center no-repeat
+    background: url(../../../assets/Map.png) center center no-repeat
     background-size: cover
     border-radius: 4px
 
@@ -274,6 +274,6 @@ export default {
         left: -32px
         width: 24px
         height: 24px
-        background: url(../../assets/create_img.svg) center center no-repeat
+        background: url(../../../assets/create_img.svg) center center no-repeat
         transform: translateY(-50%)
 </style>

@@ -29,7 +29,8 @@
       </div>
 
       <div class="login__line">
-        <div></div>Или
+        <div></div>
+        Или
         <div></div>
       </div>
 
@@ -83,7 +84,8 @@
       </div>
 
       <div class="login__line">
-        <div></div>Или
+        <div></div>
+        Или
         <div></div>
       </div>
 

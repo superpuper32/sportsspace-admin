@@ -22,7 +22,7 @@ import axios from 'axios'
 export default {
   name: 'EditPlayground',
   components: {
-    PlaygroundForm: () => import('@/components/PlaygroundForm')
+    PlaygroundForm: () => import('@/components/calendar/playgrounds/PlaygroundForm.vue')
   },
   data: () => ({
     playground: null,

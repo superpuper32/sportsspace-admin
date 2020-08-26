@@ -39,30 +39,35 @@ import axios from 'axios'
 
 export default {
   name: 'CalendarPlaygrounds',
+
   components: {
-    PlaygroundCard: () => import('@/components/PlaygroundCard'),
+    PlaygroundCard: () => import('@/components/calendar/playgrounds/PlaygroundCard.vue'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard'),
     CalendarNotification: () => import('@/components/CalendarNotification')
   },
+
   data: () => ({
     playgrounds: [],
     notification: false
   }),
+
   mounted() {
     this.loadPlaygrounds()
   },
+
   computed: {
     havePlaygrounds() {
       return this.playgrounds.length > 0
     }
   },
+
   methods: {
     loadPlaygrounds() {
       axios
-        .get('http://localhost:3004/playgrounds')
-        .then(response => (this.playgrounds = response.data))
+        .get('https://devtest.sportsspace.ru/api/v1/playgrounds.json')
+        .then(response => (this.playgrounds = response.data.items))
         .catch(error => console.error(error))
     }
   }
