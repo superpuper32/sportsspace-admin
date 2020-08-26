@@ -110,8 +110,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.schedule {
-  display: flex;
-}
+<style scoped lang="sass">
+.schedule
+  display: flex
 </style>

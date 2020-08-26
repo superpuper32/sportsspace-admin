@@ -26,14 +26,14 @@ export default {
   },
   data: () => ({
     tournament: null,
-    restUrl: 'http://localhost:3004/tournaments/'
+    restUrl: 'https://devtest.sportsspace.ru/api/v1/tournaments/'
   }),
   computed: {
     id() {
       return this.$route.params.id
     },
     url() {
-      return `${this.restUrl}${this.id}`
+      return `${this.restUrl}${this.id}.json`
     }
   },
   mounted() {

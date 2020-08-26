@@ -1,149 +1,153 @@
 <template>
   <section class="create-form">
-    <div class="simple-input">
-      <label for="name">Название</label>
-      <input
-        type="text"
-        name="name"
-        placeholder="Введите название"
-        v-model="localTournament.title"
-      />
-    </div>
+    <form>
+      <div class="simple-input">
+        <label for="name">Название</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Введите название"
+          v-model="localTournament.name"
+        />
+      </div>
 
-    <div class="create-form__columns">
-      <div class="create-form__column">
-        <div class="simple-input">
-          <label for="sportKind">Вид спорта</label>
+      <div class="create-form__columns">
+        <div class="create-form__column">
+          <div class="simple-input">
+            <label for="sportKind">Вид спорта</label>
 
-          <select name="sportKind" v-model="localTournament.sport.kind">
-            <option value="tennis">Теннис</option>
-            <option value="voleyball">Волейбол</option>
-            <option value="football">Футбол</option>
-          </select>
+            <input
+              type="text"
+              name="sportKind"
+              placeholder="Вид спорта"
+              v-model="localTournament.sport"
+            />
+          </div>
+        </div>
+
+        <div class="create-form__column">
+          <div class="simple-input">
+            <label for="sport">Формат турнира</label>
+
+            <input
+              type="text"
+              name="sport"
+              placeholder="Формат турнира"
+              v-model="localTournament.format_tour"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="create-form__column">
-        <div class="simple-input">
-          <label for="sport">Формат турнира</label>
+      <div class="simple-input">
+        <label for="address">Адрес</label>
 
-          <select name="sport" v-model="localTournament.formTournament">
-            <option value="single">Сингл</option>
-            <option value="double">Double</option>
-            <option value="round-robin">Round Robin</option>
-          </select>
-        </div>
+        <input
+          type="text"
+          name="address"
+          placeholder="Введите адрес"
+          v-model="localTournament.address"
+        />
       </div>
-    </div>
 
-    <div class="simple-input">
-      <label for="address">Адрес</label>
+      <div class="create-form__map"></div>
 
-      <input
-        type="text"
-        name="address"
-        placeholder="Введите адрес"
-        v-model="localTournament.address"
-      />
-    </div>
+      <div class="simple-input">
+        <label for="location">Арендовать</label>
 
-    <div class="create-form__map"></div>
-
-    <div class="simple-input">
-      <label for="location">Арендовать</label>
-
-      <select name="location" v-model="localTournament.location">
-        <option value="address">Спортивный комплекс - СК «Прометей»</option>
-        <option value="address1">address 1</option>
-        <option value="address2">address 2</option>
-      </select>
-    </div>
-
-    <div class="create-form__logo">
-      <span>Загрузить фотографии</span>
-      <div class="create-form__img">
-        <span>Загрузить документ</span>
+        <select name="location">
+          <option value="address">Спортивный комплекс - СК «Прометей»</option>
+          <option value="address1">address 1</option>
+          <option value="address2">address 2</option>
+        </select>
       </div>
-    </div>
 
-    <div class="create-form__columns">
-      <div class="create-form__column">
-        <div class="simple-input">
-          <label for="quantityPlayers">Количество участников</label>
-
-          <select name="quantityPlayers" v-model="localTournament.quantityPlayers">
-            <option value="8">8</option>
-            <option value="16">16</option>
-            <option value="32">32</option>
-          </select>
-        </div>
-
-        <div class="simple-input">
-          <label for="time">Время проведения</label>
-          <input type="time" v-model="localTournament.time" />
-        </div>
-
-        <div class="simple-input">
-          <label for="tel">
-            Телефон
-            <span>(для справок)</span>
-          </label>
-          <input type="tel" v-model="localTournament.tel" />
+      <div class="create-form__logo">
+        <span>Загрузить фотографии</span>
+        <div class="create-form__img">
+          <span>Загрузить документ</span>
         </div>
       </div>
 
-      <div class="create-form__column">
-        <div class="simple-input">
-          <label for="date">Дата проведения</label>
-          <input type="date" v-model="localTournament.date" />
+      <div class="create-form__columns">
+        <div class="create-form__column">
+          <div class="simple-input">
+            <label for="quantityPlayers">Количество участников</label>
+
+            <select name="quantityPlayers">
+              <option value="8">8</option>
+              <option value="16">16</option>
+              <option value="32">32</option>
+            </select>
+          </div>
+
+          <div class="simple-input">
+            <label for="time">Время проведения</label>
+            <input type="time" />
+          </div>
+
+          <div class="simple-input">
+            <label for="tel">
+              Телефон
+              <span>(для справок)</span>
+            </label>
+            <input type="tel" />
+          </div>
         </div>
 
-        <div class="simple-input">
-          <label for="payment">
-            Тип участников
-            <span>(распределения оплаты)</span>
-          </label>
+        <div class="create-form__column">
+          <div class="simple-input">
+            <label for="date">Дата проведения</label>
+            <input type="text" v-model="localTournament.data_and_time" />
+          </div>
 
-          <select name="quantityPlayers" v-model="localTournament.payment">
-            <option value="captain">Капитан</option>
-            <option value="players">Игроки</option>
-            <option value="sponsor">Спонсор</option>
-          </select>
-        </div>
+          <div class="simple-input">
+            <label for="payment">
+              Тип участников
+              <span>(распределения оплаты)</span>
+            </label>
 
-        <div class="simple-input">
-          <label for="price">
-            Цена
-            <span>(участия с команды)</span>
-          </label>
+            <select name="quantityPlayers">
+              <option value="captain">Капитан</option>
+              <option value="players">Игроки</option>
+              <option value="sponsor">Спонсор</option>
+            </select>
+          </div>
 
-          <input type="text" v-model="localTournament.price" />
+          <div class="simple-input">
+            <label for="price">
+              Цена
+              <span>(участия с команды)</span>
+            </label>
+
+            <input type="text" v-model="localTournament.price" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="simple-input">
-      <label for="description">Описание</label>
+      <div class="simple-input">
+        <label for="description">Описание</label>
 
-      <input
-        type="text"
-        name="description"
-        placeholder="Введите описание"
-        v-model="localTournament.description"
-      />
-    </div>
+        <input
+          type="text"
+          name="description"
+          placeholder="Введите описание"
+          v-model="localTournament.description"
+        />
+      </div>
 
-    <div class="simple-input">
-      <label for="invite">Пригласить участников</label>
+      <div class="simple-input">
+        <label for="invite">Пригласить участников</label>
 
-      <input type="text" name="invite" placeholder="Поиск" v-model="localTournament.invite" />
-    </div>
+        <input type="text" name="invite" placeholder="Поиск" />
+      </div>
 
-    <label class="simple-checkbox">
-      Принять условия пользовательского соглашения.
-      <input type="checkbox" v-model="convention" />
-      <span class="checkmark"></span>
-    </label>
+      <label class="simple-checkbox">
+        Принять условия пользовательского соглашения.
+        <input type="checkbox" />
+        <span class="checkmark"></span>
+      </label>
+    </form>
   </section>
 </template>
 
