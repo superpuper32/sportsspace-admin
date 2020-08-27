@@ -38,7 +38,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'CalendarTournaments',
   components: {
-    TournamentCard: () => import('@/components/TournamentCard'),
+    TournamentCard: () => import('@/components/calendar/tournaments/TournamentCard.vue'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')

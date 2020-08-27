@@ -3,7 +3,7 @@
     <div class="tournament-card__left">
       <div class="tournament-card__title">
         <div class="tournament-card__img">
-          <img src="../../assets/tournament_icon.svg" alt="avatar" />
+          <img src="../../../assets/tournament_icon.svg" alt="avatar" />
         </div>
 
         <div>
@@ -170,7 +170,7 @@ export default {
         left: -30px
         width: 20px
         height: 20px
-        background: url(../../assets/tournament-card_status.svg) center center no-repeat
+        background: url(../../../assets/tournament-card_status.svg) center center no-repeat
         transform: translateY(-50%)
 
   &__buttons
@@ -182,7 +182,7 @@ export default {
     margin-right: 12px
     width: 32px
     height: 32px
-    background: url(../../assets/button_settings.svg) center center no-repeat
+    background: url(../../../assets/button_settings.svg) center center no-repeat
     border: 1px dashed #F8FAFB
     border-radius: 50%
     outline: none

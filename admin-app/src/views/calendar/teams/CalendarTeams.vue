@@ -32,7 +32,7 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'Teams',
   components: {
-    TeamCard: () => import('@/components/TeamCard'),
+    TeamCard: () => import('@/components/calendar/teams/TeamCard.vue'),
     CalendarCard: () => import('@/components/CalendarCard'),
     PackageCard: () => import('@/components/PackageCard'),
     NoteCard: () => import('@/components/NoteCard')

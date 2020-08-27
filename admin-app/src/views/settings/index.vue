@@ -68,9 +68,11 @@ var tabs = [
 
 export default {
   name: 'Settings',
+
   components: {
     NavSettings: () => import('@/components/NavSettings')
   },
+
   data: () => {
     return {
       settings: null,
@@ -79,6 +81,7 @@ export default {
       restUrl: 'http://localhost:3004/settings/'
     }
   },
+
   computed: {
     ...mapGetters(['profile']),
 
@@ -90,28 +93,15 @@ export default {
       return 'icon-' + name.toLowerCase()
     }
   },
+
   mounted() {
-    // this.loadProfileSettings()
     this.$store.dispatch('profile/GET_PROFILE')
   },
-  methods: {
-    // loadProfileSettings() {
-    //   axios
-    //     .get(this.url)
-    //     .then(response => (this.settings = response.data))
-    //     .catch(error => console.error(error))
-    // },
 
+  methods: {
     backToDashboard() {
       this.$router.push({ path: '/dashboard' })
     }
-
-    // save() {
-    //   axios
-    //     .patch(this.url, this.settings)
-    //     .then(() => this.backToDashboard())
-    //     .catch(error => console.error(error))
-    // }
   }
 }
 </script>

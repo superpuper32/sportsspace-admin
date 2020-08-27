@@ -2,7 +2,7 @@
   <div class="team-card">
     <div class="team-card__title">
       <div>
-        <img src="../../assets/playground-card__avatar.svg" alt />
+        <img src="../../../assets/playground-card__avatar.svg" alt />
       </div>
 
       <div class="team-card__heading">
@@ -123,7 +123,7 @@ export default {
       left: 0
       width: 16px
       height: 16px
-      background: url(../../assets/playground-card_rate.svg) center center no-repeat
+      background: url(../../../assets/playground-card_rate.svg) center center no-repeat
       transform: translateY(-50%)
 
   &__created
@@ -164,7 +164,7 @@ export default {
       left: 0
       width: 16px
       height: 16px
-      background: url(../../assets/playground-card_ball.svg) center center no-repeat
+      background: url(../../../assets/playground-card_ball.svg) center center no-repeat
       transform: translateY(-50%)
 
   &__value

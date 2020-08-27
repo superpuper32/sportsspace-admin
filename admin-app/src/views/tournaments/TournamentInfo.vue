@@ -13,13 +13,16 @@ import axios from 'axios'
 
 export default {
   name: 'TournamentInfo',
+
   components: {
-    TournamentCard: () => import('@/components/TournamentCard')
+    TournamentCard: () => import('@/components/calendar/tournaments/TournamentCard.vue')
   },
+
   data: () => ({
     tournament: null,
     restUrl: 'https://devtest.sportsspace.ru/api/v1/tournaments/'
   }),
+
   computed: {
     id() {
       return this.$route.params.id
@@ -38,9 +41,11 @@ export default {
         : `${imageUrl}.jpg`
     }
   },
+
   mounted() {
     this.loadTournament()
   },
+
   methods: {
     loadTournament() {
       axios

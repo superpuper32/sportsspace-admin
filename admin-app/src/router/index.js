@@ -291,21 +291,4 @@ export function resetRouter() {
   router.matcher = newRouter.matcher // reset router
 }
 
-// const token = '123'
-
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (token !== '123') {
-//       next({
-//         path: '/login',
-//         query: { redirect: to.fullPath }
-//       })
-//     } else {
-//       next()
-//     }
-//   } else {
-//     next()
-//   }
-// })
-
 export default router
